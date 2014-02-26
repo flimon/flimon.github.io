@@ -1,0 +1,135 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1156" id="AutoNumber1">
+  <tr>
+    <td width="4%">
+    &nbsp;</td>
+    <td width="1073">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">Virtualización</font></td>
+    <td width="4%" align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1073" style="border: 5px solid #BD9600">
+    <font size="4" color="#FFFFFF">&nbsp;</font></td>
+    <td width="34" align="justify">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49">&nbsp;</td>
+    <td width="1073">&nbsp;</td>
+    <td width="34" align="justify">&nbsp;</td>
+  </tr>
+  </table>
+
+<p><font size="4" color="#FFFFFF">Es una de las últimas técnologías informáticas 
+que permiten optimizar los recursos y ganar disponibilidad mediante la 
+<a href="http://es.wikipedia.org/wiki/VirtualizaciÃ³n">virtualización</a> de servicios o recursos hardware. Las CPUs modernas ya incorporan 
+extensiones destinadas a facilitar dicha virtualización y que la pérdida de 
+rendimiento sea mínima ... cuando mínima es inferior al 3% sobre el recurso 
+real.</font></p>
+
+<p><font size="4" color="#FFFFFF">Es probable que te haya sucedido el tener una 
+avería grave en el ordenador que controla el observatorio, tener que comprar uno 
+nuevo ... y lo que casi es peor ... tener que volver a instalar todo desde cero. 
+Son muchas, muchas horas de trabajo. En otras ocasiones no nos atrevemos a 
+probar una nueva versión de software o drivers por miedo a que luego no funcione 
+y no tener marcha atrás.</font></p>
+
+<p><font size="4" color="#FFFFFF">La tecnología de virtualización te permitirá 
+poder desplegar tu sistema informático del observatorio ejecutando sobre una 
+máquina virtual (</font><b><i><font size="4" color="#FF0000">guest</font></i></b><font size="4" color="#FFFFFF">) en cualquier ordenador 
+físico (</font><b><i><font size="4" color="#FF0000">host</font></i></b><font size="4" color="#FFFFFF">), 
+independientemente de la CPU, placa base y dispositivos que tenga. Replicar una 
+máquina virtual no implica más que copiar un directorio del sistema real. Podrás jugar con la copia, y si no te gusta 
+el resultado, simplemente lo borras. Y para hacer un backup ... pues te copias a 
+un disco externo el directorio correspondiente a la máquina virtual y listo. 
+Incluso podrás tener replicado tu máquina&nbsp; del observatorio en más de un 
+ordenador.</font></p>
+
+<p><font size="4" color="#FFFFFF">Esta tecnología no es sencilla ni trivial, 
+pero intentaré explicarte paso a paso el proceso a seguir para utilizarla. 
+Aunque no pretendo elaborar una guía paso a paso, pues el tema da para muchas 
+páginas, y se requieren unos conocimientos en informática nada triviales.</font></p>
+
+<p>&nbsp;</p>
+
+<p><b><font size="5" color="#C6C246">HOST</font></b></p>
+
+<p><font size="4" color="#FFFFFF">Hablemos primero de la máquina física (host) 
+que utilizaremos como plataforma de virtualización.</font></p>
+
+<p><font size="4" color="#FFFFFF">Aunque lo primero sea pensar que necesitamos 
+una máquina con muchos <i><b>
+<a href="http://es.wikipedia.org/wiki/Procesador_multinÃºcleo">cores</a></b></i>, 
+la verdad es que lo realmente crítico es disponer de suficiente memoria, y 
+cuanto más rápida mejor. Las CPUs suelen estar bastante ociosas, y además, se 
+comparten entre la máquina real y la máquina virtual. No ocurre lo mismo con la 
+memoria, que generalmente se le asigna una zona en exclusiva para cada una de 
+las máquinas, y por lo tanto no se comparte.</font></p>
+
+<p><font size="4" color="#FFFFFF">En mi caso, que sólo suelo arrancar una única 
+máquina virtual, monté un procesador
+<a href="http://ark.intel.com/products/65527/">Intel Pentium G2120 3.1GHz</a> 
+(tecnología de 22nm, y por tanto bajo consumo) con 8 GB RAM DDR3 en una placa
+<a href="http://www.intel.com/content/www/us/en/motherboards/desktop-motherboards/desktop-board-dh67cf.html">
+Mini ITX DH67CFB3</a><font color="#FFFFFF">.</font></font></p>
+
+<p><font size="4" color="#FFFFFF">A pesar de usar Windows de 64 bits, y aunque 
+el número de programas que usamos en un observatorio automatizado no es 
+despreciable, una máquina con 4 GB de RAM es más que suficiente. Considerando 
+que el sistema real (host) correrá un sistema operativo Linux, del que 
+procuraremos desactivar todo el entorno gráfico de usuario que no utilizaremos, 
+y que con 2 GB de RAM irá sobrado. Tenemos que aún nos quedan de margen otros 2 
+GB de RAM ... que en caso de necesidad podremos asignar a la máquina virtual.</font></p>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#C6C246">¿Qué Linux instalamos en el host?</font><font size="4" color="#FFFFFF">
+</font></p>
+
+<p><font size="4" color="#FFFFFF">Pues cualquiera que sea ligero. Cualquier 
+versión <i>server</i> nos valdrá. En mi caso utilizo Linux Debian 7 con interfaz gráfico 
+XFCE (ligerito) al que he 
+instalado XRDP, lo que me permite conectarme a él usando el protocolo de 
+escritorio remoto de Microsoft (más ligero). Aunque usaremos esta vía de 
+conexión sólo en la fase de configuración.</font></p>
+
+<p><font size="4" color="#FFFFFF">También hay que instalar SSH y NTP. El primero 
+para establecer sesiones no gráficas con el <i>host</i>, y el segundo para 
+garantizar que la máquina real y las virtuales tengan ajustado el reloj con la 
+suficiente precisión.</font></p>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#C6C246">¿Qué herramienta usaremos para virtualizar?</font></p>
+
+<p><font size="4" color="#FFFFFF">Inicialmente pensé en utilizar VirtualBox, 
+porque lo había usado para otras aplicaciones y porque es gratuito. Pero 
+descubrí con desagradable sorpresa que no gestiona muy bien el tema de los 
+dispositivos USB (al menos la versión que probé en su momento), sobre todo se pegaba de tortas con las cámaras fotográficas.</font></p>
+
+<p><font size="4" color="#FFFFFF">Cuando estaba a punto de tirar la toalla con 
+este proyecto, se me ocurrió probar con VMWare Player 5.0.2, que es gratuito 
+para uso no comercial. ¡Fantástico!</font></p>
+
+<p><font size="4" color="#FFFFFF">En el <i>host</i> tendremos que instalar 
+VMware Player for Linux 64-bit (</font><span id="aui_3_2_0_1213" class="det_info"><font color="#C6C246">VMware-Player-5.0.2-1031769.x86_64.bundle</font><font color="#FFFFFF">)
+</font></span><font size="4" color="#FFFFFF">&nbsp;y </font>
+<font color="#FFFFFF">VMware VIX API for 64-bit Linux (</font><font color="#C6C246"><span class="det_info">VMware-VIX-1.12.2-1031769.x86_64.bundle</span></font><font color="#FFFFFF">)</font>,<font size="4" color="#FFFFFF"> 
+lo que nos permitirá arrancar las máquinas virtuales sin necesidad de utilizar 
+en interfaz gráfico.</font></p>
+
+<p>&nbsp;</p>
+
+</body>
+</html>

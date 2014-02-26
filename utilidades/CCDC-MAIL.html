@@ -1,0 +1,89 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1156" id="AutoNumber1">
+  <tr>
+    <td width="4%">
+    &nbsp;</td>
+    <td width="1073">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">CCD Commander - E-Mail Script</font></td>
+    <td width="4%" align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1073" style="border: 5px solid #BD9600">
+    <p align="center">
+    <font size="4" color="#FFFFFF">&nbsp;</font><font size="4" color="#C6C246">Versión 
+    1.0</font></td>
+    <td width="34" align="justify">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49">&nbsp;</td>
+    <td width="1073">&nbsp;</td>
+    <td width="34" align="justify">&nbsp;</td>
+  </tr>
+  </table>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Una de las facilidades que presenta <a href="http://ccdcommander.com/">CCD Commander</a> 
+es la posibilidad de enviar un e-mail si se produce algún tipo de alerta.</font></p>
+
+<p><font size="4" color="#FFFFFF">Esto ha funcionado bien hasta que los 
+proveedores de correo electrónico se han puesto las pilas por razones de 
+seguridad y han obligado a que la conexión se realice cifrada mediante SSL. Para colmo, el autor del programa parece no tener 
+mucha prisa en resolver este problema:</font></p>
+
+<blockquote>
+
+<p><font color="#009999">
+<span id="yui_3_15_0_1_1399301871437_2092" style="font-family: Courier New; font-weight: 700">
+[2013/DIC/29] If the mail provider does not support plain text SMTP, then it 
+will not work. &nbsp;CCD Commander does not support SSL encrypted email. -Matt Thomas</span></font></p>
+
+</blockquote>
+
+<p><font size="4" color="#FFFFFF">La única solución que ha dado como alternativa es 
+facilitar ejecutar un <i>script</i> cada 
+vez que el CCD Commander tenga que enviar un mail, pasándole a dicho <i>script</i> como 
+argumentos el </font><font size="4" color="#C6C246">asunto</font><font size="4" color="#FFFFFF"> 
+del mail y el </font><font size="4" color="#C6C246">cuerpo del mensaje</font><font size="4" color="#FFFFFF">.</font></p>
+
+<p><font size="4" color="#FFFFFF">Así que investigando un ratito, y basándome en 
+algunos ejemplos que he visto, he elaborado el siguiente <i>script</i>:
+<a href="Sendmail.vbs">Sendmail.vbs</a><font color="#FFFFFF">. </font>Lo 
+he dejado preparado para GoogleMail, por lo que sólo tienes que modificarlo para 
+poner tus datos de identificación y tu dirección de correo electrónico.</font></p>
+
+<p><font size="4" color="#FFFFFF">Respecto al CCD Commander, en </font>
+<font size="4" color="#C6C246">Setup</font><font size="4" color="#FFFFFF">, en 
+la lengueta de </font><font size="4" color="#C6C246">E-Mail Alerts</font><font size="4" color="#FFFFFF">, 
+hay que dejar todos los campos en blanco (importante!!), menos el del puerto que 
+vale cualquier número e incluir el <i>script</i> 
+en el campo E-Mail Script, como se puede apreciar en la captura adjunta.</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="CCDC-MailScript.jpg" width="555" height="603"></p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+<p><font size="4" color="#FFFFFF">De esta manera se enviarán las alertas que se 
+programen a 
+vuestro correo electrónico, aunque éste obligue a utilizar conexiones cifradas.</font></p>
+<p><font size="4" color="#FFFFFF">Espero que os sea de ayuda!!</font></p>
+
+</body>
+</html>

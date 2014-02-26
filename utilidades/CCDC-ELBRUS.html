@@ -1,0 +1,201 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1156" id="AutoNumber1">
+  <tr>
+    <td width="4%">
+    &nbsp;</td>
+    <td width="1073">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">Integración CCD Commander y 
+Elbrus</font></td>
+    <td width="4%" align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1073" style="border: 5px solid #BD9600">
+    <p align="center">
+    <font size="4" color="#FFFFFF">&nbsp;</font><font size="4" color="#C6C246">Versión 
+    6.0</font></td>
+    <td width="34" align="justify">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49">&nbsp;</td>
+    <td width="1073">&nbsp;</td>
+    <td width="34" align="justify">&nbsp;</td>
+  </tr>
+  </table>
+
+<p>&nbsp;</p>
+
+<p><font color="#FFFFFF" size="4">Cuando comencé a automatizar el observatorio 
+basándome en el <a href="http://ccdcommander.com/">CCD Commander</a> me encontré 
+con un problema inesperado a la hora de resolver astrométricamente las tomas 
+para sincronizar el telecopio.</font></p>
+<p><font size="4" color="#FFFFFF">CCD Commander utiliza bien la versión LE de
+<a href="http://pinpoint.dc3.com/">Pinpoint</a> que incorpora
+<a href="http://www.cyanogen.com/">Maxim DL</a> o directamente la versión 
+completa. En ambos casos Pinpoint tiene una mala costumbre: intenta resolver la 
+foto de cualquier manera, aunque para ello tenga que modificar constantes como 
+son la resolución por pixel o la longitud focal. Nunca he entendido por qué este 
+empeño en resolver y no contestar &quot;no puedo&quot;. Este defecto, que no efecto, se da 
+con mayor asiduidad cuanto más pequeño sea el CCD que utilicemos.</font></p>
+<p><font size="4" color="#FFFFFF">La consecuencia de esto es que te puedes 
+encontrar al telescopio intentando apuntar a una zona comprometida que puede llegar a 
+estropear los motores, cámara o cualquier instrumento. Aunque él crea que apunta 
+al cenit, porque Pinpoint así se lo ha dicho.</font></p>
+<p><font size="4" color="#FFFFFF">Era evidente que tenía que buscar una 
+alternativa a la acción Plate Solve de CCD Commander, que nunca más utilizaré 
+mientras Pinpoint funcione como hasta ahora.</font></p>
+<p><font size="4" color="#FFFFFF">Había hecho algunas pruebas con un programa 
+desarrollado por Alfonso Pulido que se denomina
+<a href="http://www.astrosurf.com/pulgar/elbrus/elbrussp.htm">Elbrus</a>, que 
+debo decir que es una auténtica maravilla, pues en más de una ocasión me había 
+ayudado a &quot;encontrarme&quot; cuando estaba perdido en la inmensidad del universo.</font></p>
+<p><font size="4" color="#FFFFFF">Tras estudiar la documentación disponible, 
+especialmente la utilización del programa desde el modo comando, opté por 
+intentar hacer que CCD Commander fuese capaz de utilizar Elbrus, pues  tiene la 
+decencia de que cuando no sabe resolver una foto lo dice y te deja el telescopio donde estaba. 
+¡Mejor perdido que mal hallado!</font></p>
+
+<p><font size="4" color="#FFFFFF">A la hora de utilizar Elbrus es importante tener en cuanta ciertos aspectos 
+de la configuración. Recomiendo que primero hagáis funcionar Elbrus y luego 
+prosigáis con lo que aquí propongo. A modo de ejemplo, estos son los parámetros 
+que utilizo yo, aunque cada instalación tendrá los suyos dependiendo de la 
+óptica empleada:</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="Elbrus.Parametros.jpg" width="636" height="465"></p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Con todo esto elaboré una solución que ha 
+funcionado y que muchos llevan utilizado durante mucho tiempo. Pero tras una sugerencia de Ramón Naves sobre la 
+posibilidad de emplear los <i>scripts</i> que CCD Commander permite definir para antes y 
+después de los <i>slew</i>, me puse a darle vueltas al tema y lo que comenzó con la idea de ser un simple <i>
+script</i>, se fue complicando con llamadas a objetos exportados por MaximDL y 
+monturas con interfaz ASCOM. </font></p>
+
+<p><font size="4" color="#FFFFFF">MaximDL proporciona el interfaz de la cámara que necesitamos para realizar 
+la foto que deberá resolver Elbrus. Para acceder a la montura podremos 
+seleccionar de entre todas las alternativas ASCOM que tengamos instaladas.</font></p>
+<p><font size="4" color="#FFFFFF">Como puede ver,  no existen 
+llamadas explícitas a Elbrus desde los ACT (fichero de lista de acciones) de CCD Commander, sino que el proceso 
+de sincronización se produce de manera automática cada vez que CCD Commander 
+ordena un <i>slew</i>.</font></p>
+<p><font size="4" color="#FFFFFF">Y lo que es mejor, se ha logrado resolver el 
+problema del <i>Meridian Flip</i>, pues con el primer diseño no tenía forma de 
+sincronizar tras un cambio de meridiano, lo que era un gran inconveniente.</font></p>
+<p><font size="4" color="#FFFFFF">Debemos ser conscientes que cada <i>slew</i> implica, 
+como mínimo: 
+hacer el <i>slew</i>, realizar una foto, llamar a Elbrus para que resuelva, sincronizar el telescopio 
+y realizar un <i>re-slew</i>. Pero todo de manera automática y transparente.&nbsp; 
+Un ejemplo de cómo queda un ACT de CCD Commander es:</font></p>
+<p>&nbsp;</p>
+<blockquote>
+<p><img border="0" src="CCDC-2-Act.jpg" width="545" height="466"></p>
+</blockquote>
+<p>&nbsp;</p>
+<p><font size="4" color="#FFFFFF">Las primeras versiones se basaron en un simple
+<i>script</i> escrito en VBS y que el usuario debía modificar para adaptar a sus 
+necesidades, lo que solía generar problemas. En la actualidad la solución se 
+basa en dos programas que utilizan la plataforma .NET Framework 4.0 o superior 
+(la puedes descargar de
+<a href="http://www.microsoft.com/es-es/download/details.aspx?id=30653">aquí</a>) 
+donde uno de ellos facilita la gestiona de la configuración del comportamiento 
+que tendrá Elbrus_sync (generando </font><font size="4" color="#C6C246">
+Elbrus_sync.ini</font><font size="4" color="#FFFFFF">), así como crea algunos <i>
+scripts</i> auxiliares.</font></p>
+<p><font size="4" color="#FFFFFF">Los dos ejecutables los encontrarás en
+<a href="Elbrus_sync%20v6.0.zip">Elbrus_sync v6.0.zip</a>. 
+Se deberán extraer en el mismo directorio 
+donde esté instalado Elbrus. Los programas son&nbsp; </font><font size="4" color="#C6C246">
+Elbrus_sync_cfg.exe</font><font size="4" color="#FFFFFF"> y </font>
+<font size="4" color="#C6C246">CCDC_Elbrus.exe</font><font size="4" color="#FFFFFF">.</font></p>
+<p><font size="4" color="#FFFFFF">Estos programas han sido compilados para 
+funcionar con Microsoft .NET Framework 4.0, por lo que deberá verificar que 
+dispone de esta versión o superior, y en su defecto, podrá descargarlo e 
+instalarlo desde </font><font size="5"><b>
+<a href="http://www.microsoft.com/es-es/download/details.aspx?id=30653">
+Microsoft</a></b></font><font size="4" color="#FFFFFF">.</font></p>
+<p><font size="4" color="#FFFFFF">Lo primero que haremos es ejecutar </font>
+<font size="4" color="#C6C246">Elbrus_sync_cfg.exe</font><font size="4" color="#FFFFFF">, 
+que nos permitirá configurar de manera cómoda el comportamiento que queremos del 
+sistema de sincronización:</font></p>
+<p>&nbsp;</p>
+<blockquote>
+<p><img border="0" src="Elbrus_sync_cfg.jpg" width="395" height="374"></p>
+</blockquote>
+<p>&nbsp;</p>
+<p><font size="4" color="#FFFFFF">Empezaremos indicando qué cámara queremos 
+utilizar: la principal o la de autoguiado. Indicaremos el tipo de campo de búsqueda que utilizará.</font></p>
+<p><font size="4" color="#FFFFFF">Es necesario seleccionar el interfaz de conexión con el telescopio, 
+para lo que pulsaremos el botón </font><font size="4" color="#C6C246">Selec.
+</font><font size="4" color="#FFFFFF">Podremos seleccionar de entre todos los 
+interfaces ASCOM que tengamos instalados en nuestro sistema.</font></p>
+<p><font size="4" color="#FFFFFF">Respecto a la cámara, 
+podremos indicar el tiempo 
+de exposición en las tomas que utilizaremos en las resoluciones, el filtro a emplear en caso de disponer de una ruleta 
+(no es de aplicación si usamos la cámara de autoguiado) y el <i>binning</i> de las 
+tomas.</font></p>
+<p><font size="4" color="#FFFFFF">Si utilizamos monturas GEM es muy importante que 
+al definir su comportamiento indiquemos a Elbrus que el tipo de campo de 
+búsqueda sea de </font><font size="4" color="#C6C246"> <b>5x5 
+  grados con ángulo de imagen normal y opuesto</b></font><font size="4" color="#FFFFFF">, 
+y de esta forma pueda resolver 
+  incluso cuando se haya realizado el cambio de meridiano (Meridian Flip).</font></p>
+<p><font size="4" color="#FFFFFF">Es posible indicar que sólo se realice la 
+sincronización cuando se produzca un <i>Meridian Flip</i>. Se puede configurar 
+un lapso de tiempo en caso de que sea necesario esperar a la cúpula. Y también es posible indicar 
+que queremos se realice un doble proceso de sincronización y así obtener una 
+mayor precisión, si es que fuese necesaria.</font></p>
+<p><font size="4" color="#FFFFFF">Para finalizar pulsaremos el botón </font>
+<font size="4" color="#C6C246">Configurar</font><font size="4" color="#FFFFFF">.</font></p>
+<p><font size="4" color="#FFFFFF">Terminaremos configurando CCD Commander en
+</font><font size="4" color="#C6C246">Setup</font><font size="4" color="#FFFFFF">, 
+en la la pestaña de </font><font size="4" color="#C6C246">Mount Parameter</font><font size="4" color="#FFFFFF">, 
+donde activaremos la opción </font><font size="4" color="#C6C246">Enable Slew 
+Scripts</font><font size="4" color="#FFFFFF"> y en </font>
+<font size="4" color="#C6C246">After Slew</font><font size="4" color="#FFFFFF"> 
+enlazaremos con el <i>script</i> </font><font size="4" color="#C6C246">Elbrus_sync.vbs</font><font size="4" color="#FFFFFF"> (que 
+ha generado </font><font size="4" color="#C6C246">Elbrus_sync_cfg.exe </font><font size="4" color="#FFFFFF">
+y que encontraremos en el 
+directorio donde se está instalado Elbrus) como puede verse en la 
+siguiente captura:</font></p>
+<p>&nbsp;</p>
+<blockquote>
+<p><img border="0" src="CCDC-2-Setup.jpg" width="545" height="567"></p>
+</blockquote>
+<p>&nbsp;</p>
+<p><font size="4" color="#FFFFFF">Una vez que tengas todo esto ... ¡ya has 
+terminado!</font></p>
+<p><font size="4" color="#FFFFFF">Si decides usar la opción
+</font><b><font size="4" color="#C6C246">Sincronizar sólo cuando Meridian Flip</font></b><font size="4" color="#FFFFFF"> 
+entonces CCD Commander deberá ejecutar otro <i>script</i>, 
+permitiendo averiguar en qué lado del meridiano estaba situado el telescopio 
+antes del <i>slew</i>. 
+Para esta labor tenemos el <i>script</i>
+</font><font size="4" color="#C6C246">SideOfPier.vbs</font><font size="4" color="#FFFFFF">, que lo enlazaremos en la opción
+</font><font size="4" color="#C6C246">Before Slew</font><font size="4" color="#FFFFFF"> 
+del  </font><font size="4" color="#C6C246">Setup</font><font size="4" color="#FFFFFF"> 
+del CCDCommander. Este <i>script</i> lo encontrará en el mismo directorio 
+que Elbrus y lo genera </font><font size="4" color="#C6C246">Elbrus_sync_cfg.exe</font><font size="4" color="#FFFFFF">.</font></p>
+<p><font size="4" color="#FFFFFF">Y esto es todo ... así que espero os sea de 
+utilidad y que lo disfrutéis.</font></p>
+<p>&nbsp;</p>
+
+</body>
+</html>

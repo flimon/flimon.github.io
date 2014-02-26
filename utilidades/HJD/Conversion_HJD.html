@@ -1,0 +1,712 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111" link="#C00000" vlink="#C00000" alink="#C00000">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1308" id="AutoNumber1">
+  <tr>
+    <td width="7">
+    &nbsp;</td>
+    <td width="1159">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">Conversión de fechas en 
+formato MJD a HJD</font></td>
+  </tr>
+  <tr>
+    <td width="4" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1154" style="border: 5px solid #BD9600">
+    <p align="center">
+    <font size="4" color="#FFFFFF">&nbsp;</font></td>
+  </tr>
+  <tr>
+    <td width="7">&nbsp;</td>
+    <td width="1159">&nbsp;</td>
+  </tr>
+  </table>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="89%">
+  <tr>
+    <td width="100%"><font color="#FFFFFF" size="4">En ocasiones, al intentar 
+    complementar los datos de las curvas de luz de una variable usando datos 
+    obtenidos en VSX, éstos tiene las fechas en formato MJD (Modified Julian 
+    Date) y es necesario convertirlas a HJD.</font><p><font size="4" color="#FFFFFF">En este tutorial voy a 
+    explicaros, de manera muy visual, el proceso a seguir para pasar de MJD a 
+    HJD (Heliocentric Julian date). Para ello voy a usar, a modo de ejemplo, la 
+    estrella NSVS 7467387.</font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="89%">
+  <tr>
+    <td width="100%"><font size="4" color="#FFFFFF">Iremos a
+    <a href="https://www.aavso.org/vsx/index.php?view=search.top">VSX</a> y 
+    buscaremos NSVS 7467387 rellenando el campo </font><b>
+    <font size="4" color="#C6C246">Name</font></b><font size="4" color="#FFFFFF"> 
+    y pulsando </font><font size="4" color="#C6C246"><b>Search </b></font>
+    <font size="4" color="#FFFFFF">:</font><p>&nbsp;</p>
+    <p align="center">
+    <img border="0" src="IMG1.jpg" width="453" height="414"></p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><font size="4" color="#FFFFFF">Obtendremos diversa 
+    información sobre la estrella, y en </font><b>
+    <font size="4" color="#C6C246">External Links</font></b><font size="4" color="#FFFFFF"> 
+    podremos buscar información adicional.</font></p>
+    <p align="left"><font size="4" color="#FFFFFF">Si seleccionamos </font>
+    <font size="4" color="#C6C246">SuperWASP</font><font size="4" color="#FFFFFF"> 
+    y pulsamos </font><font size="4" color="#C6C246">Go</font><font size="4" color="#FFFFFF"> 
+    no encontraremos en esta página:</font></p>
+    <p align="left">&nbsp;</p>
+    <p align="center"><img border="0" src="IMG2.jpg" width="947" height="533"></p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><font size="4" color="#FFFFFF">Donde pulsando en </font><b>
+    <font size="4" color="#008080">CSV</font></b><font size="4" color="#FFFFFF"> 
+    podremos descargar un fichero directamente manejable con Excel, que tiene un 
+    aspecto como este:</font></p>
+    <div align="center">
+      <center>
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="33%">&nbsp;</td>
+          <td width="33%" bordercolorlight="#000000">
+          <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 344">
+            <colgroup>
+              <col width="80" span="3" style="width:60pt">
+            </colgroup>
+            <tr height="20" style="height:15.0pt">
+              <td height="20" colspan="3" style="height: 15.0pt; width: 344; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+              <font color="#FFFFFF">HJD,</font><font color="#FF0000">camera</font><font color="#FFFFFF">,magnitude,&quot;magnitude 
+              error&quot;</font></td>
+            </tr>
+            <tr height="20" style="height:15.0pt">
+              <td height="20" colspan="3" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="184">
+              <font color="#FFFFFF">2453131.381887,102,13.5616,0.1289</font></td>
+            </tr>
+            <tr height="20" style="height:15.0pt">
+              <td height="20" colspan="3" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="184">
+              <font color="#FFFFFF">2453131.384769,102,13.4390,0.0866</font></td>
+            </tr>
+            <tr height="20" style="height:15.0pt">
+              <td height="20" colspan="3" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="184">
+              <font color="#FFFFFF">2453131.387813,102,13.5668,0.0923</font></td>
+            </tr>
+            <tr height="20" style="height:15.0pt">
+              <td height="20" colspan="3" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="184">
+              <font color="#FFFFFF">2453131.390683,102,13.5814,0.0929</font></td>
+            </tr>
+            <tr height="20" style="height:15.0pt">
+              <td height="20" colspan="3" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="184">
+              <font color="#FFFFFF">2453131.393576,102,13.4787,0.0505</font></td>
+            </tr>
+            <tr height="20" style="height:15.0pt">
+              <td height="20" colspan="3" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="184">
+              <font color="#FFFFFF">2453131.399387,102,13.4209,0.1090</font></td>
+            </tr>
+          </table>
+          <p>&nbsp;</td>
+          <td width="34%" bordercolorlight="#000000">&nbsp;</td>
+        </tr>
+      </table>
+      </center>
+    </div>
+    <p align="left">
+    <font color="#FFFFFF">que como puede apreciarse viene con algo más de 
+    información, pero ya viene en formato HJD. Tras hacer varias pruebas, y si 
+    en Windows&nbsp; tienes configurado el Castellano o cualquier idioma que use 
+    la coma ( , ) como separador de decimales, creo que lo mas sencillo 
+    antes de importar es ir a Configuración Regional de Windows y cambiar el 
+    separador de decimales al punto. Tras abrir el fichero, será suficiente 
+    eliminar alguna columna </font><b><font color="#FF0000">camera</font></b><font color="#FFFFFF"> 
+    y listo. Ahora sólo tendremos que guardarlo en modo Texto separado por 
+    tabuladores (.txt). Y ya tendremos el fichero listo para usar en 
+    <a href="http://www.astrosurf.com/orodeno/fotodif/">FotoDif</a>.</font></p>
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="33%">
+        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 301">
+          <colgroup>
+            <col width="80" span="3" style="width:60pt">
+          </colgroup>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" width="80" style="height: 15.0pt; width: 60pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">HJD</font></td>
+            <td style="width: 95; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">magnitude</font></td>
+            <td style="width: 126; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">magnitude error</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453131.38</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="95">
+            <font color="#FFFFFF">13.5616</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="126">
+            <font color="#FFFFFF">0.1289</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453131.39</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="95">
+            <font color="#FFFFFF">13.439</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="126">
+            <font color="#FFFFFF">0.0866</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453131.39</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="95">
+            <font color="#FFFFFF">13.5668</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="126">
+            <font color="#FFFFFF">0.0923</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453131.39</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="95">
+            <font color="#FFFFFF">13.5814</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="126">
+            <font color="#FFFFFF">0.0929</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453131.39</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="95">
+            <font color="#FFFFFF">13.4787</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="126">
+            <font color="#FFFFFF">0.0505</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453131.4</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="95">
+            <font color="#FFFFFF">13.4209</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="126">
+            <font color="#FFFFFF">0.109</font></td>
+          </tr>
+        </table>
+        <p>&nbsp;</td>
+        <td width="34%">&nbsp;</td>
+      </tr>
+    </table>
+    <p align="left">
+    <font color="#FFFFFF">Ahora sólo tendremos que guardarlo en modo Texto 
+    separado por tabuladores (.txt). Y ya tendremos el fichero listo para usar 
+    en <a href="http://www.astrosurf.com/orodeno/fotodif/">FotoDif</a>.</font></p>
+    <p align="left">
+    &nbsp;</p>
+    <p align="center">
+    <img border="0" src="IMG6.jpg" width="480" height="442"></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="left">
+    <font color="#FFFFFF">Hasta aquí lo fácil. Pero en alguna ocasión te 
+    encuentras con que sólo tienen datos de esa estrella en el CRTS. Siguiendo 
+    el mismo proceso, nos bajaremos un CSV, que al abrirlo veremos que tiene un 
+    aspecto como este:</font></p>
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="33%">
+        <table border="0" cellpadding="0" cellspacing="0" width="400" style="border-collapse:
+ collapse;width:300pt">
+          <colgroup>
+            <col width="80" span="5" style="width:60pt">
+          </colgroup>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" colspan="4" width="320" style="height: 15.0pt; width: 240pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FF0000">MasterID</font><font color="#FFFFFF">,Mag,Magerr,</font><font color="#FF0000">RA</font><font color="#FFFFFF">,</font><font color="#FF0000">Dec</font><font color="#FFFFFF">,MJD,</font><font color="#FF0000">Blend</font></td>
+            <td width="80" style="width: 60pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">&nbsp;</td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" colspan="5" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">
+            1132045021748,13.08,0.05,146.77354,32.03192,53708.49503,0</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" colspan="5" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">
+            1132045021748,13.07,0.05,146.77353,32.03190,53708.50327,0</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" colspan="5" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">
+            1132045021748,13.11,0.05,146.77355,32.03192,53708.51153,0</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" colspan="5" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">
+            1132045021748,13.15,0.05,146.77353,32.03193,53708.51980,0</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" colspan="5" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">
+            1132045021748,13.40,0.05,146.77351,32.03192,53726.48616,0</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" colspan="5" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">
+            1132045021748,13.39,0.05,146.77353,32.03191,53726.49309,0</font></td>
+          </tr>
+        </table>
+        <p>&nbsp;</td>
+        <td width="34%">&nbsp;</td>
+      </tr>
+    </table>
+    <p align="left">
+    <font color="#FFFFFF">En este caso nos sobra MasterID, RA, Dec y Blend. 
+    Vamos a importarlo, quitar las columnas que no queremos y ordenamos las 
+    restantes:</font></p>
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="33%">
+        <table border="0" cellpadding="0" cellspacing="0" width="177" style="border-collapse:
+ collapse;width:133pt">
+          <colgroup>
+            <col width="84" style="width: 63pt">
+            <col width="42" style="width: 32pt">
+            <col width="51" style="width: 38pt">
+          </colgroup>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" width="84" style="height: 15.0pt; width: 63pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">MJD</font></td>
+            <td width="42" style="width: 32pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">Mag</font></td>
+            <td width="51" style="width: 38pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">Magerr</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.49503</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.08</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.50327</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.07</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.51153</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.11</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.5198</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.15</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53726.48616</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.4</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53726.49309</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.39</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+        </table>
+        <p>&nbsp;</td>
+        <td width="34%">&nbsp;</td>
+      </tr>
+    </table>
+    <p align="left">
+    <font color="#FFFFFF">Y claro, necesitamos pasar a HJD ...</font></p>
+    <p align="left">
+    <font color="#FFFFFF">Primero tendremos que pasar de MJD a JD, que se hace 
+    sumando a MJD la constante </font><font color="#FF0000"><b>2400000,5</b></font><font color="#FFFFFF">. 
+    Así que iremos al Excel, insertaremos una columna a la izquierda de MJD que 
+    encabezaremos como JD y haremos que cada celda de JD sea MJD + 2400000.5. Al 
+    final tendremos esto:</font></p>
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="33%">
+        <table border="0" cellpadding="0" cellspacing="0" width="261" style="border-collapse:
+ collapse;width:196pt">
+          <colgroup>
+            <col width="84" span="2" style="width: 63pt">
+            <col width="42" style="width: 32pt">
+            <col width="51" style="width: 38pt">
+          </colgroup>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" width="84" style="height: 15.0pt; width: 63pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">MJD</font></td>
+            <td width="84" style="width: 63pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">JD</font></td>
+            <td width="42" style="width: 32pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">Mag</font></td>
+            <td width="51" style="width: 38pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">Magerr</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.49503</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453708.995</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.08</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.50327</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.003</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.07</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.51153</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.012</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.11</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.5198</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.02</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.15</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53726.48616</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453726.986</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.4</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53726.49309</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453726.993</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.39</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+        </table>
+        <p>&nbsp;</td>
+        <td width="34%">&nbsp;</td>
+      </tr>
+    </table>
+    <p align="left">
+    <font color="#FFFFFF">Y ahora sólo queda convertir JD a HJD. Para ello 
+    utilizaremos un Complemento Excel desarrollado por Patrick Wils denominado
+    </font><b><font color="#C6C246"><a href="Varstars.zip">VARSTARS.xla</a></font></b><font color="#FFFFFF">. 
+    Pero primero vamos al Excel y creamos otra columna a la izquierda de JD:</font></p>
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="33%">
+        <table border="0" cellpadding="0" cellspacing="0" width="345" style="border-collapse:
+ collapse;width:259pt">
+          <colgroup>
+            <col width="84" span="3" style="width: 63pt">
+            <col width="42" style="width: 32pt">
+            <col width="51" style="width: 38pt">
+          </colgroup>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" width="84" style="height: 15.0pt; width: 63pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">MJD</font></td>
+            <td width="84" style="width: 63pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">JD</font></td>
+            <td width="84" style="width: 63pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">HJD</font></td>
+            <td width="42" style="width: 32pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">Mag</font></td>
+            <td width="51" style="width: 38pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">Magerr</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.49503</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453708.995</font></td>
+            <td style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">&nbsp;</td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.08</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.50327</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.003</font></td>
+            <td style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">&nbsp;</td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.07</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.51153</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.012</font></td>
+            <td style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">&nbsp;</td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.11</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.5198</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.02</font></td>
+            <td style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">&nbsp;</td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.15</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53726.48616</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453726.986</font></td>
+            <td style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">&nbsp;</td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.4</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53726.49309</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453726.993</font></td>
+            <td style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">&nbsp;</td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.39</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+        </table>
+        <p>&nbsp;</td>
+        <td width="34%">&nbsp;</td>
+      </tr>
+    </table>
+    <p align="left">
+    <font color="#FFFFFF">Luego, haremos un doble click en el complemento </font>
+    <b><font color="#C6C246">VARSTARS.xla,</font><font color="#FFFFFF"> </font>
+    </b><font color="#FFFFFF">y nos aparecerá una ventana como esta:</font></p>
+    <p align="left">
+    &nbsp;</p>
+    <p align="center">
+    <img border="0" src="IMG3.jpg" width="475" height="300"></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="left">
+    <font color="#FFFFFF">Pulsaremos </font><b><font color="#FF0000">Habilitar 
+    macros</font></b><font color="#FFFFFF"> y en la barra superior del Excel 
+    aparecerá el botón </font><b><font color="#FF0000">Complementos</font></b><font color="#FFFFFF">. 
+    Pulsamos en él, y a la izquierda se desplegará un submenú que indicará
+    </font><b><font color="#FF0000">Stars</font></b><font color="#FFFFFF">:</font></p>
+    <p align="left">
+    &nbsp;</p>
+    <p align="center">
+    <img border="0" src="IMG4.jpg" width="407" height="393"></p>
+    <p align="left">
+    &nbsp;</p>
+    <p align="left">
+    <font color="#FFFFFF">Es muy importante seguir este orden de operaciones:</font></p>
+    <ol>
+      <li><p align="left">
+    <font color="#FFFFFF">1.- Seleccionamos todas las celdas de la columna JD 
+    que contengan datos numéricos, es decir, no seleccionando las cabeceras. Y 
+    si existen filas sin datos las elimináis peviamente.</font></p>
+      </li>
+      <li><p align="left">
+    <font color="#FFFFFF">2.- En </font><font color="#FF0000">Stars</font><font color="#FFFFFF"> 
+    seleccionamos </font><font color="#FF0000">Heliocentric corection</font></p>
+      </li>
+      <li><p align="left">
+    <font color="#FFFFFF">3.- Aparecerá una ventana que nos pedirá las 
+    coordenadas de la estrella objeto de estudio. Escribiremos las coordenadas y 
+    marcaremos la época 2000.</font></p>
+      </li>
+      <li><p align="left">
+    &nbsp;</p>
+      </li>
+    </ol>
+    <p align="center">
+    <img border="0" src="IMG5.jpg" width="348" height="269"></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="left">
+    <font color="#FFFFFF">Al pulsar OK nos aperecerá en la columna HJD, por fín, 
+    la necesaria fecha en formato HJD!!!</font></p>
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="33%">
+        <table border="0" cellpadding="0" cellspacing="0" width="349" style="border-collapse:
+ collapse;width:262pt">
+          <colgroup>
+            <col width="84" span="2" style="width: 63pt">
+            <col width="88" style="width: 66pt">
+            <col width="42" style="width: 32pt">
+            <col width="51" style="width: 38pt">
+          </colgroup>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" width="84" style="height: 15.0pt; width: 63pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">MJD</font></td>
+            <td width="84" style="width: 63pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">JD</font></td>
+            <td width="88" style="width: 66pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">HJD</font></td>
+            <td width="42" style="width: 32pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">Mag</font></td>
+            <td width="51" style="width: 38pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">Magerr</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.49503</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453708.995</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453708.9973</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.08</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.50327</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.003</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.0055</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.07</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.51153</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.012</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.0138</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.11</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53708.5198</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.02</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453709.0221</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.15</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53726.48616</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453726.986</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453726.9898</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.4</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+          <tr height="20" style="height:15.0pt">
+            <td height="20" align="right" style="height: 15.0pt; color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">53726.49309</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453726.993</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">2453726.9968</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">13.39</font></td>
+            <td align="right" style="color: black; font-size: 11.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+            <font color="#FFFFFF">0.05</font></td>
+          </tr>
+        </table>
+        <p>&nbsp;</td>
+        <td width="34%">&nbsp;</td>
+      </tr>
+    </table>
+    <p align="left">
+    <font color="#FFFFFF">Podéis eliminar las columnas MJD y JD y guardarlo en 
+    modo Texto separado por tabuladores (.txt). Y ya tendremos el fichero listo 
+    para usar en <a href="http://www.astrosurf.com/orodeno/fotodif/">FotoDif</a>.</font></p>
+    <p align="left">
+    &nbsp;</p>
+    <p align="center">
+    <img border="0" src="IMG7.jpg" width="480" height="442"></p>
+    <p align="left">
+    &nbsp;</p>
+    <p align="left">
+    <font color="#FFFFFF">Pues esto es todo!</font></p>
+    <p align="left">
+    <font color="#FFFFFF">El Complemento </font><b><font color="#C6C246">VARSTARS.xla</font></b><font color="#FFFFFF"> 
+    se puede instalar de manera permanente. Hay mucha información en Internet respecto 
+    a cómo instalar Complementos Excel. Así que si vais a usarlo con frecuencia creo que es la mejor 
+    opción.&nbsp;&nbsp; </font></p>
+    <p align="left">
+    <font color="#FFFFFF">Espero que este pequeño tutorial os sea de utilidad.
+    </font></p>
+    <p align="left">
+    &nbsp;</p>
+    <p align="left">
+    &nbsp;</p>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

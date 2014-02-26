@@ -1,0 +1,77 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1156" id="AutoNumber1">
+  <tr>
+    <td width="4%">
+    &nbsp;</td>
+    <td width="1073">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">Autoguiado con MaximDL y 
+CCD Commander</font></td>
+    <td width="4%" align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1073" style="border: 5px solid #BD9600">
+    <font size="4" color="#FFFFFF">&nbsp;</font></td>
+    <td width="34" align="justify">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49">&nbsp;</td>
+    <td width="1073">&nbsp;</td>
+    <td width="34" align="justify">&nbsp;</td>
+  </tr>
+  </table>
+
+<p><font size="4" color="#FFFFFF">Suele ser habitual leer que el tema de 
+autoguiado y el hecho de realizar el Meridian Flip son incompatibles o que deja 
+de funcionar el autoguiado. ¡Os aseguro que funciona!</font></p>
+
+<p><font size="4" color="#FFFFFF">El origen del problema es que
+<a href="http://ccdcommander.com/">CCD Commander</a> y
+<a href="http://www.cyanogen.com/">MaximDL</a> son muy &quot;mandones&quot; y los dos 
+quieren tener el control de las mismas cosas ... y esto no nos lleva a buen 
+puerto. Si usamos CCD Commander, debemos configurar CCD Commander para que sea 
+él quien lleve el control y quien diga a MaximDL cómo debe comportarse.</font></p>
+
+<p><font size="4" color="#FFFFFF">En lo relativo al Meridian Flip, debemos 
+configurar MaximDL para que no controle estos aspectos, desmarcando las dos 
+casillas que se indican en la siguiente imagen:</font></p>
+
+<blockquote>
+
+<p><img border="0" src="Guiado-MaximDL-CCDC-1.jpg" width="460" height="391"></p>
+
+</blockquote>
+
+<p><font size="4" color="#FFFFFF">Eso si, a CCD Commander debemos permitirle que 
+determine de manera automática en qué lado está del meridiano cuando se inicia 
+(información que suelen proporcionar directamente las monturas), y lo que es 
+incluso tan importante como lo primero, indicarle qué zona del cielo se utilizó 
+para realizar la calibración del autoguiado en MaximDL. Es decir, que si 
+utilizamos estrellas situadas al este del meridiano marcaremos Eastern Sky y si 
+eran de la zona oeste marcaremos Western Sky. Para ello en CCD Commander marcaremos las casillas que se indican en la siguiente captura:</font></p>
+
+<blockquote>
+
+<p><img border="0" src="Guiado-MaximDL-CCDC-2.jpg" width="555" height="603"></p>
+
+</blockquote>
+
+<p><font size="4" color="#FFFFFF">Si hacéis estos ajustes en vuestra 
+configuración os aseguro que no tendréis problemas con los autoguiados y los 
+cambios de meridiano.</font></p>
+
+<p><font size="4" color="#FFFFFF">Espero que os sea de utilidad.</font></p>
+
+</body>
+</html>

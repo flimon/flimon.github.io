@@ -1,0 +1,237 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1156" id="AutoNumber1">
+  <tr>
+    <td width="4%">
+    &nbsp;</td>
+    <td width="1073">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">FocusMax - Curvas V</font></td>
+    <td width="4%" align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1073" style="border: 5px solid #BD9600">
+    <font size="4" color="#FFFFFF">&nbsp;</font></td>
+    <td width="34" align="justify">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49">&nbsp;</td>
+    <td width="1073">&nbsp;</td>
+    <td width="34" align="justify">&nbsp;</td>
+  </tr>
+  </table>
+
+<p><font size="4" color="#FFFFFF"><a href="http://www.focusmax.org/">FocusMax</a> 
+es una herramienta muy potente que permite obtener  calidad de enfoque de manera 
+automática, por lo que es una de los utensilios básicos en un observatorio 
+controlado en remoto ... y en presencial, porque es muy cómo y rápido.</font></p>
+
+<p><font size="4" color="#FFFFFF">No es mi objetivo realizar un manual de 
+FocusMax, describiendo cada una de las opciones que presenta. Hay muchos 
+manuales disponibles en Internet. Pero si que he visto, y sufrido en mis propias 
+carnes, que el método de obtención de las curvas V no es evidente, y que la 
+herramienta Wizard que trae el propio FocusMax no es muy autoexplicativo. Es por 
+ello que quiero aportar mi granito de arena con una pequeña guía del proceso que 
+sigo para obtener las famosas curvas V.</font></p>
+
+<p><font size="4" color="#FFFFFF">En un proceso de enfoque, FocusMax se aleja 
+del punto antrerios de enfoque lo suficiente como para sobrepasar el punto de
+</font><font size="4" color="#C6C246">HFD </font><font size="4" color="#FFFFFF">
+definido en</font><font size="4" color="#C6C246"> Near Focus</font><font size="4" color="#FFFFFF">. 
+En base a las curvas V hace una aproximación al punto </font>
+<font size="4" color="#C6C246">HFD</font><font size="4" color="#FFFFFF">, 
+realiza una serie de tomas (</font><font size="4" color="#C6C246">Exposures</font><font size="4" color="#FFFFFF">), 
+calcula y decide cuál es el punto donde se encuentra el nuevo punto de enfoque.</font></p>
+
+<p><font size="4" color="#FFFFFF">Si el enfocador tiene mucho recorrido, esta 
+operación no tiene mayor importancia, pero si el enfocador tiene poco recorrido 
+y el grado de desenfoque que se obtiene en los extremos es poco, es muy 
+importante reducir el HFD con el fin de limitar el mencionado desplazamiento. El 
+valor óptimo lo obtendréis observando cómo de cerca de los extremos del 
+recorrido se desplaza FocusMax&nbsp; cuando empieza un proceso de enfoque.</font></p>
+
+<p><font size="4" color="#FFFFFF">Es muy recomendable tener bien ajustados los 
+parámetros de </font><font size="4" color="#C6C246">Near Focus</font><font size="4" color="#FFFFFF">, 
+que se pueden ajustar en la ventana de </font><font size="4" color="#C6C246">
+SetUp</font><font size="4" color="#FFFFFF">.</font></p>
+
+<p><font size="4" color="#FFFFFF">Otro aspecto importante a tener en 
+consideración, y que se ajusta en esta misma ventana, en la sección </font>
+<font size="4" color="#C6C246">Move</font><font size="4" color="#FFFFFF">, es 
+fijar en qué sentido se hace la aproximación hacia el punto de enfoque: de 
+adentro a afuera o de afuera a adentro (</font><font size="4" color="#C6C246">In</font><font size="4" color="#FFFFFF"> 
+o </font><font size="4" color="#C6C246">Out</font><font size="4" color="#FFFFFF">). 
+Lo normal es hacerlo hacia adentro, pues de esta manera la fuerza de la gravedad 
+tirará hacia afuera y minimizaremos los posibles efectos de holguras.</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="FM0.jpg" width="277" height="432"></p>
+
+</blockquote>
+
+<p><font size="4" color="#FFFFFF">Antes de comenzar con el proceso de cálculo de 
+las curvas V, yo suelo enfocar el telescopio manualmente lo mejor que puedo. 
+Luego pongo el motor del enfocador a mitad de recorrido, en vacío, sin actuar 
+sobre el enfocador . Una vez hechas ambas operaciones engranamos el motor al 
+enfocador. De esta manera tendremos el punto de enfoque a mitad de recorrido del 
+motor, y de esta manera minimizaremos la posibilidad de salirnos del rango de 
+pasos disponibles.</font></p>
+
+<p><font color="#FFFFFF" size="4">Hecho esto, vamos a calcular las curvas V, 
+para lo que abriremos la ventana de </font><font size="4" color="#C6C246">
+Profile</font><font color="#FFFFFF" size="4"> y en caso de existir datos de 
+anteriores tomas, procederemos a eliminarlos seleccionándolos y usando la tecla
+</font><font size="4" color="#C6C246">Delete Entries</font><font color="#FFFFFF" size="4">.</font></p>
+
+<p><font size="4" color="#FFFFFF">Luego abriremos la ventana </font>
+<font size="4" color="#C6C246">Vcurve</font><font size="4" color="#FFFFFF">, 
+para hacer la primera aproximación. En este caso (la primera vez) usaremos la 
+opción </font><font size="4" color="#C6C246">End Points</font><font size="4" color="#FFFFFF">. 
+Suponiendo que enfocaremos hacia adentro, y que nuestros enfocador tiene 3000 
+pasos, fijaremos como </font><font size="4" color="#C6C246">Initial </font>
+<font size="4" color="#FFFFFF">el 2900 y el </font>
+<font size="4" color="#C6C246">Final</font><font size="4" color="#FFFFFF"> 100, 
+usando saltos (</font><font size="4" color="#C6C246">Move Incr.</font><font size="4" color="#FFFFFF">) 
+de 100 en 100 (como es hacia dentro los saltos son negativos).</font></p>
+
+<p><font size="4" color="#FFFFFF">Aunque podríamos poner 3000 y 1, no conviene 
+acercarse tanto a los límites.</font></p>
+
+<blockquote>
+
+<p><img border="0" src="FM1.jpg" width="282" height="442"></p>
+
+</blockquote>
+
+<p><font color="#FFFFFF" size="4">Una vez ajustados los parámetros iniciales 
+damos a </font><font size="4" color="#C6C246">Run</font><font color="#FFFFFF" size="4"> 
+y veremos cómo se va moviendo el enfocador y al mismo tiempo va apareciendo en 
+la ventana </font><font size="4" color="#C6C246">Vcurve Sequence</font><font color="#FFFFFF" size="4"> 
+la famosa V.</font></p>
+
+<p><font size="4" color="#FFFFFF">Aunque a todos nos gustaría ver una V 
+perfecta, la verdad es que el vértice suele ser redondeado.</font></p>
+
+<p><font size="4" color="#FFFFFF">Una vez terminado el proceso, veremos que 
+aparece una entrada en la ventana </font><font size="4" color="#C6C246">Profile</font><font size="4" color="#FFFFFF">, 
+y dado que tenemos marcada la opción </font><font size="4" color="#C6C246">
+Autofocus</font><font size="4" color="#FFFFFF">, FocusMax realizará un primer 
+intento de enfoque automático con los valores calculados.</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="FM2.jpg" width="643" height="270"></p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Hay usuarios que opinan que hace falta tener 
+en el </font><font size="4" color="#C6C246">Profile</font><font size="4" color="#FFFFFF"> 
+no menos de 12 entradas de cálculos de curvas V. Mi experiencia me dice que con 
+5 es suficiente. Así que vamos a calcular unas cuentas curvas más.</font></p>
+
+<p><font size="4" color="#FFFFFF">A partir de haber realizado la primera 
+aproximación siempre marcaremos para el resto de cálculos de curvas V la opción
+</font><font size="4" color="#C6C246">Half Width</font><font size="4" color="#FFFFFF">, 
+cuyos valores ya los habrá dejado configurados el propio FocusMax en el 
+autoenfoque realizado en el paso anterior. En el caso del ejemplo FocusMax ha 
+dejado configurado el centro en el paso 1501, y recorrido desde 2900 (1501+1399) 
+hasta 102 (1501-1399). En todo caso, podremos jugar con el ancho del recorrido 
+si vemos que es demasiado amplio. </font></p>
+
+<p><font size="4" color="#FFFFFF">Opcionalmente podemos marcar la opción </font>
+<font size="4" color="#C6C246">Autofocus</font><font size="4" color="#FFFFFF">, 
+para que realice un autoenfoque cada vez que finalice una curva, aunque 
+personalmente no suelo hacerlo.</font></p>
+
+<p><font size="4" color="#FFFFFF">Y marcaremos cuántas veces queremos que repita 
+el proceso. Pondremos en </font><font size="4" color="#C6C246">Repeat</font><font size="4" color="#FFFFFF"> 
+un 4 si queremos que se haga una curva y cuatro veces más, es decir, cinco 
+veces.</font></p>
+
+<p><font size="4" color="#FFFFFF">Una vez hechos los ajustes, daremos al botón
+</font><font size="4" color="#C6C246">Run</font><font size="4" color="#FFFFFF"> 
+... y a esperar.</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="FM3.jpg" width="285" height="443"></p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Según vaya avanzando el proceso irán 
+apareciendo entradas en el </font><font size="4" color="#C6C246">Profile</font><font size="4" color="#FFFFFF">.</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="FM4.jpg" width="643" height="271"></p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Es importante que todas las entradas en el
+</font><font size="4" color="#C6C246">Profile</font><font size="4" color="#FFFFFF"> 
+tengan un </font><font size="4" color="#C6C246">PI Diff</font><font size="4" color="#FFFFFF"> 
+similar.</font></p>
+
+<p><font size="4" color="#FFFFFF">Llegados a este punto, suelo eliminar la 
+primera entrada (que era la primera aproximación) y aquellas que presentan un PI 
+Diff muy discordante.</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="FM5.jpg" width="642" height="270"></p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Si me quedan entradas suficientes doy por 
+finalizado el proceso. Si no, realizo unos cuantos cálculos más hasta quedarme 
+con 5 entradas buenas.</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="FM6.jpg" width="642" height="269"></p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Y de esta manera habremos calculados las 
+curvas V para nuestra óptica tal y como se encuentra en este momento.</font></p>
+
+<p><font size="4" color="#FFFFFF">Recordad que si hacéis algún cambio que pueda 
+modificar el tren óptico es necesario volver a obtener las curvas V.</font></p>
+
+<p><font size="4" color="#FFFFFF">Espero que os sea de utilidad.</font></p>
+
+</body>
+</html>

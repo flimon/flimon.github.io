@@ -1,0 +1,136 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1156" id="AutoNumber1">
+  <tr>
+    <td width="4%">
+    &nbsp;</td>
+    <td width="1073">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">Hiberna</font></td>
+    <td width="4%" align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1073" style="border: 5px solid #BD9600">
+    <p align="center">
+    <font size="4" color="#FFFFFF">&nbsp;</font><font size="4" color="#C6C246">Versión 
+    5.3</font></td>
+    <td width="34" align="justify">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49">&nbsp;</td>
+    <td width="1073">&nbsp;</td>
+    <td width="34" align="justify">&nbsp;</td>
+  </tr>
+  </table>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Hay monturas que carecen de funcionalidades de 
+gran utilidad en instalaciones permanentes, como puede el poder establecer un 
+punto de aparcamiento e incluso hibernarla, lo que 
+permite despertar la montura y seguir trabajando sin necesidad de realizar una 
+nueva alineación. Este tipo de monturas, cuando se utilizan en observatorios 
+fijos, sólo requieren una buena puesta en estación y sincronizarla al comienzo 
+de sesión con unas coordenadas conocidas, utilizando para ello una estrella de 
+referencia.</font></p>
+
+<p><font size="4" color="#FFFFFF">Esto está muy bien si estamos presentes en el 
+momento de arrancar la montura, pero ¿y si trabajamos en remoto? La cosa se 
+complica.</font></p>
+
+<p><font size="4" color="#FFFFFF">Para desarrollar este proyecto me ha basado en 
+la rutina que utilizo en mi observatorio con la montura Celestron CGEM:</font></p>
+
+<p><font size="4" color="#FFFFFF">a) Finalizar sesión:</font></p>
+
+<p><font size="4" color="#FFFFFF">&nbsp;&nbsp;&nbsp; 1.- Desde POTH doy la orden 
+de aparcar la montura. Lo que se traduce en un desplazamiento a unas coordenadas 
+Alt/Az que previamente habremos definido, y que siempre utilizaremos para 
+aparcar.</font></p>
+
+<p><font size="4" color="#FFFFFF">&nbsp;&nbsp;&nbsp; 2.- Una vez alcanzadas las 
+coordenadas de aparcamiento, se detienen los motores de la montura (tracking off).</font></p>
+
+<p><font size="4" color="#FFFFFF">&nbsp;&nbsp;&nbsp; 3.- Desde NexRemore, con 
+los motores parados, hiberno la montura.</font></p>
+
+<p><font size="4" color="#FFFFFF">b) Inicio de sesión:</font></p>
+
+<p><font size="4" color="#FFFFFF">&nbsp;&nbsp;&nbsp; 1.- Desde NexRemote doy la 
+orden de despertar (wake up) a la montura. Ésta recuerda las coordenadas Alt/Az 
+a donde apuntaba cuando se le dio la orden de hibernar. Por lo que sólo tiene 
+que sincronizar con esas coordenadas y poner los motores en marcha.</font></p>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Bueno, pues básicamente he desarrollado un 
+programa que permite repetir este proceso. Para comunicarnos con el telescopio nos 
+basaremos en POTH, un HUB incluido en la plataforma ASCOM.</font></p>
+
+<p>&nbsp;</p>
+<blockquote>
+
+<p><img border="0" src="Hiberna_Config.jpg" width="332" height="186"></p>
+
+<p>&nbsp;</p>
+</blockquote>
+
+<p><font size="4" color="#FFFFFF">En la pestaña Configurar podemos establecer 
+las coordenadas Alt/Az donde queremos que se posicione nuestro telescopio cuando 
+demos la orden de Hibernar y las coordenadas donde estará apuntando el 
+telescopio en el momento de despertar.</font></p>
+
+<p><font size="4" color="#FFFFFF">En la pestaña principal tenemos dos opciones:</font></p>
+
+<p>&nbsp;</p>
+<blockquote>
+
+<p><img border="0" src="Hiberna_Principal.jpg" width="331" height="186"></p>
+
+<p>&nbsp;</p>
+</blockquote>
+
+<p><b><font size="5" color="#BD9600">Hiberna</font></b><font size="4" color="#FFFFFF">: 
+Realiza un desplazamiento a las coordenadas que se han prefijado, y una vez 
+establecido, se detienen los motores de la montura. En ese momento se puede apagar.</font></p>
+
+<p><b><font color="#BD9600" size="5">Despierta</font></b><font size="4" color="#FFFFFF">: 
+Antes de encender la montura, manualmente la pondremos con la mayor precisión 
+posible apuntando a las coordenadas establecidas en la configuración. En ese 
+instante encenderemos la montura, conectaremos a ella desde POTH y pulsaremos este botón. La montura quedará 
+sincronizada en estas coordenadas. Como el despertar es menos preciso, es 
+recomendable realizar en desplazamiento a alguna cercana del cielo y resolver 
+una foto con Elbrus o PinPoint.</font></p>
+
+<p><font size="4" color="#FFFFFF">La fase de Despertar es la más dependiente de 
+lo que cada montura necesite que se haga para iniciarla, por lo que pocas cosas 
+puedo añadir a lo comentado.</font></p>
+
+<p><font size="4" color="#FFFFFF">El programa lo podéis descargar de </font><b>
+<font color="#FFFFFF" size="5"><a href="Hiberna%20v5.3.zip">aquí</a></font></b><font size="4" color="#FFFFFF">.</font></p>
+
+<p><font size="4" color="#FFFFFF">Este programa ha sido compilado para funcionar 
+con Microsoft .NET Framework 4.5, por lo que deberá verificar que dispone de 
+esta versión o superior, y en su defecto, podrá descargarlo e instalarlo desde
+</font><font size="5"><b>
+<a href="http://www.microsoft.com/es-es/download/details.aspx?id=30653">
+Microsoft</a></b></font><font size="4" color="#FFFFFF">.</font></p>
+
+<p><font size="4" color="#FFFFFF">Espero que este programita os guste y sea de 
+utilidad.</font></p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+</html>

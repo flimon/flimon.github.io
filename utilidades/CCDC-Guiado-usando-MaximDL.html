@@ -1,0 +1,187 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1156" id="AutoNumber1">
+  <tr>
+    <td width="4%">
+    &nbsp;</td>
+    <td width="1073">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">Autoguiado desde CCD 
+Commander usando el algoritmo de MaximDL</font></td>
+    <td width="4%" align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1073" style="border: 5px solid #BD9600">
+    <p align="center">
+    <font size="4" color="#C6C246">&nbsp;Versión 1.4</font></td>
+    <td width="34" align="justify">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49">&nbsp;</td>
+    <td width="1073">&nbsp;</td>
+    <td width="34" align="justify">&nbsp;</td>
+  </tr>
+  </table>
+
+<p><font size="4" color="#FFFFFF">Me pidieron ver la posibilidad de preparar 
+un <i>script</i> que le indicase a CCD Commander que si perdía la estrella de 
+guiado volviese a buscar otra y así no arruinar una secuencia de tomas ... de 
+esas en las que los segundos se cuentan por centenas.</font></p>
+
+<p><font size="4" color="#FFFFFF">Dándole vueltas al tema, he visto la 
+oportunidad de quitarme de encima el algoritmo de selección de estrella de 
+guiado que incorpora CCD Commander (que en mi opinión es bastante pobre) y usar directamente el de MaximDL. En más de 
+una ocasión he tenido que parar el autoguiado que había iniciado CCDC y decirle 
+a MaximDL que lo continuase él con otra estrella.</font></p>
+
+<p><font size="4" color="#FFFFFF">La forma de hacerlo es la de lanzar un 
+programa, que se ejecutará concurrentemente con CCDC en modo <i>demonio (daemon)</i>. 
+Se iniciará justo antes de comenzar 
+con la secuencia de toma de imágenes (Take images). Una vez terminada&nbsp; la secuencia 
+de tomas se ejecutará otro programa que dará la orden de finalizar al primero.  </font>
+<font size="4" color="#C6C246"> 
+<b>Evidentemente, en la acción 
+&quot;Take images&quot;  habrá que indicarle a CCDC que no haga autoguiado</b>.</font><font size="4" color="#FFFFFF">  </font></p>
+
+<p><font size="4" color="#FFFFFF">En la siguiente 
+captura puede apreciarse cómo debe quedar una sesión de CCDC usando este método:</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="MAXIM-GUIDE-ACT-List.jpg" width="543" height="466"></p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">La verdad es que me ha dado más guerra de lo 
+esperado. Aunque la idea es sencilla, el estar navegando entre dos aguas (CCDC 
+y MaximDL) hace que en ocasiones se desencadene la tormenta perfecta y el 
+proceso </font><font size="4" color="#FF0000">Autoguide</font><font size="4" color="#FFFFFF"> 
+termine muerto.</font></p>
+
+<p><font size="4" color="#FFFFFF">Cuando CCDC comienza la secuencia de tomas 
+reinicia la conexión con las cámaras, lo que ha obligado a que el proceso </font>
+<font size="4" color="#FF0000">Autoguide</font><font size="4" color="#FFFFFF"> 
+tenga que esperar a que comience la secuencia de tomas para iniciar el 
+autoguiado e incluir incluso en el programa la gestión de ciertos eventos 
+eventos, pues de lo contrario se encuentra intentando hablar con una cámara 
+que le han desconectado. No he sido capaz, por más pruebas que he hecho, de encontrar 
+la forma para que CCDC no actúe de esta manera. Cierto es que el interfaz que 
+proporciona MaximDL es único para las dos cámaras, lo que complica todo mucho 
+más.</font></p>
+
+<p><font size="4" color="#FFFFFF">Por otra parte, el interfaz que proporciona MaximDL, que también es muy particular, 
+y la única manera de indicar que el sistema de 
+guiado ha perdido la estrella (<i>Star fade</i>) es generando un evento, pero 
+también hay que deshabilitar el sistema que lleva para la gestión de este tipo 
+de problema. Así que lo mejor es que MaximDL no haga 
+nada y sea el </font><font size="4" color="#FF0000">Autoguide</font><font size="4" color="#FFFFFF"> 
+quien se encargue de intentar detectar esta circunstancia. Para ello en MaximDL haremos <i>click</i> en el botón de Alarms:</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="MAXIM-GUIDE-Alarms.jpg" width="461" height="392"></p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">y lo configuraremos para 
+que no controle nada, como puede verse en la siguiente figura:</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="MAXIM-GUIDE-Alarms-conf.jpg" width="308" height="249"></p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Por último, tenemos
+</font><font size="4" color="#FF0000">Autoguide_conf</font><font size="4" color="#FFFFFF">: 
+Permite configurar varios parámetros que marcarán el comportamiento de 
+</font>
+<font size="4" color="#FF0000">Autoguide</font><font size="4" color="#FFFFFF">. Entre ellos, el error máximo permitido 
+en la estrella de guiado. Si se supera este error se para el autoguiado y se 
+vuelve a iniciar un nuevo proceso de selección de estrella, etc, etc. Éste es el 
+primer programa que debes ejecutar, y  se utiliza para modificar la 
+configuración. Creará en el mismo directorio un fichero denominado </font>
+<font size="4" color="#FF0000">Autoguide_conf.ini</font><font size="4" color="#FFFFFF"> 
+que contiene los parámetros de configuración.</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><font size="4" color="#FFFFFF">
+<img border="0" src="MAXIM-GUIDE-conft.jpg" width="408" height="360"></font></p>
+
+</blockquote>
+
+<p><font size="4" color="#FFFFFF"><br>
+La solución final está formada por cuatro 
+programas independientes. Los ejecutables 
+se deben descomprimir en el 
+mismo directorio donde esté instalado CCDC.&nbsp; La última versión de Autoguide (v 1.4) la 
+puedes descargar de
+</font><font size="5" color="#FFFFFF">
+<a href="Autoguide-v1.4.zip">
+<font color="#0066FF">aquí</font></a></font><font size="4" color="#FFFFFF">.</font></p>
+
+<p><font size="4" color="#FFFFFF">Estos programas han sido compilados para 
+funcionar con Microsoft .NET Framework 4.5, por lo que deberá verificar que 
+dispone de esta versión o superior, y en su defecto, podrá descargarlo e 
+instalarlo desde </font><font size="5"><b>
+<a href="http://www.microsoft.com/es-es/download/details.aspx?id=30653">
+Microsoft</a></b></font><font size="4" color="#FFFFFF">.</font></p>
+
+<p><font size="4" color="#FFFFFF">Tanto </font><font size="4" color="#FF0000">Autoguide_start</font><font size="4" color="#FFFFFF"> 
+como </font><font size="4" color="#FF0000">Autoguide_stop </font>
+<font size="4" color="#FFFFFF">se deben ejecutar desde CCDC con una acción de &quot;Run 
+external program&quot;. Es </font>
+<font size="4" color="#C6C246"><b>muy </b> </font>
+<b>
+<font size="4" color="#C6C246"> importante</font></b><font size="4" color="#FFFFFF"> seleccionar la casilla que 
+indica a&nbsp; CCDC que debe esperar a que terminen estos programas antes de 
+proseguir:</font></p>
+
+<p>&nbsp;</p>
+
+<blockquote>
+
+<p><img border="0" src="MAXIM-GUIDE-ACT-Run.jpg" width="468" height="251"></p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Recomiendo, por experiencia propia, que 
+verifiquéis que el autoguiado desde MaximDL funciona en todas las circunstancias 
+... y cuidado con los Flip Meridian. En el caso de monturas GE hay que tener en 
+cuenta en qué lado del cielo se ha realizado el calibrado del autoguiado y configurar 
+adecuadamente en el Setup de MaximDL, en las Opciones del telescopio el Sider of 
+Pier. Si hemos calibrado con estrellas situadas en el Oeste habrá que 
+seleccionar ASCOM Normal, y si lo hemos hecho con estrellas situadas en el cielo 
+del Este indicaremos ASCOM Inverted.</font></p>
+
+<p><font size="4" color="#FFFFFF">Espero que os sea de utilidad.</font></p>
+
+</body>
+</html>

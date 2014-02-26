@@ -1,0 +1,386 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111" link="#C00000" vlink="#C00000" alink="#C00000">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%" id="AutoNumber1">
+  <tr>
+    <td width="917">
+    <p align="center">
+<b><i><font face="Cambria" size="7" color="#C6C246">Sky Meter I</font></i></b></td>
+  </tr>
+  <tr>
+    <td width="912" style="border: 5px solid #BD9600">
+    <p align="center">
+    <font size="4" color="#FFFFFF">&nbsp;</font></td>
+  </tr>
+  <tr>
+    <td width="917">&nbsp;</td>
+  </tr>
+  </table>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%"><b><font color="#C6C246" size="4">Sky Meter I</font></b><font color="#C6C246" size="4"><b> </b></font><font color="#FFFFFF" size="4">
+    es un dispositivo que de día mide la Radiación UV y el Índice 
+    Ultravioleta (IUV) y por la noche se comporta como un medidor de Calidad del 
+    Cielo (SQM), es decir, midiendo la oscuridad del cielo.</font><p><font size="4" color="#FFFFFF">
+    En su faceta de SQM implementa todo el 
+    conjunto de instrucciones de los SQM de Unihedron.</font><p>
+    <font size="4" color="#FFFFFF">Ha sido diseñado para trabajar a la 
+    intemperie y puede ubicarse en una posición fija del observatorio 
+    astronómico.</font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%" align="center"><img border="0" src="SM-1.jpg" width="385" height="546"></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%"><font size="4" color="#FFFFFF">Sky Meter I se monta en 
+    una caja PVC 
+    de 102mm X 102mm X 56mm y con grado de protección IP66.</font><p align="center">
+    <img border="0" src="SM-2.jpg" width="343" height="610"></p>
+
+<p><font size="4" color="#FFFFFF">El consumo medido del dispositivo es lo 
+suficientemente bajo como para que se alimenta directamente a través del puerto USB, sin necesidad de 
+alimentación externa.</font></p>
+
+<p><font size="4" color="#FFFFFF">El Programa de Control está compilado en .NET 4.5, por 
+lo que es  compatible con Windows 7, 8, 8.1 y 10. Al mismo tiempo, ha sido 
+programado para que la interpretación del separador de decimales, ya sea coma o 
+punto, no sea un problema y se adapte a la configuración regional del sistema 
+donde se ejecuta.</font></p>
+
+<p><font size="4" color="#FFFFFF">El interfaz USB 2.0 utiliza el chipset CH341. Las 
+últimas versiones de Windows lo reconocen sin problema, pero si lo necesita,
+<a href="ch341ser.zip">aquí</a> tiene el driver para descargarlo e instalarlo.</font></p>
+
+<p><font size="4" color="#FFFFFF">Es posible actualizar el <i>firmware</i> del procesador que incorpora. Para 
+ello utilizaremos el programa <a href="XLoader.zip">XLoader</a>. Basta con 
+descomprimir y ejecutar:</font></p>
+
+<p align="center"><img border="0" src="XLoader.jpg" width="210" height="215"></p>
+
+<p align="justify"><font size="4" color="#FFFFFF">Será necesario indicar que se trata de un Arduino Nano (como se muestra en la 
+imagen) y seleccionar el puerto. La 
+velocidad la fija el programa. Seleccionaremos el fichero con la última versión 
+del <i>firmware</i> que queremos instalar y pulsaremos </font>
+<font size="4" color="#C6C246"><b>Upload</b></font><font size="4" color="#FFFFFF">. 
+Mientras se realiza la reprogramación no se deben interrumpir las comunicaciones 
+con el Sky Meter.</font></p>
+
+<p align="justify"><font size="4" color="#FFFFFF">Es posible que el proceso de 
+actualización implique un borrado de la configuración existente, por lo que es 
+recomendable verificar la configuración tras aplicar una actualización del 
+<i>firmware</i>.</font></p>
+
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%"><u><b><font size="5" color="#BD9600">Instalación y 
+    mantenimiento del Sky Meter I</font></b></u><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%"><p><font size="4" color="#FFFFFF">Descargue y descomprima el fichero 
+    que contiene la última versión  del Programa de Control (ver 
+    sección </font><b><font size="4" color="#C6C246">Actualización de <i>software</i> y
+    <i>firmware</i></font></b><font size="4" color="#FFFFFF"> de esta página). Cree la 
+    carpeta donde quiera instalar el programa. Lo aconsejable es que dicha 
+    carpeta se denomine </font><font size="4" color="#C6C246">SkyMeter</font><font size="4" color="#FFFFFF">. 
+    En esa misma carpeta residirán todos 
+    los ficheros relacionados con la aplicación: configuración, <i>logs</i>, etc.</font></p>
+    <p><font size="4" color="#FFFFFF">La primera vez que ejecute el Programa de 
+    Control (<b>SkyMeter.exe</b>) se creará automáticamente el fichero <b>
+    SkyMeter.ini</b> con una 
+    configuración estándar que posteriormente podrá modificar con el propio 
+    programa. Sólo se le pedirá indique el puerto serie 
+    que le ha adjudicado el sistema operativo al conectar el Sky Meter, lo que 
+    podrá ver utilizando el Administrador de Dispositivos de Windows..  </font>
+    <p align="left">
+    <font size="4" color="#FFFFFF">El dispositivo Sky Meter deberá 
+    instalarse en una ubicación despejada, siendo muy 
+    importante que tenga una ligera inclinación para evitar que retenga agua en la 
+    parte superior del mismo, debiendo estar situados los orificios de 
+    ventilación, <u><i> <b>que nunca deberán obstruirse</b></i></u>, en la parte más baja.</font><p align="center">
+    <font size="4" color="#FFFFFF">&nbsp;</font><img border="0" src="SM-3.jpg" width="313" height="239"><p align="left">
+    <font size="4" color="#FFFFFF">En algunos ordenadores, a pesar de que el 
+    fabricante asegure que sus puertos USB cumplen las especificaciones 2.0, no 
+    siempre es cierto y proporcionan voltajes en la 
+    salida de 5V sensiblemente inferiores, lo que en la práctica  supone un recorte en la 
+    longitud máxima del cable USB que pueden soportar y por tanto tienen 
+    dificultades para utilizar cables USB de 5 metros, como el que incorpora el 
+    Sky Meter. 
+     
+    </font><p align="left">
+    <font size="4" color="#FFFFFF">Esta circunstancia suele traducirse en pérdidas intermitentes de las 
+    comunicaciones o directamente no poder establecerse. En ocasiones es posible solventar este problema probando en 
+    alguno de los otros puertos (preferiblemente los situados en la parte 
+    trasera del ordenador). Aunque la solución más recomendable es incorporar un HUB USB 
+    alimentado, de calidad y que nos garantice cumplir con las especificaciones 
+    USB 2.0. También es posible utilizar Extensores de USB mediante RJ45 a 
+    través de cable UTP.</font><p align="left">
+    <font size="4" color="#FFFFFF">Sky Meter, como todo dispositivo 
+    instalado en el exterior, sufre las inclemencias meteorológicas y 
+    ambientales, por lo que deberá ser objeto de cuidado y mantenimiento. El 
+    cristal que protege los sensores puede presentar acumulación de 
+    suciedad, por lo que es aconsejable limpiarlo, con mucho cuidado y suavemente. La falta de limpieza puede 
+    producir lecturas erróneas en estos sensores.</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%"><u><font size="5" color="#BD9600"><b>Información 
+    proporcionada por</b></font><b><font size="5" color="#BD9600"> el programa 
+    de control del Sky Meter I</font></b></u><p align="center">
+    <img border="0" src="SM-4.jpg" width="256" height="366"></p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%"><font size="4" color="#FFFFFF">Cuando se inicializa el 
+    programa, se muestra la ventana principal.</font><p>
+    <font size="4" color="#FFFFFF">En ella se muestra, además de la fecha y 
+    hora de la última lectura realizada, la temperatura ambiente, la información relativa a la Calidad del 
+    Cielo (SQM) en órdenes de magnitud, la radiación ultravioleta expresada en 
+    vatios por metro cuadrado y el índice ultravioleta en escala de 0 a 11.</font></p>
+    <p><font size="4" color="#FFFFFF">En la zona inferior derecha tenemos el 
+    botón </font><b><font size="4" color="#C6C246">Gráfica</font></b><font size="4" color="#FFFFFF">, 
+    que nos permitirá visualizar con total comodidad la evolución de  las 
+    cuatro variables monitorizadas por el Sky Meter a lo largo de hasta las 
+    últimas 48 horas. Al pulsarlo se abrirá una nueva ventana como ésta:</font></p>
+    <p align="center">
+    <img border="0" src="SM-8.jpg" width="611" height="285"></p>
+    <p><font size="4" color="#FFFFFF">En el caso de que la ventana permanezca abierta, ésta se actualizará automáticamente cada 5 minutos. 
+    Si se pulsa el botón </font><b><font size="4" color="#C6C246">Gráfica </font>
+    </b><font size="4" color="#FFFFFF">estando la ventana abierta se producirá 
+    un refresco de las gráficas a 
+    ese instante.</font></p>
+    <p><font size="4" color="#FFFFFF">Los valores de </font>
+    <font size="4" color="#C6C246">Temperatura y Magnitud </font><font size="4" color="#FFFFFF"> 
+    se referencian sobre el eje de ordenadas (Y) de la izquierda de la gráfica. Los valores de </font>
+    <font size="4" color="#C6C246">Índice UV y Radiación UV</font><font size="4" color="#FFFFFF"> 
+    utilizan el eje de ordenadas (Y) de la derecha.</font></p>
+    <p><font size="4" color="#FFFFFF">Los datos visualizados son los mismos que 
+    se almacenan en formato CSV, por lo que para estudios más profundos y 
+    detallados se recomienda&nbsp; utilizar directamente una hoja de cálculo.</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%"><u><font size="5" color="#BD9600"><b>Calibración</b></font><b><font size="5" color="#BD9600"> 
+    del Sky Meter I</font></b></u><p align="center">
+    <img border="0" src="SM-5.jpg" width="255" height="365"></p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%"><font size="4" color="#FFFFFF">Recuerde que la 
+    configuración reside en el dispositivo Sky Meter, por lo que cada 
+    vez que se solicitan los parámetros de configuración desde el programa de 
+    control, éstos se debe solicitar 
+     
+    al dispositivo para poder visualizarlos. Esta operación, 
+    dependiendo de las circunstancias puede llegar a tardar hasta treinta segundos.</font><p>
+    <font size="4" color="#FFFFFF">En la ventana de </font><b><font size="4" color="#C6C246">
+    Calibrar</font></b><font size="4" color="#FFFFFF"> es donde se definen los valores de los parámetros que 
+    fijarán el funcionamiento del Sky Meter a la hora de medir la calidad del 
+    cielo. No se recomienda manipular estos parámetros, y en todo caso es muy 
+    recomendable tomar nota de los valores originales antes de manipularlos.</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%"><u><font size="5" color="#BD9600"><b>Acerca de Sky Meter I</b></font></u><p align="center">
+    <img border="0" src="SM-7.jpg" width="257" height="366"></p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%">
+    <p><font color="#FFFFFF" size="4">En esta ventana podremos consultar, además 
+    de las condiciones de uso, la versión del Programa de Control que estamos 
+    utilizando.</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%"><u><b><font size="5" color="#BD9600">Especificación del 
+    fichero SkyMeter.csv</font></b></u><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%"><font size="4" color="#FFFFFF">Es un fichero en formato CSV 
+    e importable directamente desde Excel. La descripción de los campos, 
+    separados por &quot;;&quot;, es la siguiente:</font><p><b>
+    <font face="Letter Gothic Std" color="#C6C246" size="4">
+    2019-11-03;15:00:20;18.1;0;7.47;1</font></b></p>
+    <table border="1" cellspacing="1" width="41%" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+      <tr>
+        <td width="50%"><b><font size="4" color="#C6C246">Campo</font></b></td>
+        <td width="50%"><font size="4" color="#C6C246"><b>Significado</b></font></td>
+      </tr>
+      <tr>
+        <td width="50%"><font size="4" color="#FFFFFF">Fecha</font></td>
+        <td width="50%"><font size="4" color="#FFFFFF">yyyy-mm-dd</font></td>
+      </tr>
+      <tr>
+        <td width="50%"><font size="4" color="#FFFFFF">Hora</font></td>
+        <td width="50%"><font size="4" color="#FFFFFF">hh:mm:ss</font></td>
+      </tr>
+      <tr>
+        <td width="50%"><font size="4" color="#FFFFFF">Temperatura ambiente</font></td>
+        <td width="50%"><font size="4" color="#FFFFFF">nn.n</font></td>
+      </tr>
+      <tr>
+        <td width="50%"><font size="4" color="#FFFFFF">Magnitud</font></td>
+        <td width="50%"><font size="4" color="#FFFFFF">nn.nn</font></td>
+      </tr>
+      <tr>
+        <td width="50%"><font size="4" color="#FFFFFF">Radiación UV</font></td>
+        <td width="50%"><font size="4" color="#FFFFFF">nnn.nn</font></td>
+      </tr>
+      <tr>
+        <td width="50%"><font size="4" color="#FFFFFF">IUV</font></td>
+        <td width="50%"><font size="4" color="#FFFFFF">nn</font></td>
+      </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%" colspan="2"><u><font size="5" color="#BD9600"><b>Actualización 
+    de <i>software</i> y <i>firmware</i></b></font></u><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="18%">
+    <font size="4" color="#C6C246"><b>Programa de Control</b></font></td>
+    <td width="82%">
+    &nbsp;<font size="4" color="#FFFFFF">1.0.15 - <a href="SkyMeter-v1.0.15.zip">SkyMeter-v1.0.15.zip</a></font></td>
+  </tr>
+  </table>
+<p>&nbsp;</p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59961188-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<hr color="#BD9600" width="90%" align="left">
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%"><u><font size="5" color="#BD9600"><b>SM_SQM</b></font></u><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%">
+    <p><font size="4" color="#FFFFFF">Como se ha indicado con anterioridad, Sky 
+    Meter I es compatible con los sensores SQM de Unihedron, por lo que es 
+    posible utilizar una versión adaptada del programa escrito en lenguaje 
+    Python: PySQM. Desarrollado por el grupo GUAIX de la UCM.</font></p>
+    <p><font size="4" color="#FFFFFF">PySQM bajo ciertas circunstancias reinicia 
+    la conexión con el dispositivo. En el caso del Sky Meter y al tratarse de un 
+    Arduino, induce un reinicio no deseado de éste.</font></p>
+    <p><font size="4" color="#FFFFFF">La versión del programa adaptado al Sky 
+    Meter se ha denominado SM_SQM. Se basa en el código fuente disponible del 17 
+    de noviembre de 2018: <a href="PySQM-master-20181107.zip">PySQM-master-20181107.zip</a>. 
+    Los fuentes modificados está disponibles en <a href="SM_SQM-20191012.zip">
+    SM_SQM-20191012.zip</a>. </font></p>
+    <p><font size="4" color="#FFFFFF">El programa ejecutable está disponible en
+    <a href="SM_SQM.zip">SM_SQM.zip</a><font color="#FFFFFF">, e incorpora como 
+    ejemplo el fichero config.py que utilizo en mi observatorio.</font></font></p>
+    <p><font size="4" color="#FFFFFF">Para más información, puede consultar la 
+    documentación elaborada por el grupo GUAIX:
+    <a href="https://guaix.fis.ucm.es/PySQM">https://guaix.fis.ucm.es/PySQM</a></font></p>
+    <p><font size="4" color="#FFFFFF">Con este programa podrá obtener gráficas 
+    como estas:</font></p>
+    <p align="center">
+    <img border="0" src="20191009_120000_SQM-Mazariegos.png" width="446" height="427"></p>
+    <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59961188-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<hr color="#BD9600" width="90%" align="left">
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%"><u><font size="5" color="#BD9600"><b>Coste del dispositivo 
+    y e-Mail de contacto</b></font></u><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%"><p>
+    <b><font size="4" color="#C6C246">Sky Meter I</font></b><font size="4" color="#FFFFFF"> <u><b>no es un producto comercial</b></u> 
+    y por lo tanto se proporciona sin ningún tipo de garantía. No va sellado ni 
+    incorpora mecanismos que impidan al propietario su manipulación. Lo diseñé 
+    para utilizarlo en mi observatorio y el precio cubre costes de materiales y 
+    algunas horas de montaje. Sólo el desarrollo software ha supuesto cientos de 
+    horas de trabajo. Sigo trabajando en su evolución, 
+    siendo ésta la primera generación.</font><p>
+    <font size="4" color="#FFFFFF">Si necesitas alguna aclaración, sugerencia o 
+    si tienes interés por un Sky Meter I, puedes contactar conmigo 
+    en:</font><blockquote>
+    <p>
+    <font size="4" color="#FFFFFF">
+    <img border="0" src="email.gif" width="157" height="27"></font></blockquote>
+    <p>
+    <font size="4" color="#FFFFFF">o puedes inscribirte en el grupo de Google
+    </font><b><font size="4" color="#C6C246">meteo-watcher</font></b><font size="4" color="#FFFFFF"> 
+    : <a href="https://groups.google.com/forum/#!forum/meteowatcher">
+    https://groups.google.com/forum/#!forum/meteowatcher</a></font><p>
+    &nbsp;</td>
+  </tr>
+</table>
+
+</body>
+</html>

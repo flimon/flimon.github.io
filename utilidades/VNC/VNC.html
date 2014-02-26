@@ -1,0 +1,182 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111" link="#C00000" vlink="#C00000" alink="#C00000">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1308" id="AutoNumber1">
+  <tr>
+    <td width="7">
+    &nbsp;</td>
+    <td width="1159">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">TightVNC</font></td>
+  </tr>
+  <tr>
+    <td width="4" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1154" style="border: 5px solid #BD9600">
+    <p align="center">
+    <font size="4" color="#FFFFFF">&nbsp;</font></td>
+  </tr>
+  <tr>
+    <td width="7">&nbsp;</td>
+    <td width="1159">&nbsp;</td>
+  </tr>
+  </table>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="89%">
+  <tr>
+    <td width="100%"><font size="4" color="#FFFFFF">Las siglas VNC (Virtual 
+    Network Computing) identifican a una solución que permite conectar dos 
+    sistemas informáticos a través de una conexión cliente-servidor mediante un 
+    determinado protocolo.  VNC es independiente del sistema operativo, tanto 
+    del cliente como del servidor.</font><p><font size="4" color="#FFFFFF">A 
+    diferencia de otras soluciones de conexión remota, VNC no utiliza a un tercero 
+    para facilitar la negociación de puertos y el establecimiento de la 
+    conexión. En el caso de conexiones entre equipos conectados a través de un router NAT (ADSL/FTTH) deberemos configurarlo para reencaminar el tráfico 
+    entrante al puerto que vayamos a utilizar (normalmente TCP/5901) hacia la IP 
+    interna de nuestra LAN.</font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="89%">
+  <tr>
+    <td width="100%"><font face="Avery Deluxe" size="6" color="#C6C246">
+    Instalación</font><p><font size="4" color="#FFFFFF">Lo primero que tendremos 
+    que hacer es instalar los componentes básicos. Además del propio TightVNC (<a href="https://www.tightvnc.com/download.php">https://www.tightvnc.com/download.php</a>). 
+    Los autores recomiendan además instalar un driver virtual de pantalla que 
+    permite optimizar el rendimiento de las comunicaciones: DFMirage Driver (<a href="https://www.tightvnc.com/download/dfmirage/dfmirage-setup-2.0.301.exe">https://www.tightvnc.com/download/dfmirage/dfmirage-setup-2.0.301.exe</a>).</font></p>
+    <p><font size="4" color="#FFFFFF">Comenzamos por este último.</font></p>
+    <p align="center">
+    <img border="0" src="IMG5.jpg" width="496" height="385"></p>
+    <p align="left">
+    <font color="#FFFFFF" size="4">Una vez terminada la instalación, nos pedirá 
+    reiniciar el sistema.</font></p>
+    <p align="center">
+    <img border="0" src="IMG6.jpg" width="496" height="385"></p>
+    <p align="left">
+    <font size="4" color="#FFFFFF">Una vez reiniciado el sistema, si vamos al 
+    Administrador de Dispositivos, en Pantallas, veremos nuestro monitor físico 
+    y otro denominado Mirage Driver.</font></p>
+    <p align="center">
+    <img border="0" src="IMG17.jpg" width="395" height="262"></p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><font size="4" color="#FFFFFF">Procedemos a instalar 
+    TightVNC</font></p>
+    <p align="center"><img border="0" src="IMG7.jpg" width="494" height="385"></p>
+    <p align="center"><font size="4" color="#FFFFFF">
+    <img border="0" src="IMG8.jpg" width="493" height="386"></font></p>
+    <p align="center"><img border="0" src="IMG9.jpg" width="492" height="384"></p>
+    <p align="left"><font size="4" color="#FFFFFF">Como se ha comentado 
+    anteriormente, VNC es una solución cliente-servidor, por lo que podremos 
+    optar por instalar cualquiera de las partes o ambas. Si optamos por la 
+    opción </font><b><font size="4" color="#C6C246">Typical</font></b><font size="4" color="#FFFFFF">, 
+    instalaremos ambas. Si optamos por </font><b><font size="4" color="#C6C246">
+    Custom</font></b><font size="4" color="#FFFFFF"> podremos indicar qué parte 
+    queremos instalar.</font></p>
+    <p align="center"><img border="0" src="IMG10.jpg" width="493" height="383"></p>
+    <p align="left"><font size="4" color="#FFFFFF">En el ejemplo se ha indicado 
+    que sólo se quiere&nbsp; instalar la parte servidor. Por ejemplo, si se 
+    trata de un sistema al que sólo entraremos en remoto y desde el que no nos 
+    vamos a conectar a terceros, es normal que únicamente instalemos la parte 
+    servidor.</font></p>
+    <p align="center"><img border="0" src="IMG11.jpg" width="492" height="384"></p>
+    <p align="center"><img border="0" src="IMG12.jpg" width="493" height="384"></p>
+    <p align="center"><img border="0" src="IMG13.jpg" width="448" height="398"></p>
+    <p align="left"><font size="4" color="#FFFFFF">Es muy recomendable (debiera 
+    ser obligatorio bajo mi punto de vista) la utilización de claves tanto para 
+    el inicio de sesión como para entrar en modo administrador. Que es lo que se 
+    nos está pidiendo en esta pantalla.</font></p>
+    <p align="center"><img border="0" src="IMG14.jpg" width="495" height="385"></p>
+    <p align="left">&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><font face="Avery Deluxe" size="6" color="#C6C246">
+    Configuración</font></p>
+    <p align="left"><font size="4" color="#FFFFFF">Una vez finalizada la 
+    instalación, tendremos configurado el Firewall de Windows y el servicio 
+    TightVNC a la espera de conexiones remotas. Prueba de ello es que podremos 
+    ver en la barra de tareas el incono de TightVNC, que punsando el botón 
+    derecho del ratón nos desplegará este menú de opciones. Vamos a entrar en
+    </font><b><font size="4" color="#C6C246">Configuration</font></b><font size="4" color="#FFFFFF"> 
+    para revisar la configuración de servidor.</font></p>
+    <p align="center"><img border="0" src="IMG15.jpg" width="430" height="287"></p>
+    <p align="left"><font size="4" color="#FFFFFF">Como vamos a entrar en modo 
+    administrador, nos pide al password de administrador de TightVNC que habemos 
+    indicado unos pasos antes.</font></p>
+    <p align="center"><img border="0" src="IMG16.jpg" width="280" height="151"></p>
+    <p align="center"><img border="0" src="IMG1.jpg" width="479" height="425"></p>
+    <p align="left"><font size="4" color="#FFFFFF">En la pestaña </font><b>
+    <font size="4" color="#C6C246">Server</font></b><font size="4" color="#FFFFFF">, 
+    como más importante, podremos configurar el puerto por el que escuchará el 
+    servidor las solicitudes de conexión.</font></p>
+    <p align="center"><img border="0" src="IMG2.jpg" width="477" height="425"></p>
+    <p align="left"><font size="4" color="#FFFFFF">En la pestaña </font><b>
+    <font size="4" color="#C6C246">Administration</font></b><font size="4" color="#FFFFFF">, 
+    podremos configurar qué hacer cuando se cierra una conexión. En mi opinión, 
+    por razones de seguridad, se debe bloquear la sesión, forzando que se vuelva 
+    a solicitar la identificación de Windows al volver a conectarse. Esto no 
+    impide que los programas que se estén ejecutando lo sigan haciendo mientras 
+    la sesión está bloqueada.</font></p>
+    <p align="left">&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><font face="Avery Deluxe" size="6" color="#C6C246">Acceso 
+    remoto</font></p>
+    <p align="left"><font size="4" color="#FFFFFF">Al igual que en los equipos a 
+    los que vamos a acceder de manera remota habremos instalado la parte de 
+    servidor, en los que puedan actuar de clientes instalaremos la parte 
+    cliente. En cuyo caso tendremos que utilizar el TightVNC Viewer (C:\Program 
+    Files\TightVNC\tvnviewer.exe).</font></p>
+    <p align="center"><img border="0" src="IMG3.jpg" width="426" height="305"></p>
+    <p align="left"><font size="4" color="#FFFFFF">En </font><b>
+    <font size="4" color="#C6C246">Options</font></b><font size="4" color="#FFFFFF"> 
+    podremos configurar los niveles de compresión en las comunicaciones, de lo 
+    que dependerá mucho el ancho de banda que necesitemos. Por mi experiencia, 
+    el nivel 6 es muy aceptable tanto para compresión como para calidad de JPEG.</font></p>
+    <p align="left"><font size="4" color="#FFFFFF">En </font><b>
+    <font size="4" color="#C6C246">Configure</font></b><font size="4" color="#FFFFFF"> 
+    podremos ajustar algún parámetro adicional. Podréis observar que la primera 
+    vez que os conectéis en remoto a un sistema os pedirá la clave de sesión, no 
+    haciéndolo las siguientes. Esto es debido a que es capaz de recordarlas. 
+    Aquí podremos indicarle cuántas queremos que recuerde y si queremos que las 
+    borre.</font></p>
+    <p align="left"><b><font size="4" color="#C00000">IMPORTANTE</font></b><font size="4" color="#FFFFFF">: 
+    A la hora de indicar el sistema al que queremos, podemos indicar el nombre 
+    (si usamos DNS) o la IP, pero es necesario indicar el puerto por el que 
+    sabemos estará escuchando el servidor, separado por dos caracteres 
+    consecutivos de dos puntos: &quot;::&quot;</font></p>
+    <blockquote>
+    <p align="left"><font color="#FFFFFF" size="4">gtm.mazariegos.es::5902</font></p>
+    <p align="left"><font size="4" color="#FFFFFF">192.168.1.33::5901</font></p>
+    </blockquote>
+    <p align="left"><font size="4" color="#FFFFFF">El TightVNC Viewer os 
+    permitirá conectaros a cualquier sistema que utilice VNC como protocolo de 
+    acceso remoto. En mi caso, el hipervisor (sistema físico) donde corren las 
+    máquinas (virtuales) que gestionan mi observatorio remoto, que se basa en 
+    Debian con escritorio Xfce, accedo mediante VNC, como podéis ver en esta 
+    captura. Con las misma herramienta con las que luego accedo a las máquinas 
+    virtuales que corren en Windows 10.</font></p>
+    <p align="center"><img border="0" src="IMG18.jpg" width="638" height="541"></p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="left"><font size="4" color="#FFFFFF">Y con esto ya podéis empezar 
+    a jugar con otra herramienta de acceso remoto, gratuita y sin el miedo que 
+    con el tiempo os reclamen en pago de licencias por uso.</font></p>
+    <p align="left">
+    <font color="#FFFFFF" size="4">Creo que no se me olvida nada importante, por 
+    lo que espero que este pequeño tutorial os sea de utilidad.
+    </font></p>
+    <p align="left">
+    &nbsp;</p>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

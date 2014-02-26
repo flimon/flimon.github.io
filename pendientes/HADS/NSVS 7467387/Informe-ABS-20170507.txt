@@ -1,0 +1,15 @@
+FOTOMETRÍA ABSOLUTA
+
+ESTRELLAS DE CALIBRADO:
+   C1: 12.771 CV
+
+NSVS 7467387 
+FECHA J HELIO         MAG      +/-
+----------------------------------
+2457881.35655      13.413    0.006
+2457881.35810      13.420    0.007
+2457881.35970      13.426    0.007
+2457881.36128      13.441    0.006
+
+Observador: Obs. Mazariegos - F. Limon - AAVSO LFEA
+FotoDif 3.95

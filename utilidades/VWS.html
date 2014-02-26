@@ -1,0 +1,325 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1156" id="AutoNumber1">
+  <tr>
+    <td width="4%">
+    &nbsp;</td>
+    <td width="1073">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">Virtual Weather Station</font></td>
+    <td width="4%" align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1073" style="border: 5px solid #BD9600">
+    <font size="4" color="#FFFFFF">&nbsp;</font></td>
+    <td width="34" align="justify">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49">&nbsp;</td>
+    <td width="1073">&nbsp;</td>
+    <td width="34" align="justify">&nbsp;</td>
+  </tr>
+  </table>
+
+<p><font color="#FFFFFF" size="4">Una vez que has automatizado el observatorio, 
+lo siguiente que uno se plantea es ... dormir a pierna suelta mientras el 
+observatorio hace su trabajo. ¡Qué gozada! Pero enseguida se visualiza sobre 
+nuestra cabeza una nube negra, cargada de agua y acompañada de fuerte viento 
+... y decides tomarte un café y aguantar despierto controlando a tu inseparable 
+compañero.</font></p>
+
+<p><font size="4" color="#FFFFFF">Existe un aspecto que marca las necesidades y 
+requisitos del sistema de control del observatorio: la distancia de él a tu 
+cama. No es lo mismo que nos separen 300 Km o que se encuentre en la terraza de 
+la casa donde duermes. En el primer caso cualquier medida de seguridad es poca, 
+puesto que el observatorio debe ser capaz de reaccionar y sobrevivir a 
+cualquier imprevisto ... y los imprevistos tienden a infinito.</font></p>
+
+<p><font size="4" color="#FFFFFF">Para aquellos que, como es mi caso, han 
+logrado automatizar el observatorio pero que en caso de incidencia actuamos 
+como <i>SARE (Sistema Autónomo de Respuesta a Emergencias)</i> con un &quot;levántate 
+a toda pastilla y mira a ver qué ocurre&quot;, va dedicado este trabajo.</font></p>
+
+<p><font size="4" color="#FFFFFF">Tenía previsto comprarme una estación 
+meteorológica diseñada para utilizar en observatorios astronómicos; de esas que 
+por 500 tienen hasta anemómetro. Estuve analizando prestaciones y la verdad es 
+que son una chulada. Pero al final sólo la iba a utilizar como una simple 
+estación meteorológica (bastante más económica) y como mucho utilizaría uno de los relés 
+para disparar una alarma luminosa en el dormitorio (¡que no es cuestión de despertar a la 
+jefa!). Lo único que me ataba a estas estaciones era su integración con el CCD Commander.</font></p>
+
+<p><font size="4" color="#FFFFFF">En una de las lecturas sobre prestaciones de 
+estas estaciones me percaté que existía el <b>modo remoto</b>, que básicamente 
+te permite tener la estación en un ordenador, grabar y actualizar los datos de 
+la estación cada cierto tiempo y en cierto formato y, si configuras 
+adecuadamente la red, puedes acceder a ellos con el CCD Commander desde el 
+ordenador que controla el observatorio.</font></p>
+
+<p><font size="4" color="#FFFFFF">Se me encendió la bombilla: ¿Y si los datos 
+los tomo de una estación meteorológica cercana, proceso los datos y los grabo en 
+el formato que espera el CCD Commander? A fin de cuentas sólo busco saber si se 
+ha&nbsp; nublando o si se está levantando viento. Se planteaban tres retos: 
+averiguar el formato de los datos, buscar una estación meteorológica 
+suficientemente cercana  que me proporcionase los datos que necesitaba y lograr 
+hacerme llegar a la mesilla una señal de alarma en caso de problemas.</font></p>
+
+<p><font size="4" color="#FFFFFF">¡Vamos a ello!</font></p>
+
+<p><b><font size="4" color="#FFFF00">1.- Averiguar el formato de los datos que 
+necesita CCD Commander.</font></b></p>
+
+<p><font size="4" color="#FFFFFF">Tras unas cuantas consultas al Oráculo (Google) 
+apareció la respuesta en el <a href="claritymanual.pdf">User Manual<a/> del Cloud Sensor II de Clarity, 
+cap 17: Remote Operation. Con todo lujo de detalles.</a></font></p>
+
+<p><font size="4" color="#FFFF00"><b>2</b></font><b><font size="4" color="#FFFF00">.- 
+Utilizar una estación meteorológica cercana y que proporcione los datos necesarios y fiables.</font></b></p>
+
+<p><font size="4" color="#FFFF00"><b>2.1.- Versión implementada en VB Script.</b></font></p>
+
+<p><font size="4" color="#FFFFFF">Como sabéis, existen varias redes de 
+estaciones meteorológicas que realizan un magnífico servicio y que proporcionan 
+unos datos muy fiables. ¡Gracias!</font></p>
+
+<p><font size="4" color="#FFFFFF">Tras analizar varias alternativas, encontré <b>
+<a href="http://www.wunderground.com/">Weather Underground</a></b> que para mi 
+suerte tenía dos estaciones a menos de 2 Km de casa. Esta red dispone de un 
+<a href="http://www.wunderground.com/weather/api/">API</a> para desarrolladores 
+con suscripción gratuita que te permite realizar un cierto número de 
+consultas por día, pudiendo seleccionar de qué 
+estación se solicitan los datos y obteniendo el&nbsp; resultado de la consulta 
+en formato XML, entre otros.</font></p>
+
+<p><font size="4" color="#FFFFFF">Tras analizar diversas alternativas, buscando 
+la simplicidad del código y no meterme en jaleos, opté por usar Windows Script: 
+lenguaje sencillo, no muy amigable para formatear datos de salida, pero como 
+contrapartida dispone de un objeto que permite fácilmente procesar datos en 
+formato XML.</font></p>
+
+<p><font size="4" color="#FFFFFF">Tras diversas aproximaciones, refinamientos y 
+mejoras salió este <a href="VWS.vbs">VWS.vbs</a>. El código no es muy extenso y 
+seguro que fácilmente mejorable, pero para no ser mi entorno habitual de 
+programación, creo que es aceptable.</font></p>
+
+<p><font size="4" color="#FFFFFF">Si queréis personalizar el <i>script</i>, al 
+principio encontraréis la definición de una serie de constantes:</font></p>
+
+<blockquote>
+
+<p><b><font size="4" color="#008000">' Personalización:<br>
+Const </font><font size="4" color="#00FF00">LimiteViento</font><font size="4" color="#008000"> = 15 ' 15 Kmh<br>
+Const </font><font size="4" color="#00FF00">HumedadAlta</font><font size="4" color="#008000"> = 80 ' 80% humedad relativa<br>
+</font><font size="4" color="#00FF00">strDirectory</font><font size="4" color="#008000"> = &quot;C:\VWS&quot;<br>
+</font><font size="4" color="#00FF00">strFile</font><font size="4" color="#008000"> = &quot;\VWS.dat&quot;</font></b></p>
+
+</blockquote>
+
+<p><font size="4" color="#FFFFFF">donde se define la velocidad máxima del viento 
+admisible para que no salte alarma, humedad relativa máxima admisible, 
+directorio donde está instalado el <i>script</i> y el nombre del fichero donde 
+se escribirán los datos que luego utilizará CCD Commander.</font></p>
+
+<p><font size="4" color="#FFFFFF">Como CCD Commander no tiene alerta por humedad 
+pero si por lluvia, lo que creo que es algo redundante con la condición de 
+nublado, he usado la condición de lluvia para alertar que la humedad relativa es 
+muy alta. Para mi gusto, y en las condiciones donde está mi observatorio, más 
+del 80% es muy alta y por tanto no dejo trabajar al observatorio.</font></p>
+
+<p><font size="4" color="#FFFFFF">En VWS.dat encontraremos una línea de texto 
+como ésta:</font></p>
+
+<blockquote>
+  <p><img border="0" src="VWS.jpg" width="850" height="20"></p>
+</blockquote>
+
+  <p><font size="4" color="#FFFFFF">que siguiendo la descripción del formato 
+  podrá interpretarse su contenido. Aunque lo importantes son los cuatro últimos 
+  dígitos: </font><b><font size="4" color="#008000">1 1 2 0</font></b><font size="4" color="#FFFFFF">. 
+  Un 1 es BIEN y un 2 es MAL. Por órden:</font></p>
+  <blockquote>
+  <p>
+  <b>
+  <font size="4" color="#00FF00">1</font><font size="4" color="#008000">: BIEN. 
+  No está nublado. Admito como válido que el cielo esté despejado o parcialmente 
+  nublado.</font><br>
+
+  <font size="4" color="#00FF00">1</font><font size="4" color="#008000">: BIEN. 
+  La velocidad del viento es inferior a 15 KM/h</font><br>
+
+  <font size="4" color="#00FF00">2</font><font size="4" color="#008000">: MAL. 
+  La humedad relativa es superior al 80%.</font><br>
+
+  <font size="4" color="#00FF00">0</font><font size="4" color="#008000">: No lo 
+  utilizo y siempre va a cero. Se podría usar para indicar que hay exceso de 
+  luz.</font></b>
+  </p>
+  </blockquote>
+
+  <p><font size="4" color="#FFFFFF">En estas condiciones CCD Commander no me 
+  habría permitido trabajar por exceso de humedad.</font></p>
+  <p><font size="4" color="#FFFFFF">Cuando se ejecuta el programa, en pantalla 
+  aparece una ventana como ésta:</font></p>
+<blockquote>
+  <p><img border="0" src="VWS-window.jpg" width="346" height="227"></p>
+</blockquote>
+  <p><font size="4" color="#FFFFFF">donde se muestra la misma información que en 
+  VWS.dat, pero legible para un humano. Esta ventana se refresca cada 5 minutos 
+  y aparece en todo el centro de la pantalla. No he encontrado la forma de hacer 
+  que recuerde dónde la hemos colocado.</font></p>
+  <p><font size="4" color="#FFFFFF">Los botones tienen su función, y dado que no 
+  me ha sido posible renombrarlos, he procurado que signifiquen algo parecido a 
+  lo que hacen:</font></p>
+<blockquote>
+  <p>
+  <font size="4">
+  <font color="#00FF00"><b>Cancelar</b></font><font color="#008000">: Detener la ejecución del 
+  programa.</font></font><font color="#008000"><br>
+  </font>
+  <font size="4">
+  <font color="#00FF00"><b>Reintentar</b></font><font color="#008000">: Volver a consultar los datos a la estación 
+  meteorológica y refrescarlos en pantalla.</font></font><font color="#008000"><br>
+  </font>
+  <font size="4">
+  <font color="#00FF00"><b>Continuar</b></font><font color="#008000">: Continuar la ejecución del programa en modo <i>
+  background</i>, es decir, sin mostrar esta ventana.</font></font>
+  </p>
+</blockquote>
+
+<p><font size="4" color="#FFFFFF">Para que ejecute el programa deberemos 
+indicarle la clave que nos han asignado al realizar nuestro registro gratuito 
+(16 caracteres alfanuméricos) y el código de la estación meteorológica de la que 
+queremos consultar los datos. Creamos un acceso directo desde el escritorio y 
+modificamos las propiedades del acceso directo añadiendo estos dos parámetros:</font></p>
+
+<blockquote>
+
+<p><img border="0" src="VWS-directo.jpg" width="378" height="545"></p>
+
+</blockquote>
+
+<p><font size="4" color="#FFFFFF">donde </font><font size="4" color="#00FF00">
+nnnnnnnnnnnnnnnn</font><font size="4" color="#FFFFFF"> es el código que nos han 
+asignado y </font><font size="4" color="#00FF00">IMADRIDR2 </font><font size="4" color="#FFFFFF"> 
+es la estación meteorológica que usaremos.</font></p>
+
+<p><font size="4" color="#FFFFFF">Si todo se ha hecho bien, podremos ejecutar el 
+programa e ir viendo la ventana con los datos de la estación remota. E incluso 
+podremos ver los datos que se van actualizando en el ficheros de datos que luego 
+utilizará CCD Commander. ¡Por lo que ya tenemos operativa nuestra estación 
+meteorológica remota!</font></p>
+
+<p><font size="4" color="#FFFFFF">Vamos a configurar CCD Commander para que la 
+utilice. En primer lugar le diremos que tiene una estación remota y dónde está 
+el fichero con los datos:</font></p>
+
+<blockquote>
+
+<p><img border="0" src="CCDC-setup.jpg" width="559" height="604"></p>
+
+</blockquote>
+
+<p><font size="4" color="#FFFFFF">y a continuación le diremos cómo debe actuar. 
+Ésta es mi configuración:</font></p>
+
+<blockquote>
+
+<p><img border="0" src="CCDC-weather.jpg" width="556" height="603"></p>
+
+</blockquote>
+
+<p><font size="4" color="#FFFFFF">Desde estos momentos CCD Commander podrá 
+utilizar los datos que obtenemos de la estación remota para controlar las 
+condiciones climatológicas y decidir si puede seguir trabajando o debe parar.</font></p>
+
+<p><font size="4" color="#FFFF00"><b>2.2.- Versión implementada en Visual Basic.</b></font></p>
+
+<p><font color="#FFFFFF" size="4">A </font><font color="#FF0000" size="4">
+Fernando Campuzano</font><font color="#FFFFFF" size="4"> le gustó la idea de la 
+estación meteorológica virtual, y se animó a realizar una implementación en Visual Basic. Y la verdad es que 
+su solución ha mejorado notablemente mi implementación en VB Script. 
+¡Gracias tocayo!</font></p>
+
+<p><font size="4" color="#FFFFFF">Además de traducir el <i>script</i> a Visual Basic, ha 
+ampliado la aplicación añadiéndole  opciones configurables por el 
+usuario, como valores para la condición &quot;safe&quot;, tiempo de refresco, algún 
+parámetro informativo adicional, y búsqueda de estaciones meteorológicas próximas a partir de 
+la dirección IP del usuario (aunque también se pueden añadir manualmente).
+</font></p>
+
+<p><font size="4" color="#FFFFFF">En Windows XP el archivo VWS.dat se crea en la 
+carpeta de instalación de la aplicación, pero en Windows 7 y Windows 8 se crea en C:\Users\<i>usuario</i>\AppData\Local\VirtualStore\Program Files (x86)\VWS, 
+así que ojo a la hora de configurar el CCD Commander. En cualquier caso el 
+programa permite definir cualquier otra ruta y evitarnos problemas y 
+confusiones.</font></p>
+
+<p><font size="4" color="#FFFFFF">Otra de las aportaciones importantes de la 
+versión de Fernando Campuzano es que tienes una pestaña donde podrás ver la 
+previsión meteorológica para las próximas 10 horas. Esta información se 
+actualiza de manera automática cada 60 minutos. Ayuda a ver de un vistazo cómo 
+se presenta la noche.</font></p>
+
+<p><font size="4" color="#FFFFFF">Y como guinda del pastel, el programa puede configurarse 
+para que envíe alertas al sistema
+<a href="http://lunatico.es/site/ourproducts/good-night-system.html">Good Night System</a>.</font></p>
+
+<p><font size="4" color="#FFFFFF">Después de cada refresco de datos, los botones 
+se quedan inhabilitados durante 20 segundos, con el objeto de evitar que 
+&quot;jugando&quot; con el programa podamos llegar a hacer demasiadas consultas a la web y 
+nos terminen anulando la API key.</font></p>
+
+<p><font size="4" color="#FFFFFF">Personalmente os recomiendo la implementación 
+de </font><font size="4" color="#FF0000">Fernando Campuzano</font><font size="4" color="#FFFFFF">. 
+Dispone de interfaz de configuración (no hay que tocar los fuentes para 
+modificar parámetros) y proporciona cierta información adicional que es muy 
+interesante.</font></p>
+
+<blockquote>
+
+<p><img border="0" src="VWS-fc.jpg" width="320" height="422"></p>
+
+</blockquote>
+
+<p><font size="4" color="#FFFFFF">El instalador os lo podéis descargar pinchando <b>
+<a href="VWS_1.0.6_setup.zip">AQUÍ</a></b><font color="#FFFFFF">, y la 
+instalación es trivial.</font></font></p>
+
+<p><b><font size="4" color="#FFFF00">3.- Hacer llegar una señal de alarma en caso de problemas.</font></b></p>
+
+<p><font size="4" color="#FFFFFF">Quedaría configurar E-Mail Alerts para que en 
+caso de incidencia nos envía un mail de alerta.</font></p>
+
+<p><font size="4" color="#FFFFFF">Es muy probable que con enviarnos un mail de 
+alerta sea suficiente. Pero en mi caso, si en el iPad activo los sonidos para 
+los mail entrantes ... no iba a pegar ojo en toda la noche, y volvería a estar 
+peor que al principio.</font></p>
+
+<p><font size="4" color="#FFFFFF">Busqué alternativas hasta que encontré el 
+servicio gratuito de <a href="http://www.boxcar.io">Boxcar</a> <font color="#FFFFFF">:
+</font>te creas una cuenta de correo en este 
+servicio, y todos los mail que lleguen a esta cuenta hacen que se active una 
+alarma en el iPad. Sólo queda decirle al CCD Commander que los mail de alerta 
+los mande a esa dirección de correo. ¡Y ya está!</font></p>
+
+<p><font size="4" color="#FFFFFF">Este servicio está disponible en estos 
+momentos para dispositivos Apple, aunque lo tienen anunciado para Windows y 
+Android.</font></p>
+
+<p><font size="4" color="#FFFFFF">Eso si, no olvides que si suena la alarma, el 
+SARE (es decir, tú) debe actuar: </font><font size="4" color="#FF0000"><b>
+&quot;levántate a toda pastilla y mira a ver qué ocurre&quot; </b></font>
+<font size="4" color="#FFFFFF">...  para esto aún no tengo solución.</font></p>
+
+<p><font size="4" color="#FFFFFF">¡Espero os sea de utilidad!</font></p>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+http://www.wunderground.com/cgi-bin/findweather/hdfForecast?query=vaciamadrid
+
+WMR928NX
+http://es.oregonscientific.com/cat-Estaciones-Meteorol%C3%B3gicas-sub-Estaciones-Meteorol%C3%B3gicas-Profesionales-prod-Estaci%C3%B3n-Meteorol%C3%B3gica-Profesional-con-Pantalla-T%C3%A1ctil.html#.UHr6CFGPPng

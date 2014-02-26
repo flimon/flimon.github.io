@@ -1,0 +1,12 @@
+Hola!
+
+Desde hace unos meses estoy trabajando en un proyecto de diseño e implementación de un sistema de alertas meteorológicas: Nubes, lluvia, luz, humedad y rocío. Incorporando mejoras tecnológicas, como es el uso del bluetooth para las comunicaciones entre el dispositivo (Meteo Watcher) y PC.
+
+Llevo gran parte del otoño probándolo y mejorándolo. Incluso hay una unidad instalada en Àger que está demostrando dar un magnífico resultado y sin problemas.
+
+En esta URL: http://www.ea4su.org/utilidades/MW/MeteoWatcher.html encontraréis una amplia descripción y fotos del dispositivo.
+
+Os agradecería le echarais un vistazo. Me gustaría conocer vuestros comentarios y encantado os aclararé cualquier duda.
+
+Gracias ... y feliz 2015!!
+

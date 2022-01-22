@@ -1,0 +1,173 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111" link="#C00000" vlink="#C00000" alink="#C00000">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1156" id="AutoNumber1">
+  <tr>
+    <td width="4%">
+    &nbsp;</td>
+    <td width="1073">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">Recalibración del higrómetro del Meteo Watcher 
+V</font></td>
+    <td width="4%" align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1073" style="border: 5px solid #BD9600">
+    <p align="center">&nbsp;</td>
+    <td width="34" align="justify">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49">&nbsp;</td>
+    <td width="1073">&nbsp;</td>
+    <td width="34" align="justify">&nbsp;</td>
+  </tr>
+  </table>
+
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="89%">
+  <tr>
+    <td width="100%"><u><font size="5" color="#BD9600"><b>Introducción</b></font></u><p>
+    <font size="4" color="#FFFFFF">Uno de los problemas que suelen presentar los 
+    sensores de humedad es que en la zona intermedia de la franja de 
+    funcionamiento (HR medias) las mediciones que presentan son correctas, pero 
+    en la zona alta, donde más crítico es su comportamiento para un observatorio 
+    astronómico, las mediciones suelen tender a ser más altas de lo real, 
+    incrementando incluso su pendiente a menor temperatura de trabajo.</font></p>
+    <p><font size="4" color="#FFFFFF">En el Meteo Watcher V se utiliza el sensor 
+    BME280 de la casa Bosch. Dispositivo especialmente diseñado para 
+    aplicaciones móviles, presentando una gran linealidad y alta precisión. Y lo 
+    que es mejor, una rápida respuesta ante cambios rápidos de las condiciones 
+    ambientales. Pero así y todo, desde mi experiencia tiene tendencia a marcar 
+    de más en las 
+    zonas extremas de la curva de humedad.</font></p>
+    <p><font size="4" color="#FFFFFF">El dispositivo en sí no proporciona 
+    directamente el valor de humedad relativa (HR), sino que la calculan los <i>
+    drivers</i> partiendo de unos valores en crudo (<i>raw</i>) que proporciona 
+    el dispositivo. Por tanto, él método a utilizar se basa en calcular unos 
+    valores incrementales que permiten modificar la ecuación de conversión a 
+    unos valores más adecuados a nuestro sensor de humedad.</font></p>
+    <p><font size="4" color="#FFFFFF">Al mismo tiempo, se ha observado que con 
+    el paso de los años, el envejecimiento del dispositivo hace que los valores
+    <i>raw</i> obtenidos vayan derivando hacia valores mayores dentro del rango 
+    establecido (0 - 65.535). Con este método también se puede corregir el 
+    efecto de esta deriva.</font></p>
+    <p>&nbsp;</p>
+    <p><u><font size="5" color="#BD9600"><b>Hoja de cálculo</b></font></u></p>
+    <p><font size="4" color="#FFFFFF">Para la realización de los cálculos de 
+    manera sencilla se proporciona una hoja Excel, que puedes descargar <b>
+    <a href="Calibrador.xlsx">aquí</a></b>.</font></p>
+    <p><font size="4" color="#FFFFFF">En esta hoja sólo es necesario 
+    cumplimentar los valores de las casillas coloreadas en amarillo, siendo los 
+    resultados de las casillas verdes los destinados a utilizar en los campos de 
+    la pestaña de Configuración de Programa de Control del Meteo Watcher V.</font></p>
+    <p align="center">
+    <img border="0" src="Calibrador-1.JPG" width="438" height="266"></p>
+    <p align="center">&nbsp;</p>
+    <p><u><font size="5" color="#BD9600"><b>Obtención de valores H2 y H4</b></font></u></p>
+
+    <p><font size="4" color="#FFFFFF">En primer lugar, debe configurar el 
+    Programa de Control para que genere el fichero de traza (log), tras lo cual, debe 
+    reiniciar el programa.</font></p>
+
+    <p><font size="4" color="#FFFFFF">Una vez reiniciado, en la carpeta 
+    MeteoWatcherV dentro de Documentos, encontrarás dos ficheros con nombres 
+    similares a:</font></p>
+
+    <p align="center">
+    <img border="0" src="Calibrador-2.jpg" width="300" height="46"></p>
+
+    <p><font size="4" color="#FFFFFF">Siendo el que nos interesa el que tiene 
+    extensión &quot;log&quot;. Ábralo con el &quot;Block de notas&quot; o cualquier otro editor 
+    similar.</font></p>
+
+    <p align="center">
+    <img border="0" src="Calibrador-3.jpg" width="679" height="203"></p>
+
+    <p align="left"><font size="4" color="#FFFFFF">Interesan los valores que 
+    aparecen el la línea 8 (<b>Trama</b>), concretamente los valores de <b>X:363</b> e <b>Y:315</b>, 
+    que corresponden a los valores que deberá introducir en el Excel en las 
+    celdas <b>H2</b> y 
+    <b>H4</b> 
+    respectivamente.</font></p>
+
+    <p align="left"><font size="4" color="#FFFFFF">Cada BME280 viene configurado de 
+    fábrica con unos valores específicos de calibración para H2 y H4, por lo que es normal 
+    que los valores que usted obtenga sean distintos a los mostrados en el ejemplo.</font></p>
+
+    <p align="left">&nbsp;</p>
+
+    <p align="left"><u><font size="5" color="#BD9600"><b>Datos de calibración</b></font></u></p>
+
+    <p><font size="4" color="#FFFFFF">Para realizar la calibración deberá 
+    basarse en una estación meteorológica fiable, con mediciones contrastadas, y que esté lo más cercana 
+    posible al observatorio para que sus datos de humedad relativa sean muy similares a 
+    lo que mida el sensor  del Meteo Watcher V. De esta estación 
+    deberá disponer de los valores de HR que ha ido midiendo a lo largo 
+    de un día. Aunque nos interesan los instantes (hora y minuto) de máxima y 
+    mínima humedad, que normalmente deben coincidir con el amanecer y mediodía 
+    solar.</font></p>
+
+    <p><font size="4" color="#FFFFFF">En el fichero de traza (log), encontrará muchas 
+    entradas del tipo:</font></p>
+
+    <p align="center">
+    <img border="0" src="Calibrador-4.jpg" width="1161" height="45"></p>
+
+    <p><font size="4" color="#FFFFFF">Donde figura el día, la hora y en el 
+    parámetro W, el valor <i>raw</i> que  interesa. En el caso del ejemplo el Meteo Watcher proporcionó el 6/ENE/2022 a las 05:23 un valor <i>raw</i> de 
+    HR <b>w:39465</b>.</font></p>
+
+    <p><font size="4" color="#FFFFFF">Deberá buscar en el fichero de traza los 
+    instantes más próximos al máximo y mínimo de humedad relativa que ha 
+    obtenido de la estación meteorológica de calibración. De esta manera 
+    dispondrá de cuatro valores: máxima HR (<b>HR1</b>) y valor <i>raw</i> que mostraba 
+    el Meteo Watcher (<b>Raw1</b>), así como mínima HR (<b>HR2</b>) y&nbsp;el valor <i>raw</i> 
+    que mostraba el Meteo Watcher (<b>Raw2</b>). Esos cuatro valores serán los que 
+    introducirá en las correspondientes celdas de la hoja Excel.</font></p>
+
+    <p><font size="4" color="#FFFFFF">En los campos <b>Param. H2 </b>y <b>Param. H4 
+    </b>obtendrá los valores que utilizará para recalibrar el Meteo Watcher 
+    desde el Programa de Control, en la pestaña de </font>
+    <font size="4" color="#C6C246">Configuración</font><font size="4" color="#FFFFFF">.</font></p>
+
+    <p align="center">
+    <img border="0" src="Calibrador-5.jpg" width="356" height="487"></p>
+
+    <p><font size="4" color="#FFFFFF">Una vez introducidos los datos, deberá 
+    pulsar 
+    el botón </font><font size="4" color="#C6C246">Guardar</font><font size="4" color="#FFFFFF"> 
+    y ya habrá recalibrado el sensor de humedad relativa.</font></p>
+
+    <p><b><font size="4" color="#FFFFFF">En el caso de querer anular la 
+    recalibración, sólo tiene que poner estos dos valores a cero.</font></b></p>
+
+    <p><font size="4" color="#FFFFFF">Se obtendrán mejores resultados cuanto más 
+    alejadas estén las humedades relativas medidas. Soliendo proporcionar buenos 
+    resultados si utiliza una humedad máxima que ronde entre el 92% y el 95% y una menor que esté 
+    cercana al 50% o 60%.</font></p>
+
+    <p><font size="4" color="#FFFFFF">No se trata de un método formal de 
+    recalibración, pero permite obtener unos resultados más 
+    ajustados en los rangos altos de humedad. Se que algunos usuarios 
+    deshabilitan las alertas de humedad y rocío, pero para los que no nos gusta 
+    ver chorreando de agua el telescopio y las cámaras, puede ayudarnos a 
+    trabajar con niveles más reales de humedad.</font></p>
+
+    <p>&nbsp;</p>
+
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+</body>
+</html>

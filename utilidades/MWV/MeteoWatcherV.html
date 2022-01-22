@@ -176,9 +176,8 @@ condiciones climatológicas de cada época.  </font>
 <font size="4" color="#C6C246">En todo caso, Meteo Watcher no es una 
 estación meteorológica y no debe utilizarse como tal.</font></p>
 
-<p><font size="4" color="#FFFFFF">Meteo Watcher V dispone de un nuevo sensor de 
-humedad y temperatura ambiente, más preciso y con un&nbsp; comportamiento más 
-lineal, que le permite controlar de manera más ajustada la humedad 
+<p><font size="4" color="#FFFFFF">Meteo Watcher V dispone de un  sensor de 
+humedad y temperatura ambiente,  que le permite controlar  la humedad 
 relativa y 
 la temperatura ambiente, y por tanto conocer la temperatura de rocío (punto de 
 rocío). Esto permite configurar las alertas para que se cierre el 
@@ -197,7 +196,7 @@ manejo de motores u otro tipo de dispositivos.</font></p>
 
 <p><font size="4" color="#FFFFFF">Meteo Watcher cuenta con un  sensor de 
 lluvia capacitivo de compuesto cerámico mucho más sensible. [Es de color celeste 
-y no lleva ninguna protección superficial que tenga que retirar.]  </font></p>
+o verde y no lleva ninguna protección superficial que tenga que retirar.]  </font></p>
 
 <p><font size="4" color="#FFFFFF">En la reversa de la tapa, bajo el sensor de 
 lluvia, se ha dispuesto de un calefactor. Activándolo podremos prevenir/eliminar la 
@@ -419,11 +418,12 @@ recomendable verificar la configuración tras aplicar una actualización del
     se ha ejecutado o se ha cumplido el periodo de tiempo de </font><b><font size="4" color="#C6C246">
     Reapertura</font></b><font size="4" color="#FFFFFF"> 
     , en rojo en caso de incidencia y por tanto haberse ejecutado el programa, o 
-    en gris en caso de no estar activa dicha opción.</font></p>
+    en gris en caso de no estar activa dicha opción en la pestaña de </font>
+    <font size="4" color="#C6C246">Alertas</font><font size="4" color="#FFFFFF">.</font></p>
     <p><font size="4" color="#FFFFFF">En caso de alerta, primero se ejecutará el programa externo, 
     y una vez finalizado, se activará el relé de cierre. Esto permite, por 
     ejemplo, ejecutar un <i>script</i> VBS (<a href="POTH_Park_Telescope.vbs">POTH_Park_Telescope.vbs</a>) 
-    que se conecta con el telescopio a través de POTH para dar la orden de aparcar el telescopio, y 
+    que se conecta con el telescopio a través de POTH o ASCOM Device Hub para dar la orden de aparcar el telescopio, y 
     posteriormente mediante el relé, iniciar el cierre del observatorio.</font></p>
     <p><font size="4" color="#FFFFFF">En 
     el campo </font><b><font size="4" color="#C6C246">Reapertura</font></b><font size="4" color="#FFFFFF"> 
@@ -491,7 +491,7 @@ recomendable verificar la configuración tras aplicar una actualización del
     botón </font><b><font size="4" color="#C6C246">Gráfica</font></b><font size="4" color="#FFFFFF">, 
     que nos permitirá visualizar con total comodidad la evolución de todos las 
     variables monitorizadas por el Meteo Watcher a lo largo de hasta las 
-    últimas 48 horas. Al pulsarlo se abrirá una nueva ventana como ésta:</font></p>
+    48 últimas horas. Al pulsarlo se abrirá una nueva ventana como ésta:</font></p>
     <p align="center">
     <img border="0" src="MWV-12.jpg" width="818" height="336"></p>
     <p><font size="4" color="#FFFFFF">En el caso de que la ventana permanezca abierta, ésta se actualizará automáticamente cada 5 minutos. 
@@ -530,6 +530,29 @@ recomendable verificar la configuración tras aplicar una actualización del
     <p><font size="4" color="#FFFFFF">Los datos visualizados son los mismos que 
     se almacenan en formato CSV, por lo que para estudios más profundos y 
     detallados recomiendo utilizar directamente una hoja de cálculo.</font></p>
+    <p><font size="4" color="#FFFFFF">En el ejemplo de la imagen se observan 
+    cinco franjas en rojo donde el relé ha estado o está activado. </font></p>
+    <p><font size="4" color="#FFFFFF">En la primera se ha activado el relé al 
+    paso de una nube, por lo que la temperatura del cielo ha subido. Tras pasar 
+    la nube, el relé ha permanecido activado durante 15 minutos, que era el 
+    tiempo prefijado para rearme.</font></p>
+    <p><font size="4" color="#FFFFFF">En la segunda, el frente de nubes ha sido 
+    mayor y ha subido incluso más la temperatura del cielo. Tras pasar las nubes 
+    y esperar los 15 minutos, el relé se ha vuelto a desactivar.</font></p>
+    <p><font size="4" color="#FFFFFF">La tercera franja roja se ha debido a la 
+    subida del viento, habiendo superado el límite fijado para activar el relé.&nbsp; 
+    A los 15 minutos, el relé se ha desactivado.</font></p>
+    <p><font size="4" color="#FFFFFF">La cuarta franja se debe al paso de varias 
+    nubes en periodos de tiempo inferiores a los 15 minutos. Tras pasar éstas, y 
+    una vez transcurridos los 15 minutos prefijados, el relé se ha vuelto a 
+    desactivar.</font></p>
+    <p><font size="4" color="#FFFFFF">Finalmente. al amanecer, el nivel de luz 
+    ha superado el umbral prefijado y se ha vuelto a activar el relé de cierre 
+    del observatorio.</font></p>
+    <p><font size="4" color="#FFFFFF">También puede apreciarse que a lo largo de 
+    toda la noche ha estado trabajando el calentador de manera automática, 
+    fluctuando en base a la humedad relativa, hasta que ha amanecido y se ha 
+    desactivado definitivamente.</font></p>
     </td>
   </tr>
 </table>
@@ -759,7 +782,7 @@ recomendable verificar la configuración tras aplicar una actualización del
   </tr>
   <tr>
     <td width="100%"><font size="4" color="#FFFFFF">Recuerde que la 
-    configuración reside en el dispositivo Meteo Watcher, por lo que cada 
+    configuración se almacena en el dispositivo Meteo Watcher, por lo que cada 
     vez que se solicitan los parámetros de configuración desde el programa de 
     control, éstos se debe solicitar 
      
@@ -810,6 +833,12 @@ recomendable verificar la configuración tras aplicar una actualización del
         valor, se entiende que el cielo  pasa a estar 
         nublado. </font>
     </p>
+    <p><b><font size="4" color="#C6C246">Calibración higrómetro:</font></b><font size="4" color="#FFFFFF"> 
+    Estos parámetros permiten ajustar las dos principales valores (H2 y H4) de 
+    la función que utiliza el dispositivo para calcular la humedad relativa (HR). 
+    Si su valor es cero se utilizan los valores definidos por el fabricante. 
+    Para más información sobre esta calibración <a href="Higrometro.html">en 
+    esta página encontrarás más información</a>.</font></p>
     <p><font size="4" color="#C6C246"><b>Calibración barómetro: </b></font>
     <font size="4" color="#FFFFFF">Este parámetro permite indicar la altitud a 
     la que se encuentra situado el observatorio, posibilitando que tengamos mediciones 
@@ -965,12 +994,12 @@ recomendable verificar la configuración tras aplicar una actualización del
     <p><b><font size="4" color="#BD9600">Algunas consideraciones sobre el uso 
     del calentador.</font></b></p>
     <p><font size="4" color="#FFFFFF">Es posible que bajo condiciones de humedad 
-    extrema se puedan obtener falsas lecturas de lluvia, al depositarse gran 
+    extrema y, más con fuerte viento, se puedan obtener falsas lecturas de lluvia, al depositarse gran 
     cantidad de agua sobre el sensor de lluvia. Incluso si la temperatura es muy 
     baja este agua puede llegar a convertirse en escarcha o hielo.</font></p>
     <p><font size="4" color="#FFFFFF">Meteo Watcher incorpora un calefactor 
-    que actúa sobre el sensor de lluvia, ayudando a evaporar el agua que pudiera haberse 
-    depositado sobre él. Si el % de la potencia empleada es muy elevada, el 
+    que actúa sobre el sensor de lluvia, ayudando a eliminar el agua que pudiera haberse 
+    depositado sobre él o evitar que ésta se deposite. Si el % de la potencia empleada es muy elevada, el 
     calor generado por el calefactor puede provocar una alteración en las 
     medidas de temperatura, humedad relativa y por tanto sobre el dato del punto 
     de rocío. El efecto provocado por el calefactor puede generar medidas 
@@ -1271,21 +1300,23 @@ recomendable verificar la configuración tras aplicar una actualización del
     <td width="18%">
     <font size="4" color="#C6C246"><b>Programa de Control</b></font></td>
     <td width="82%">
-    &nbsp;<font size="4" color="#FFFFFF">5.1.8 -
-    <a href="MeteoWatcherV-v5.1.8.zip">MeteoWatcherV-v5.1.8.zip</a></font></td>
+    &nbsp;<font size="4" color="#FFFFFF">5.2.0&nbsp;&nbsp; -
+    <a href="MeteoWatcherV-v5.2.0.zip">MeteoWatcherV-v5.2.0.zip</a> 
+    [Indispensable Firmware 5.10.0]</font></td>
   </tr>
   <tr>
     <td width="18%">
     <font size="4" color="#C6C246"><b>Cliente remoto</b></font></td>
     <td width="82%">
-    &nbsp;<font size="4" color="#FFFFFF">5.1.0 -
+    &nbsp;<font size="4" color="#FFFFFF">5.1.0&nbsp;&nbsp; -
     <a href="MeteoWatcherV-Cliente-v5.1.0.zip">MeteoWatcherV-Cliente-v5.1.0.zip</a></font></td>
   </tr>
   <tr>
     <td width="18%">
     <i>
     <font size="4" color="#C6C246"><b>Firmware</b></font></i></td>
-    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">5.0.9 -&nbsp;<a href="FW-MWV-v5.0.9-HWR8.zip">FW-MWV-v5.0.9-HWR8.zip</a></font></td>
+    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">5.10.0 -&nbsp;<a href="FW-MWV-v5.10.0-HWR8.zip">FW-MWV-v5.10.0-HWR8.zip</a> 
+    [Indispensable Programa de Control 5.2.0]</font></td>
   </tr>
 </table>
 <p>&nbsp;</p>
@@ -1307,15 +1338,14 @@ recomendable verificar la configuración tras aplicar una actualización del
 
 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
   <tr>
-    <td width="100%"><u><font size="5" color="#BD9600"><b>Coste del dispositivo 
-    y e-Mail de contacto</b></font></u><p>&nbsp;</td>
+    <td width="100%"><u><font size="5" color="#BD9600"><b>Contacto</b></font></u><p>&nbsp;</td>
   </tr>
   <tr>
     <td width="100%"><p>
     <font size="4" color="#FFFFFF">Meteo Watcher V <u><b>no es un producto comercial</b></u> 
     y por lo tanto se proporciona sin ningún tipo de garantía. No va sellado ni 
     incorpora mecanismos que impidan al propietario su manipulación. Lo diseñé 
-    para utilizarlo en mi observatorio. Sólo el desarrollo software ha supuesto cientos de 
+    para utilizarlo, y lo utilizo, en mi observatorio. Sólo el desarrollo software ha supuesto cientos de 
     horas de trabajo. Sigo trabajando en su evolución, 
     siendo ésta la quinta generación.</font><p>
     <font size="4" color="#FFFFFF">Si necesitas alguna aclaración, sugerencia o 

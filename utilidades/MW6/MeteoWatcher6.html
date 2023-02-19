@@ -39,31 +39,31 @@
     prestaciones, con menor consumo y mayor durabilidad.  </font></p>
     <p><font size="4" color="#FFFFFF">Esta nueva versión del Meteo Watcher hace 
     uso de nuevos sensores, que le permiten mejorar la precisión y fiabilidad en 
-    algunos de los parámetros monitorizados. </font></p>
-    <p><font size="4" color="#FFFFFF">En el Meteo Watcher 6 se ha prescindido 
-    del sensor de lluvia debido a la nula relevancia del mismo. Siempre, antes 
-    de llover, se habrá cerrado el observatorio debido a la presencia de nubes. 
-    Al igual que se ha preferido optar por un sensor de humedad con mayor 
-    resistencia a la intemperie, prescindiendo del sensor de presión 
-    atmosférica, que nada aportaba a la seguridad del observatorio.</font></p>
-    <p><font size="4" color="#FFFFFF">La eliminación del sensor de lluvia y el 
-    calefactor  ha permitido reducir drásticamente el consumo, 
-    facilitando que el dispositivo puede alimentarse directamente por el puerto USB, sin necesidad de utilizar ninguna fuente 
-    de alimentación externa.</font></p>
-    <p><font size="4" color="#FFFFFF">Meteo Watcher 6 sigue siendo el único 
-    dispositivo de este tipo que opera de manera autónoma para mantener seguro el observatorio, 
-    sin tener que depender de ningún ordenador, sistema empotrado o controlador 
-    adicional. Analiza&nbsp; los parámetros meteorológicos 
-    conforme a la configuración que se le haya establecido y decide, por sí 
-    sólo, si las condiciones son seguras como para que el observatorio pueda 
-    permanecer abierto. </font>
-    </p>
-    <p><font size="4" color="#FFFFFF">Dispone de sensores que le permiten 
-    monitorizar los  parámetros meteorológicos más relevantes desde el 
+    algunos de los parámetros monitorizados, 
+    monitorizando  parámetros meteorológicos  relevantes desde el 
     punto de vista de la seguridad en un observatorio astronómico: Nubosidad, 
     Temperatura Ambiente, Humedad Relativa,&nbsp;Punto de Rocío, Luminosidad y Viento.</font></p>
+    <p><font size="4" color="#FFFFFF">En el Meteo Watcher 6 se ha prescindido 
+    del sensor de lluvia debido a la nula relevancia del mismo. Siempre, antes 
+    de llover y con toda seguridad, se habrá cerrado el observatorio debido a la presencia de nubes. 
+    Al igual que se ha preferido optar por un sensor de humedad con mayor 
+    resistencia a la intemperie, prescindiendo del sensor de presión 
+    atmosférica, que nada aportaba a la seguridad de un observatorio astronómico.</font></p>
+    <p><font size="4" color="#FFFFFF">La eliminación del sensor de lluvia y el 
+    calefactor  ha permitido reducir drásticamente el consumo, 
+    facilitando que el dispositivo puede alimentarse directamente a través del puerto USB, sin necesidad de utilizar ninguna fuente 
+    de alimentación externa.</font></p>
+    <p><font size="4" color="#FFFFFF">Meteo Watcher 6 sigue siendo el único 
+    dispositivo de este tipo con capacidad para operar de manera autónoma, 
+    garantizando la seguridad del observatorio 
+    sin tener que depender de ningún ordenador, sistema empotrado o controlador 
+    adicional. Analiza&nbsp; los parámetros meteorológicos conforme a la 
+    configuración que se le haya establecido y decide, por sí sólo, si las 
+    condiciones son seguras como para que el observatorio pueda permanecer 
+    abierto.&nbsp; </font>
+    </p>
     <p><font size="4" color="#FFFFFF">Todos los cambios descritos hacen que esta 
-    nueva versión sea mucho más simple de configurar y parametrizar, presentando 
+    nueva versión sea mucho más simple de configurar, presentando 
     una curva de aprendizaje en el uso del dispositivo mucho más breve.</font></p>
     <p>&nbsp;</p>
     <p align="center"><b><font color="#FF0000" size="6">
@@ -156,12 +156,26 @@ parámetros y tomar decisiones.</font></p>
 
 <p><font size="4" color="#FFFFFF">El  Programa de Control permite al usuario 
 monitorizar en tiempo real los valores meteorológicos y 
-configurar el comportamiento del dispositivo. Además, 
-proporciona un medio de interconexión (fichero Meteowatcher6.dat) compatible con el modo Boltwood/Clarity II 
-Remote, por lo que le permite interactuar con la mayoría de los programas destinados 
-a la automatización de observatorios, como puede ser CCD Commander o CCD Auto Pilot, 
+configurar el comportamiento del dispositivo.  </font></p>
+
+<p><font size="4" color="#FFFFFF">Meteo watcher 
+proporciona un medio de interconexión con tros programas a través del fichero 
+</font><b><font size="4" color="#C6C246">Meteowatcher6.dat</font></b><font size="4" color="#FFFFFF">, compatible con el modo
+</font><b><font size="4" color="#C6C246">Boltwood/Clarity II 
+Remote</font></b><font size="4" color="#FFFFFF">,  que le permite interactuar con la mayoría 
+del software destinado a la automatización de observatorios, como pueden ser CCD Commander o CCD Auto Pilot, 
 además de ser compatible con <a href="Boltwood.SafetyMonitorSetup.exe">ASCOM Boltwood Safety 
 Monitor</a>.</font></p>
+
+<p><font size="4" color="#FFFFFF">También es compatible con
+<a href="http://www.dehilster.info/astronomy/ascom_generic_file_safetymonitor.php">
+ASCOM Generic File SafetyMonitor Driver</a> mediante la creación del fichero
+</font><b><font size="4" color="#C6C246">Meteowatcher6.safe</font></b><font size="4" color="#FFFFFF"> 
+en la carpeta </font><b><font size="4" color="#C6C246">MeteoWatcher6</font></b><font size="4" color="#FFFFFF"> 
+dentro de </font><font size="4" color="#C6C246"><b>Documentos</b></font><font size="4" color="#FFFFFF"> 
+del usuario de Windows. De tal manera que si las condiciones son seguras para 
+abrir el observatorio se crea dicho fichero. Eliminándose en el momento que 
+dejan de serlo.</font></p>
 
 <p><font size="4" color="#FFFFFF">La telemetría proporcionada en la 
 ventana principal del Programa de Control y en el Registro de Intercambio de Información con otros 

@@ -28,7 +28,7 @@
   <tr>
     <td width="100%"><b><font color="#C6C246" size="4">Meteo </font></b>
     <font color="#C6C246" size="4"><b>Watcher 6 </b></font><font color="#FFFFFF" size="4">
-    es un monitor y analizador de condiciones meteorológicas esenciales para la 
+    es un monitor/analizador de condiciones meteorológicas esenciales para la 
     operativa de observatorios astronómicos.</font><p><font color="#FFFFFF" size="4">
     Ha sido diseñado 
     para controlar la seguridad del observatorio, ya sea 
@@ -37,26 +37,35 @@
      
     está facilitando la utilización de nuevos sensores, más precisos, con mayores 
     prestaciones, con menor consumo y mayor durabilidad.  </font></p>
-    <p><font size="4" color="#FFFFFF">Esta nueva versión del Meteo Watcher hace uso de nuevos sensores, que le permiten mejorar la 
-    precisión y fiabilidad en algunos de los parámetros monitorizados. Al mismo 
-    tiempo se prescinde del sensor de lluvia debido a la nula relevancia del 
-    mismo pues siempre, antes de llover, se habrá 
-    cerrado el observatorio debido a la presencia de nubes.</font></p>
+    <p><font size="4" color="#FFFFFF">Esta nueva versión del Meteo Watcher hace 
+    uso de nuevos sensores, que le permiten mejorar la precisión y fiabilidad en 
+    algunos de los parámetros monitorizados. </font></p>
+    <p><font size="4" color="#FFFFFF">En el Meteo Watcher 6 se ha prescindido 
+    del sensor de lluvia debido a la nula relevancia del mismo. Siempre, antes 
+    de llover, se habrá cerrado el observatorio debido a la presencia de nubes. 
+    Al igual que se ha preferido optar por un sensor de humedad con mayor 
+    resistencia a la intemperie, prescindiendo del sensor de presión 
+    atmosférica, que nada aportaba a la seguridad del observatorio.</font></p>
     <p><font size="4" color="#FFFFFF">La eliminación del sensor de lluvia y el 
-    calefactor ,que incorporaban versiones previas, han permitido reducir drásticamente el consumo, 
-    facilitando que el dispositivo puede alimentarse directamente desde el puerto USB, sin necesidad de utilizar ninguna fuente 
+    calefactor  ha permitido reducir drásticamente el consumo, 
+    facilitando que el dispositivo puede alimentarse directamente por el puerto USB, sin necesidad de utilizar ninguna fuente 
     de alimentación externa.</font></p>
-    <p><font size="4" color="#FFFFFF">La plataforma sobre la que se ha diseñado le permite seguir siendo el único dispositivo 
-    existente de este 
-    tipo que opera de manera autónoma, sin tener que depender de ningún 
-    ordenador o controlador para mantener seguro el observatorio, analizando los parámetros meteorológicos 
-    conforme a la configuración que se haya establecido y decidiendo, por sí 
-    sólo, si puede permanecer abierto o no el observatorio. </font>
+    <p><font size="4" color="#FFFFFF">Meteo Watcher 6 sigue siendo el único 
+    dispositivo de este tipo que opera de manera autónoma para mantener seguro el observatorio, 
+    sin tener que depender de ningún ordenador, sistema empotrado o controlador 
+    adicional. Analiza&nbsp; los parámetros meteorológicos 
+    conforme a la configuración que se le haya establecido y decide, por sí 
+    sólo, si las condiciones son seguras como para que el observatorio pueda 
+    permanecer abierto. </font>
     </p>
     <p><font size="4" color="#FFFFFF">Dispone de sensores que le permiten 
     monitorizar los  parámetros meteorológicos más relevantes desde el 
     punto de vista de la seguridad en un observatorio astronómico: Nubosidad, 
     Temperatura Ambiente, Humedad Relativa,&nbsp;Punto de Rocío, Luminosidad y Viento.</font></p>
+    <p><font size="4" color="#FFFFFF">Todos los cambios descritos hacen que esta 
+    nueva versión sea mucho más simple de configurar y parametrizar, presentando 
+    una curva de aprendizaje en el uso del dispositivo mucho más breve.</font></p>
+    <p>&nbsp;</p>
     <p align="center"><b><font color="#FF0000" size="6">
     Meteo 
     Watcher 6 no debe  asimilarse ni utilizarse como una estación 
@@ -141,18 +150,18 @@ de 5 mts). La alimentación se realiza a través de la propia conexión USB.</fo
 <p><font size="4" color="#FFFFFF">Meteo Watcher puede funcionar y gestionar la 
 seguridad del observatorio sin necesidad de un ordenador. Una vez configurado, 
 éste trabaja de manera autónoma, analizando las medidas medioambientales y 
-decidiendo si debe seguir o no abierto el observatorio en base a la configuración establecida. Desde el momento que lo enciendes comienza a analizar 
+decidiendo si debe seguir o no abierto el observatorio en base a la configuración establecida. Desde el momento que 
+se enciende comienza a analizar 
 parámetros y tomar decisiones.</font></p>
 
 <p><font size="4" color="#FFFFFF">El  Programa de Control permite al usuario 
 monitorizar en tiempo real los valores meteorológicos y 
 configurar el comportamiento del dispositivo. Además, 
-proporciona un medio de interconexión compatible con el modo Boltwood/Clarity II 
+proporciona un medio de interconexión (fichero Meteowatcher6.dat) compatible con el modo Boltwood/Clarity II 
 Remote, por lo que le permite interactuar con la mayoría de los programas destinados 
 a la automatización de observatorios, como puede ser CCD Commander o CCD Auto Pilot, 
-además de ser compatible con
-<a href="http://ascom-standards.org/Downloads/SafetyMonitorDrivers.htm">ASCOM Safety Monitor 
-(Boltwood Safety Monitor)</a>.</font></p>
+además de ser compatible con <a href="Boltwood.SafetyMonitorSetup.exe">ASCOM Boltwood Safety 
+Monitor</a>.</font></p>
 
 <p><font size="4" color="#FFFFFF">La telemetría proporcionada en la 
 ventana principal del Programa de Control y en el Registro de Intercambio de Información con otros 
@@ -193,8 +202,9 @@ donde se ejecuta.</font></p>
 últimas versiones de Windows lo reconocen sin problema, pero si lo necesita,
 <a href="ch341ser.zip">aquí</a> tiene el <i>driver</i> para descargarlo e instalarlo.</font></p>
 
-<p><font size="4" color="#FFFFFF">Es posible actualizar el <i>firmware</i> del procesador que incorpora. Para 
-ello utilizaremos el programa <a href="XLoader.zip">XLoader</a>. Basta con 
+<p><font size="4" color="#FFFFFF">Es posible actualizar el <i>firmware</i> del procesador que incorpora 
+desde el propio ordenador donde se ejecuta el Programa de Control. Para 
+ello se utilizará el programa <a href="XLoader.zip">XLoader</a>. Basta con 
 descomprimir y ejecutar:</font></p>
 
 <p align="center"><img border="0" src="MW6-8.jpg" width="210" height="215"></p>
@@ -248,8 +258,11 @@ recomendable verificar la configuración tras aplicar una actualización del
     <font size="4" color="#FFFFFF">Dado que el dispositivo opera de manera 
     autónoma, sin necesidad de estar conectado a ningún ordenador, no necesita 
     medidas de verificación de presencia de segundos dispositivos.</font><p>
+    <font size="4" color="#FFFFFF">Si se desea garantizar la alimentación por el 
+    puerto USB de manera independiente al ordenador, deberemos conectarlo a un 
+    Hub USB autoalimentado.</font><p>
     <font size="4" color="#FFFFFF">Desde el momento que se proporcione 
-    alimentación al Meteo Watcher 6 y si lo hemos configurado en Modo 
+    alimentación al Meteo Watcher 6 y si está configurado en Modo 
     Automático, comenzará a realizar las medidas de los parámetros 
     meteorológicos y a adoptar decisiones sobre la seguridad de nuestro 
     observatorio.</font></td>
@@ -896,8 +909,8 @@ recomendable verificar la configuración tras aplicar una actualización del
     Siendo el punto el separador de decimales, independientemente de la 
     configuración regional.</font></p>
     <p><b><font face="Letter Gothic Std" color="#C6C246">2023-02-11 09:22:48.00 
-    C K -3.1 0.3 -2.5 4.2 81 -2.6 0 0 0 00030 044968.39083 3 1 1 3 1 1</font></b></p>
-    <table border="1" cellspacing="1" width="60%" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+    C K -3.1 0.3 -2.5 4.2 81 -2.6 0 0 0 00030 044968.39083 3 1 0 3 1 1</font></b></p>
+    <table border="1" cellspacing="1" width="71%" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
       <tr>
         <td width="7%"><b><font size="4" color="#C6C246">Campo</font></b></td>
         <td width="7%"><b><font size="4" color="#C6C246">Posición</font></b></td>
@@ -977,7 +990,7 @@ recomendable verificar la configuración tras aplicar una actualización del
         <td width="7%"><font size="4" color="#FFFFFF">Since</font></td>
         <td width="7%"><font size="4" color="#FFFFFF">75-79</font></td>
         <td width="86%"><font size="4" color="#FFFFFF">Segundos transcurridos 
-        desde la última actualización (60)</font></td>
+        desde la última actualización (30)</font></td>
       </tr>
       <tr>
         <td width="7%"><font size="4" color="#FFFFFF">Now</font></td>
@@ -989,7 +1002,7 @@ recomendable verificar la configuración tras aplicar una actualización del
         <td width="7%"><font size="4" color="#FFFFFF">c</font></td>
         <td width="7%"><font size="4" color="#FFFFFF">94</font></td>
         <td width="86%"><font size="4" color="#FFFFFF">Condiciones de nubosidad. 
-        1:Despejado, 2:Nuboso, 3:Muy nuboso</font></td>
+        0: Desconocido 1:Despejado, 2:Nuboso, 3:Muy nuboso</font></td>
       </tr>
       <tr>
         <td width="7%"><font size="4" color="#FFFFFF">w</font></td>
@@ -1001,13 +1014,13 @@ recomendable verificar la configuración tras aplicar una actualización del
         <td width="7%"><font size="4" color="#FFFFFF">r</font></td>
         <td width="7%"><font size="4" color="#FFFFFF">98</font></td>
         <td width="86%"><font size="4" color="#FFFFFF">Condiciones de lluvia. 
-        (N/A)</font></td>
+        (N/A) 0: Desconocido 1:Seco, 2:Humedad alta, 3:Lluvia</font></td>
       </tr>
       <tr>
         <td width="7%"><font size="4" color="#FFFFFF">d</font></td>
         <td width="7%"><font size="4" color="#FFFFFF">100</font></td>
         <td width="86%"><font size="4" color="#FFFFFF">Condiciones de 
-        luminosidad. 1:Oscuro, 2:Claro, 3:Muy claro</font></td>
+        luminosidad. 0: Desconocido 1:Oscuro, 2:Claro, 3:Muy claro</font></td>
       </tr>
       <tr>
         <td width="7%"><font size="4" color="#FFFFFF">C</font></td>
@@ -1142,7 +1155,7 @@ recomendable verificar la configuración tras aplicar una actualización del
     incorpora mecanismos que impidan al propietario su manipulación. Lo diseñé 
     para utilizarlo, y lo utilizo, en mi observatorio. Sólo el desarrollo software ha supuesto cientos de 
     horas de trabajo. Sigo trabajando en su evolución, 
-    siendo ésta la quinta generación.</font><p>
+    siendo ésta la sexta generación.</font><p>
     <font size="4" color="#FFFFFF">Si necesitas alguna aclaración, sugerencia o 
     si tienes interés por un Meteo Watcher 6, puedes contactar conmigo 
     en:</font><blockquote>

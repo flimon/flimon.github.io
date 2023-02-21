@@ -33,14 +33,13 @@
     Ha sido diseñado 
     para controlar la seguridad del observatorio, ya sea 
     gestionado de manera presencial o remota.  </font></p>
-    <p><font size="4" color="#FFFFFF">La irrupción del Internet de las Cosas (IoT) 
+    <p><font size="4" color="#FFFFFF">La implantación del Internet de las Cosas (IoT) 
      
     está facilitando la utilización de nuevos sensores, más precisos, con mayores 
     prestaciones, con menor consumo y mayor durabilidad.  </font></p>
     <p><font size="4" color="#FFFFFF">Esta nueva versión del Meteo Watcher hace 
     uso de nuevos sensores, que le permiten mejorar la precisión y fiabilidad en 
-    algunos de los parámetros monitorizados, 
-    monitorizando  parámetros meteorológicos  relevantes desde el 
+    algunos de los parámetros monitorizados. Parámetros meteorológicos  relevantes desde el 
     punto de vista de la seguridad en un observatorio astronómico: Nubosidad, 
     Temperatura Ambiente, Humedad Relativa,&nbsp;Punto de Rocío, Luminosidad y Viento.</font></p>
     <p><font size="4" color="#FFFFFF">En el Meteo Watcher 6 se ha prescindido 
@@ -50,20 +49,18 @@
     resistencia a la intemperie, prescindiendo del sensor de presión 
     atmosférica, que nada aportaba a la seguridad de un observatorio astronómico.</font></p>
     <p><font size="4" color="#FFFFFF">La eliminación del sensor de lluvia y el 
-    calefactor  ha permitido reducir drásticamente el consumo, 
+    calefactor ha permitido reducir drásticamente el consumo, 
     facilitando que el dispositivo puede alimentarse directamente a través del puerto USB, sin necesidad de utilizar ninguna fuente 
     de alimentación externa.</font></p>
     <p><font size="4" color="#FFFFFF">Meteo Watcher 6 sigue siendo el único 
     dispositivo de este tipo con capacidad para operar de manera autónoma, 
-    garantizando la seguridad del observatorio 
-    sin tener que depender de ningún ordenador, sistema empotrado o controlador 
-    adicional. Analiza&nbsp; los parámetros meteorológicos conforme a la 
-    configuración que se le haya establecido y decide, por sí sólo, si las 
-    condiciones son seguras como para que el observatorio pueda permanecer 
-    abierto.&nbsp; </font>
-    </p>
+    garantizando la seguridad del observatorio sin tener que depender de ningún 
+    ordenador, sistema empotrado o controlador adicional. Analiza&nbsp; los 
+    parámetros meteorológicos conforme a la configuración que se le haya 
+    establecido y decide, por sí sólo, si las condiciones son seguras como para 
+    que el observatorio pueda permanecer abierto.</font></p>
     <p><font size="4" color="#FFFFFF">Todos los cambios descritos hacen que esta 
-    nueva versión sea mucho más simple de configurar, presentando 
+    nueva versión sea mucho más simple de configurar, implicando 
     una curva de aprendizaje en el uso del dispositivo mucho más breve.</font></p>
     <p>&nbsp;</p>
     <p align="center"><b><font color="#FF0000" size="6">
@@ -130,17 +127,14 @@
 <p>&nbsp;</p>
 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
   <tr>
-    <td width="100%"><font size="4" color="#FFFFFF">Meteo Watcher 6 se monta en 
-    una caja PVC 
-    de 102mm X 102mm X 56mm y  grado de protección IP66.</font><p align="center">
-    <img border="0" src="MW6-5.jpg" width="429" height="722"></p>
+    <td width="100%">
     <p><font size="4" color="#FFFFFF">En su diseño se ha buscado practicidad y 
 operatividad, proporcionando información en tiempo real de manera 
     gráfica o procesable con posterioridad mediante un fichero CSV.</font></p>
 
-    <p><font size="4" color="#FFFFFF">Dispone de una salida  (par de hilos) que permite actuar sobre otros dispositivos y/o 
-    sensores, como puede ser el Talon6 o similares, en el caso de que 
-las condiciones meteorológicas en la ubicación del observatorio no sean seguras.</font></p>
+    <p><font size="4" color="#FFFFFF">Dispone de una salida  (par de hilos) que 
+    le permite actuar de manera autónoma sobre otros dispositivos y/o 
+    sensores, como puede ser el Talon6 o equivalentes.</font></p>
 
 <p><font size="4" color="#FFFFFF">Las comunicaciones entre el  Meteo Watcher 
 y el ordenador del observatorio se  realizan a través del Programa de Control mediante conexión USB 2.0 (se proporciona 
@@ -193,7 +187,7 @@ programado para que la interpretación del separador de decimales, ya sea coma o
 punto, no sea un problema y se adapte a la configuración regional del sistema 
 donde se ejecuta.</font></p>
 
-<p><font size="4" color="#FFFFFF">El interfaz USB 2.0 utiliza el chipset CH341. Las 
+<p><font size="4" color="#FFFFFF">El interfaz USB 2.0 utiliza el <i>chipset</i> CH341. Las 
 últimas versiones de Windows lo reconocen sin problema, pero si lo necesita,
 <a href="ch341ser.zip">aquí</a> tiene el <i>driver</i> para descargarlo e instalarlo.</font></p>
 
@@ -205,9 +199,9 @@ descomprimir y ejecutar:</font></p>
 <p align="center"><img border="0" src="MW6-8.jpg" width="210" height="215"></p>
 
 <p align="justify"><font size="4" color="#FFFFFF">Será necesario indicar que se trata de un Arduino Nano (como se muestra en la 
-imagen) y seleccionar el puerto. La 
-velocidad la fija el programa. Seleccionaremos el fichero con la última versión 
-del <i>firmware</i> que queremos instalar y pulsaremos </font>
+imagen) y seleccionar el puerto que le ha asignado Windows. La 
+velocidad de comunicación la fija el programa. Se seleccionará el fichero con la última versión 
+del <i>firmware</i> que se desee instalar y se pulsarça </font>
 <font size="4" color="#C6C246"><b>Upload</b></font><font size="4" color="#FFFFFF">. 
 Mientras se realiza la reprogramación no se deben interrumpir las comunicaciones 
 ni apagar el Meteo Watcher.</font></p>
@@ -235,7 +229,7 @@ recomendable verificar la configuración tras aplicar una actualización del
     <p><font size="4" color="#FFFFFF">El anemómetro se conecta al Meteo Watcher 
     a través de un conector estanco, que se proporciona junto con la opción del 
     anemómetro. El dispositivo ya incluye en la caja del Meteo Watcher el conector  donde 
-    enchufar el anemómetro, como puede verse en las fotos.</font></p>
+    enchufar el anemómetro, como puede verse en la foto.</font></p>
 
     </td>
   </tr>
@@ -269,10 +263,11 @@ abrir el observatorio se crea dicho fichero. Eliminándose en el momento que
 dejan de serlo.</font></p>
 
 <p><font size="4" color="#FFFFFF">Meteo Watcher 6 también dispone de un </font>
-<b><font size="4" color="#C6C246"><a href="ASCOM%20MeteoWatcher%20Setup.exe">
-Driver Safety Monitor</a></font></b><font size="4" color="#FFFFFF"> propio, 
-utilizando el estándar </font><b><font size="4" color="#C6C246">ASCOM Alpaca</font></b><font size="4" color="#FFFFFF">, 
-lo que le facilita acceder por Ethernet a través de protocolo TCP/IP. Este <i>
+<font size="4" color="#C6C246"><a href="ASCOM%20MeteoWatcher%20Setup.exe">
+Driver Safety Monitor</a></font><font size="4" color="#FFFFFF"> propio, 
+utilizando el estándar </font><b><font size="4" color="#C6C246">ASCOM</font></b><font size="4" color="#FFFFFF">, 
+aunque en este caso se accedo al Meteo Watcher por Ethernet mediante protocolo 
+HTTP. Este <i>
 driver</i> permite conocer si las condiciones climatológicas son seguras para 
 abrir el observatorio, conforme a los parámetros que se hayan configurado desde 
 el Programa de Control. Para ello es necesario activar el Acceso Remoto y 
@@ -357,9 +352,9 @@ ejecutando.</font></p>
     través de cable UTP.</font><p align="left">
     <font size="4" color="#FFFFFF">Meteo Watcher, como todo dispositivo 
     instalado en el exterior, sufre las inclemencias meteorológicas y 
-    ambientales, por lo que deberá ser objeto de cuidado y mantenimiento. El sensor de nubes pueden presentar acumulación de 
-    suciedad, por lo que es aconsejable limpiarlo, con mucho cuidado y 
-    suavemente, con alcohol y un bastoncillo. La falta de limpieza puede 
+    ambientales, por lo que deberá ser objeto de cuidado y mantenimiento. El 
+    sensor de nubes pueden presentar acumulación de suciedad, por lo que es 
+    aconsejable limpiarlo, con mucho cuidado y suavemente, con agua jabonosa y un bastoncillo. La falta de limpieza puede 
     producir lecturas erróneas en este sensor.</font></td>
   </tr>
 </table>
@@ -898,16 +893,16 @@ ejecutando.</font></p>
   </tr>
   <tr>
     <td width="100%">
-    <p><font color="#FFFFFF" size="4">Es posible configurar el Programa de 
-    Control del Meteo Watcher para que nos envíe un mail cada vez que se 
-    active el relé de seguridad.</font></p>
+    <p><font color="#FFFFFF" size="4">En la ventana de Alertas es posible configurar el Programa de 
+    Control del Meteo Watcher para que  envíe un mail cada vez que se 
+    active el relé de cierre del observatorio.</font></p>
     <p><font size="4" color="#FFFFFF">Una vez configurados los parámetros de 
     configuración de nuestro servidor de correo electrónico, deberemos pulsar el 
     botón </font>
     <b><font size="4" color="#C6C246">Guardar</font></b><font size="4" color="#FFFFFF"> 
     para almacenar nuestra configuración.</font></p>
-    <p><font size="4" color="#FFFFFF">Pulsando el botón </font><b>
-    <font size="4" color="#C6C246">Envía prueba</font></b><font size="4" color="#FFFFFF"> 
+    <p><font size="4" color="#FFFFFF">Pulsando el botón </font>
+    <font size="4" color="#C6C246"><b>P</b></font><b><font size="4" color="#C6C246">rueba</font></b><font size="4" color="#FFFFFF"> 
     podremos verificar que todo está bien configurado, debiéndonos llegar un mail 
     de prueba.</font></p>
     </td>

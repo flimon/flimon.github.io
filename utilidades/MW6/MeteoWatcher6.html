@@ -394,8 +394,8 @@ validación de ASCOM</a>.</font></p>
     condiciones meteorológicas que el Meteo Watcher monitoriza.</font></p>
     <p><font size="4" color="#FFFFFF">En el caso de que el Programa de Control 
     detecte problemas en las comunicaciones, aparecerá un mensaje similar al 
-    anterior indicando </font><font size="4" color="#C6C246"><b>Reiniciando 
-    Comunicación, </b></font><font size="4" color="#FFFFFF">poniéndose el icono 
+    anterior indicando </font><font size="4" color="#C6C246"><b>Restarting 
+    Communication, </b></font><font size="4" color="#FFFFFF">poniéndose el icono 
     de la barra de tareas (System Tray) con la marca roja. </font></p>
     <p align="center">
     <img border="0" src="MW6-1-2.jpg" width="371" height="122"></p>
@@ -410,7 +410,7 @@ validación de ASCOM</a>.</font></p>
     fecha y hora en la que se realizó la última actualización de datos.</font></p>
     <p><font size="4" color="#FFFFFF">En la zona superior izquierda se muestra el estado de
     </font>
-    <font size="4" color="#C6C246"><b>Relé de apertura</b></font><font size="4" color="#FFFFFF">, 
+    <b><font size="4" color="#C6C246">Opening relay</font></b><font size="4" color="#FFFFFF">, 
     con el que se indica si las condiciones ambientales son adecuadas para 
     operar el observatorio (botón en color verde) y por tanto el relé estará 
     inactivo, o si por el contrario no se cumplen las condiciones para operar de 
@@ -418,22 +418,23 @@ validación de ASCOM</a>.</font></p>
     el caso de haberse inhibido el relé, el botón aparecerá en color gris.</font></p>
     <p><font size="4" color="#FFFFFF">Además del relé, siempre que tengamos 
     ejecutando el programa de control, es posible configurar Meteo Watcher para que ejecute un </font><font size="4" color="#C6C246"><b>
-    Programa externo </b></font><font size="4" color="#FFFFFF">(*.bat, *.exe o 
+    External
+    Program </b></font><font size="4" color="#FFFFFF">(*.bat, *.exe o 
     *.vbs) en el caso de que las condiciones ambientales no sea adecuadas. Al 
-    igual que con el </font><font size="4" color="#C6C246"><b>Relé de apertura</b></font><font size="4" color="#FFFFFF">, 
+    igual que con el </font><b><font size="4" color="#C6C246">Opening relay</font></b><font size="4" color="#FFFFFF">, 
     el botón estará en verde si las condiciones son adecuadas y el programa no 
-    se ha ejecutado o se ha cumplido el periodo de tiempo de </font><b><font size="4" color="#C6C246">
-    Reapertura</font></b><font size="4" color="#FFFFFF"> 
+    se ha ejecutado o se ha cumplido el periodo de tiempo de </font><b>
+    <font size="4" color="#C6C246">Time to open</font></b><font size="4" color="#FFFFFF"> 
     , en rojo en caso de incidencia y por tanto haberse ejecutado el programa, o 
     en gris en caso de no estar activa dicha opción en la pestaña de </font>
-    <font size="4" color="#C6C246">Alertas</font><font size="4" color="#FFFFFF">.</font></p>
+    <font size="4" color="#C6C246">Alerts</font><font size="4" color="#FFFFFF">.</font></p>
     <p><font size="4" color="#FFFFFF">En caso de alerta, primero se ejecutará el programa externo, 
     y una vez finalizado, se activará el relé de cierre. Esto permite, por 
     ejemplo, ejecutar un <i>script</i> VBS (<a href="POTH_Park_Telescope.vbs">POTH_Park_Telescope.vbs</a>) 
     que se conecta con el telescopio a través de POTH o ASCOM Device Hub para dar la orden de aparcar el telescopio, y 
     posteriormente mediante el relé, iniciar el cierre del observatorio.</font></p>
     <p><font size="4" color="#FFFFFF">En 
-    el campo </font><b><font size="4" color="#C6C246">Reapertura</font></b><font size="4" color="#FFFFFF"> 
+    el campo </font><b><font size="4" color="#C6C246">Time to open</font></b><font size="4" color="#FFFFFF"> 
     se indican los minutos restantes para que todos los mecanismos de seguridad 
     activados indiquen que es posible abrir el 
     observatorio: relé, campos de Cierre del observatorio o Alerta del fichero MeteoWatcher6.dat. Esta cuenta atrás se inicia en el momento en el que se 
@@ -441,39 +442,39 @@ validación de ASCOM</a>.</font></p>
     <p><font size="4" color="#FFFFFF">El botón </font><b>
     <font size="4" color="#C6C246">Reset</font></b><font size="4" color="#FFFFFF"> 
     permite indicar a Meteo Watcher que en el próximo ciclo, si las condiciones 
-    lo permiten, ponga a cero el contador de tiempo para la  </font><b><font size="4" color="#C6C246">
-    Reapertura</font></b><font size="4" color="#FFFFFF"> . Cuando se 
+    lo permiten, ponga a cero el contador de  </font><b>
+    <font size="4" color="#C6C246">Time to open</font></b><font size="4" color="#FFFFFF">. Cuando se 
     pulsa el botón se pone en color rojo. Una vez se ha evaluado la petición, 
     éste vuelve a ponerse en verde. Es de utilidad si estando inhibida la 
-    apertura del observatorio (</font><font size="4" color="#C6C246"><b>Relé de 
-    a</b></font><b><font size="4" color="#C6C246">pertura</font></b><font size="4" color="#FFFFFF"> 
+    apertura del observatorio (</font><b><font size="4" color="#C6C246">Opening 
+    relay</font></b><font size="4" color="#FFFFFF"> 
     en rojo) modificamos algún valor en la configuración o en las alertas.</font></p>
     <p>&nbsp;</p>
     <p><font size="4" color="#FFFFFF">En la zona derecha, que corresponde a 
     los valores proporcionados por alguno de los sensores, tenemos:</font></p>
     <p><b><font size="4" color="#C6C246">Temp.</font></b><font size="4" color="#FFFFFF">: 
     Temperatura ambiente.</font></p>
-    <p><b><font size="4" color="#C6C246">Cielo</font></b><font size="4" color="#FFFFFF">: 
+    <p><font size="4" color="#C6C246"><b>Sky</b></font><font size="4" color="#FFFFFF">: 
      
     Temperatura del 
     Cielo medida por el sensor de nubes. Cuanto más despejado esté el cielo menor será la temperatura medida. 
     Usaremos este valor para ajustes de 
     configuración.</font></p>
-    <p><font size="4" color="#C6C246"><b>Claridad</b></font><font size="4" color="#FFFFFF">:&nbsp; 
+    <p><font size="4" color="#C6C246"><b>Light</b></font><font size="4" color="#FFFFFF">:&nbsp; 
     Representa una indicación de la luminosidad que está midiendo el 
     sensor de luz.</font></p>
-    <p><b><font size="4" color="#C6C246">Humedad</font></b><font size="4" color="#FFFFFF">: 
+    <p><b><font size="4" color="#C6C246">Humidity</font></b><font size="4" color="#FFFFFF">: 
     Humedad relativa.</font></p>
-    <p><b><font size="4" color="#C6C246">Rocío</font></b><font size="4" color="#FFFFFF">: 
+    <p><font size="4" color="#C6C246"><b>Dew</b></font><font size="4" color="#FFFFFF">: 
     Temperatura a partir de la cual empieza a condensarse el vapor de agua 
     contenido en el aire.</font></p>
-    <p><font size="4" color="#C6C246"><b>Viento</b></font><font size="4" color="#FFFFFF">:&nbsp; 
+    <p><font size="4" color="#C6C246"><b>Wind</b></font><font size="4" color="#FFFFFF">:&nbsp; 
     Velocidad del viento. Se realiza una lectura cada 30&quot; y se 
     muestra el valor medio de las tres últimas mediciones. </font>
     </p>
     <p>&nbsp;</p>
     <p><font size="4" color="#FFFFFF">En la zona inferior izquierda tenemos el 
-    botón </font><b><font size="4" color="#C6C246">Gráfica</font></b><font size="4" color="#FFFFFF">, 
+    botón </font><b><font size="4" color="#C6C246">Graphics</font></b><font size="4" color="#FFFFFF">, 
     que nos permitirá visualizar con total comodidad la evolución de todos las 
     variables monitorizadas por el Meteo Watcher a lo largo de hasta las 
     48 últimas horas. Al pulsarlo se abrirá una nueva ventana como ésta:</font></p>
@@ -490,20 +491,20 @@ validación de ASCOM</a>.</font></p>
     dicha gráfica. Lo que nos permitirá empotrarla en una página Web o en otro 
     tipo de visualizador.</font></p>
     <p><font size="4" color="#FFFFFF">Los valores de </font>
-    <font size="4" color="#C6C246">Humedad</font><font size="4" color="#C6C246">,</font><font size="4" color="#FFFFFF">
-    </font><font size="4" color="#C6C246">Claridad y P. Externo</font><font size="4" color="#FFFFFF"> 
+    <font size="4" color="#C6C246">Humidity,</font><font size="4" color="#FFFFFF">
+    </font><font size="4" color="#C6C246">Light y External P.</font><font size="4" color="#FFFFFF"> 
     se visualizan en la escala 
     el eje de ordenadas (Y) de la izquierda. Los valores de </font>
-    <font size="4" color="#C6C246">T. Cielo</font><font size="4" color="#FFFFFF">,
-    </font><font size="4" color="#C6C246">T. Ambiente</font><font size="4" color="#FFFFFF">,
-    </font><font size="4" color="#C6C246">T. Caja</font><font size="4" color="#FFFFFF">,
-    </font><font size="4" color="#C6C246">Rocío</font><font size="4" color="#FFFFFF"> 
-    y </font><font size="4" color="#C6C246">Viento</font><font size="4" color="#FFFFFF"> 
+    <font size="4" color="#C6C246">Sky T.</font><font size="4" color="#FFFFFF">,
+    </font><font size="4" color="#C6C246">Ambient T.</font><font size="4" color="#FFFFFF">,
+    </font><font size="4" color="#C6C246">Box T.</font><font size="4" color="#FFFFFF">,
+    </font><font size="4" color="#C6C246">Dew</font><font size="4" color="#FFFFFF"> 
+    y </font><font size="4" color="#C6C246">Wind</font><font size="4" color="#FFFFFF"> 
     utilizan el eje de ordenadas (Y) de la derecha. 
      
     </font></p>
     <p><font size="4" color="#FFFFFF">Cuando el </font>
-    <font size="4" color="#C6C246">Relé</font><font size="4" color="#FFFFFF"> 
+    <font size="4" color="#C6C246">Opening relay</font><font size="4" color="#FFFFFF"> 
     está armado, indicando que no debe abrirse el observatorio, la gráfica sale 
     en fondo rojo pálido, cubriendo la franja de 0 a 100 de la escala Y de la 
     izquierda. En caso contrario el fondo sale de color blanco. </font></p>
@@ -523,7 +524,7 @@ validación de ASCOM</a>.</font></p>
     <p><font size="4" color="#FFFFFF">Como se ha indicado previamente, Meteo 
     Watcher 6 puede mostrar de modo gráfico todos los parámetros que monitoriza.</font><p>
     <font size="4" color="#FFFFFF">En la ventana </font><b>
-    <font size="4" color="#C6C246">Gráfica</font></b><font size="4" color="#FFFFFF"> 
+    <font size="4" color="#C6C246">Graphics</font></b><font size="4" color="#FFFFFF"> 
     podemos seleccionar qué parámetros queremos que se muestren gráficamente.</font></td>
   </tr>
   </table>
@@ -546,9 +547,9 @@ validación de ASCOM</a>.</font></p>
     vez que se solicitan parámetros de configuración, el programa debe solicitar 
     éstos al Meteo Watcher 6 para poder visualizarlos. Esta operación, 
     dependiendo de las circunstancias puede llegar a tardar unos pocos segundos.</font><p>
-    <font size="4" color="#FFFFFF">En la ventana de </font><b><font size="4" color="#C6C246">Alertas</font></b><font size="4" color="#FFFFFF"> se definirá qué parámetros queremos controlar  para operar con el observatorio.</font></p>
+    <font size="4" color="#FFFFFF">En la ventana de </font><b><font size="4" color="#C6C246">Alerts</font></b><font size="4" color="#FFFFFF"> se definirá qué parámetros queremos controlar  para operar con el observatorio.</font></p>
     <p>
-    <font size="4" color="#C6C246"><b>Modo automático:</b></font></p>
+    <font size="4" color="#C6C246"><b>Automatic mode:</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -559,14 +560,14 @@ validación de ASCOM</a>.</font></p>
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">En base a la 
         configuración establecida, el dispositivo tomará decisiones sobre la 
         activación del relé y calentador.</font></td>
       </tr>
       </table>
     <p>
-    <font size="4" color="#C6C246"><b>Cielo</b></font></p>
+    <font size="4" color="#C6C246"><b>Sky</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -576,12 +577,12 @@ validación de ASCOM</a>.</font></p>
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">Alerta si el sensor de 
         nubes indica que el cielo ha superado el umbral de nublado.</font></td>
       </tr>
       </table>
-    <p><font size="4" color="#C6C246"><b>Claridad</b></font></p>
+    <p><font size="4" color="#C6C246"><b>Light</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -591,13 +592,13 @@ validación de ASCOM</a>.</font></p>
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">Alerta si el sensor de 
         luz indica que la luminosidad ha alcanzado el umbral definido para muy 
         luminoso.</font></td>
       </tr>
       </table>
-    <p><b><font size="4" color="#C6C246">Humedad</font></b></p>
+    <p><b><font size="4" color="#C6C246">Humidity</font></b></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -607,12 +608,12 @@ validación de ASCOM</a>.</font></p>
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">Alerta si la humedad 
         relativa supera el umbral establecido.</font></td>
       </tr>
       </table>
-    <p><b><font size="4" color="#C6C246">Rocío</font></b></p>
+    <p><font size="4" color="#C6C246"><b>Dew</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -622,13 +623,13 @@ validación de ASCOM</a>.</font></p>
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">Alerta si la diferencia 
         entre el punto de rocío y la temperatura ambiente es inferior al umbral 
         establecido.</font></td>
       </tr>
       </table>
-    <p><font size="4" color="#C6C246"><b>Viento</b></font></p>
+    <p><font size="4" color="#C6C246"><b>Wind</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -638,12 +639,12 @@ validación de ASCOM</a>.</font></p>
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">Alerta si el anemómetro 
         mide una velocidad de viento es muy alta.</font></td>
       </tr>
       </table>
-    <p><font size="4" color="#C6C246"><b>Tiempo reapertura</b></font></p>
+    <p><font size="4" color="#C6C246"><b>Time to open</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -653,7 +654,7 @@ validación de ASCOM</a>.</font></p>
         seguro abrir el observatorio.</font></td>
       </tr>
       </table>
-    <p><font size="4" color="#C6C246"><b>Ejecutar programa externo</b></font></p>
+    <p><font size="4" color="#C6C246"><b>Run external program</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -668,7 +669,7 @@ validación de ASCOM</a>.</font></p>
         necesarias a la montura para que aparque.</font></td>
       </tr>
     </table>
-    <p><font size="4" color="#C6C246"><b>Habilitar relé de cierre</b></font></p>
+    <p><font size="4" color="#C6C246"><b>Enable use of the opening relay</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -679,8 +680,7 @@ validación de ASCOM</a>.</font></p>
         adecuadas.</font></td>
       </tr>
     </table>
-    <p><font size="4" color="#C6C246"><b>Enviar mail si se activa el relé de 
-    cierre</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+    <p><font size="4" color="#C6C246"><b>Send mail if opening relay is triggered</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
         <td width="10%">&nbsp;</td>
@@ -690,7 +690,7 @@ validación de ASCOM</a>.</font></p>
         estuviese configurado, informando del hecho.</font></td>
       </tr>
     </table>
-    <p><font size="4" color="#C6C246"><b>Buscar actualizaciones de software</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+    <p><font size="4" color="#C6C246"><b>Check software update</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
         <td width="10%">&nbsp;</td>
@@ -702,7 +702,7 @@ validación de ASCOM</a>.</font></p>
     </table>
     <p>&nbsp;<p><font size="4" color="#FFFFFF">Una 
     vez ajustados los parámetros de alerta debe pulsar el botón  </font><b>
-    <font size="4" color="#C6C246">Guardar</font></b><font size="4" color="#FFFFFF"> 
+    <font size="4" color="#C6C246">Save</font></b><font size="4" color="#FFFFFF"> 
     para que se almacene en el propio Meteo Watcher 6 la configuración establecida.</font></td>
   </tr>
 </table>
@@ -725,19 +725,20 @@ validación de ASCOM</a>.</font></p>
      
     al dispositivo para poder visualizarlos. Esta operación, 
     dependiendo de las circunstancias puede llegar a tardar hasta seis segundos.</font><p>
-    <font size="4" color="#FFFFFF">En la ventana de </font><b><font size="4" color="#C6C246">Configuración</font></b><font size="4" color="#FFFFFF"> es donde se definen los valores de los parámetros que 
+    <font size="4" color="#FFFFFF">En la ventana de </font><b><font size="4" color="#C6C246">
+    Configuration</font></b><font size="4" color="#FFFFFF"> es donde se definen los valores de los parámetros que 
     fijarán el funcionamiento del Meteo Watcher.</font></p>
     <p><b>
     <font size="4" color="#C6C246">COM</font></b><font size="4" color="#FFFFFF">: 
     Indicaremos en este campo el puerto serie asignado para las comunicaciones 
     con él.</font></p>
-    <p><b><font size="4" color="#C6C246">Humedad</font></b><font size="4" color="#FFFFFF">: 
+    <p><b><font size="4" color="#C6C246">Humidity</font></b><font size="4" color="#FFFFFF">: 
     Indicaremos el umbral de humedad relativa máximo a partir del cual se 
     entiende hay demasiada humedad ambiente y es perjudicial para el equipo o 
     perjudica notablemente las observaciones. Si se sobrepasa este umbral se 
     indicará en los campos W y r del fichero MeteoWatcher6.dat (que se describe 
     posteriormente) como humedad alta.</font></p>
-    <p><b><font size="4" color="#C6C246">Diferencial de Rocío</font></b><font size="4" color="#FFFFFF">: 
+    <p><b><font size="4" color="#C6C246">Diferential Dew</font></b><font size="4" color="#FFFFFF">: 
     Fijaremos el diferencial mínimo admisible en grados centígrados entre la 
     temperatura ambiente y el punto de rocío. Por debajo de ese diferencial se 
     entiende que hay excesivo peligro de condensación. Si se sobrepasa este 
@@ -745,18 +746,18 @@ validación de ASCOM</a>.</font></p>
     describe posteriormente) como 
     humedad alta.</font></br>
     </p>
-    <p><font size="4" color="#C6C246"><b>Viento</b></font><b><font size="4" color="#C6C246">: </font></b><font size="4" color="#FFFFFF">Valor a partir del cual 
+    <p><b><font size="4" color="#C6C246">Wind: </font></b><font size="4" color="#FFFFFF">Valor a partir del cual 
         se entiende que pasa de  calma a  viento fuerte, que impide mantener 
     abierto el observatorio. </font>
     </p>
-    <p><b><font size="4" color="#C6C246">Luminoso: </font></b>
+    <p><font size="4" color="#C6C246"><b>Brightness</b></font><b><font size="4" color="#C6C246">: </font></b>
     <font size="4" color="#FFFFFF">El valor de este parámetro pueden variar 
     entre 0 (totalmente oscuro) y 1023 (máxima luminosidad) y representa en 
     valor por debajo 
         del cual se entiende que se ha alcanzado un nivel razonable de 
         oscuridad. </font></br>
     </p>
-    <p><b><font size="4" color="#C6C246">Nublado: </font></b><font size="4" color="#FFFFFF">
+    <p><font size="4" color="#C6C246"><b>Cloudy</b></font><b><font size="4" color="#C6C246">: </font></b><font size="4" color="#FFFFFF">
     Los valores de temperatura del cielo pueden variar desde valores positivos 
     en caso de mucha nubosidad a valores negativos en caso de cielos despejados. 
     Cuanto más despejado más negativa será la temperatura del cielo. Este valor 
@@ -765,18 +766,18 @@ validación de ASCOM</a>.</font></p>
         valor, se entiende que el cielo  pasa a estar 
         nublado. </font>
     </p>
-    <p><font size="4" color="#C6C246"><b>Calibración fotómetro: </b></font>
+    <p><font size="4" color="#C6C246"><b>Photometer calibration: </b></font>
     <font size="4" color="#FFFFFF">Este parámetro permite calibrar la 
     sensibilidad del medidor de luz, posibilitando que tengamos mediciones de 
     cero en condiciones de oscuridad. Es un valor que se restará 
     siempre a la lectura que proporcione el detector de luminosidad.</font></p>
-    <p><font size="4" color="#C6C246"><b>Calibración anemómetro: </b></font>
+    <p><font size="4" color="#C6C246"><b>Anemometer calibration: </b></font>
     <font size="4" color="#FFFFFF">Para realizar una razonable caracterización 
     del anemómetro necesitamos conocer y especificar estos parámetros.</font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="8%"><font size="4" color="#C6C246">Pulsos/giro</font></td>
+        <td width="8%"><font size="4" color="#C6C246">Pulses/turn</font></td>
         <td width="94%"><font size="4" color="#FFFFFF">El anemómetro dispone en 
         su interior de un <a href="http://es.wikipedia.org/wiki/Reed_switch">
         relé <i>reed</i></a>, que se cierra cada vez que pasa cerca de él un 
@@ -791,7 +792,7 @@ validación de ASCOM</a>.</font></p>
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="8%"><font size="4" color="#C6C246">Radio</font></td>
+        <td width="8%"><font size="4" color="#C6C246">Radius</font></td>
         <td width="94%"><font size="4" color="#FFFFFF">Distancia que hay entre 
         el eje de giro del anemómetro y el eje central de las cazoletas. </font></td>
       </tr>
@@ -814,7 +815,7 @@ validación de ASCOM</a>.</font></p>
         <td width="94%">&nbsp;</td>
       </tr>
     </table>
-    <p><font size="4" color="#C6C246"><b>Acceso remoto: </b></font>
+    <p><font size="4" color="#C6C246"><b>Remote access: </b></font>
     <font size="4" color="#FFFFFF">Meteo Watcher proporciona la facilidad de 
     poder activar, a través del programa de control, un servidor HTTP que 
     proporciona un <i>string</i> en formato estándar Json que incluye todos los 
@@ -852,21 +853,21 @@ validación de ASCOM</a>.</font></p>
     <p><font size="4" color="#FFFFFF">En el bloque de opciones tenemos aquellas que permiten 
     definir el 
     modo de funcionamiento del Programa de Control:</font></p>
-    <p><font size="4" color="#C6C246"><b>Iniciar con Windows</b></font><font size="4" color="#FFFFFF">: 
+    <p><font size="4" color="#C6C246"><b>Start with Windows</b></font><font size="4" color="#FFFFFF">: 
     Se indica al programa de control del Meteo Watcher 6 que debe realizar la configuración necesaria en 
     el sistema para que éste se arranque automáticamente al iniciar el sistema 
     operativo.</font></p>
-    <p><font size="4" color="#C6C246"><b>Ejecutar minimizado</b></font><font size="4" color="#FFFFFF">: 
+    <p><font size="4" color="#C6C246"><b>Run minimized</b></font><font size="4" color="#FFFFFF">: 
     Se indica al&nbsp; programa de control del Meteo Watcher 6 que debe ejecutar en modo minimizado, mostrando 
     únicamente el icono en la barra de tareas (System Tray). De esta manera, una 
     vez establecida la conexión con el dispositivo, el programa pasa 
     automáticamente a ejecutar en modo minimizado.</font></p>
-    <p><b><font size="4" color="#C6C246">Genera traza</font></b><font size="4" color="#FFFFFF">: 
+    <p><b><font size="4" color="#C6C246">Generates trace</font></b><font size="4" color="#FFFFFF">: 
     Se indica al programa de control del Meteo Watcher 6 que genere el fichero MeteoWatcherV.log, en el 
     mismo directorio donde se encuentre instalado, en el que irá almacenando 
     toda la información relativa a las operaciones que va realizando. 
     Normalmente estará desactivado.</font></p>
-    <p><b><font size="4" color="#C6C246">Genera CSV</font></b><font size="4" color="#FFFFFF">: 
+    <p><b><font size="4" color="#C6C246">Generates CSV</font></b><font size="4" color="#FFFFFF">: 
     Se indica al programa de control del Meteo Watcher 6 que almacene en el fichero MeteoWatcherV.csv (ubicado 
     en la carpeta </font>
     <font size="4" color="#C6C246">Documentos</font><font size="4" color="#FFFFFF"> 
@@ -874,13 +875,12 @@ validación de ASCOM</a>.</font></p>
     analizar con una hoja de cálculo la evolución de los mismos y de este modo 
     refinar el ajuste del sistema.</font><p>&nbsp;<p><font size="4" color="#FFFFFF">Una 
     vez ajustados los parámetros de configuración debe pulsar el botón  </font>
-    <b><font size="4" color="#C6C246">Guardar</font></b><font size="4" color="#FFFFFF"> 
+    <font size="4" color="#C6C246"><b>S</b></font><b><font size="4" color="#C6C246">ave</font></b><font size="4" color="#FFFFFF"> 
     para que se almacene en el Meteo Watcher 6 la configuración establecida.</font><p>
     <font size="4" color="#FFFFFF">En el caso de pulsar </font><b>
     <font size="4" color="#C6C246">Reset</font></b><font size="4" color="#FFFFFF"> 
     se cargará la configuración por defecto. Realice las modificaciones que 
-    considere y finalmente pulse </font><b><font size="4" color="#C6C246">
-    Guardar</font></b><font size="4" color="#FFFFFF"> para que ésta se almacene 
+    considere y finalmente pulse </font><b><font size="4" color="#C6C246">Save</font></b><font size="4" color="#FFFFFF"> para que ésta se almacene 
     en el Meteo Watcher.</font></td>
   </tr>
 </table>
@@ -902,10 +902,10 @@ validación de ASCOM</a>.</font></p>
     <p><font size="4" color="#FFFFFF">Una vez configurados los parámetros de 
     configuración de nuestro servidor de correo electrónico, deberemos pulsar el 
     botón </font>
-    <b><font size="4" color="#C6C246">Guardar</font></b><font size="4" color="#FFFFFF"> 
+    <b><font size="4" color="#C6C246">Save</font></b><font size="4" color="#FFFFFF"> 
     para almacenar nuestra configuración.</font></p>
     <p><font size="4" color="#FFFFFF">Pulsando el botón </font>
-    <font size="4" color="#C6C246"><b>P</b></font><b><font size="4" color="#C6C246">rueba</font></b><font size="4" color="#FFFFFF"> 
+    <b><font size="4" color="#C6C246">Test</font></b><font size="4" color="#FFFFFF"> 
     podremos verificar que todo está bien configurado, debiéndonos llegar un mail 
     de prueba.</font></p>
     </td>
@@ -1150,8 +1150,8 @@ validación de ASCOM</a>.</font></p>
     <td width="18%">
     <font size="4" color="#C6C246"><b>Programa de Control</b></font></td>
     <td width="82%">
-    &nbsp;<font size="4" color="#FFFFFF">6.0.1 -
-    <a href="MeteoWatcher6-v6.0.1.zip">MeteoWatcher6-v6.0.1.zip</a> 
+    &nbsp;<font size="4" color="#FFFFFF">6.0.2 -
+    <a href="MeteoWatcher6-v6.0.2.zip">MeteoWatcher6-v6.0.2.zip</a> 
     [Indispensable Firmware 6.0.1 HW R9]</font></td>
   </tr>
   <tr>
@@ -1159,7 +1159,7 @@ validación de ASCOM</a>.</font></p>
     <i>
     <font size="4" color="#C6C246"><b>Firmware</b></font></i></td>
     <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.1 -&nbsp;<a href="FW-MWV-v6.0.1-HWR9.zip">FW-MW6-v6.0.1-HWR9.zip</a> 
-    [Indispensable Programa de Control 6.0.1]</font></td>
+    [Indispensable Programa de Control 6.0.1 o superiores]</font></td>
   </tr>
 </table>
 <p>&nbsp;</p>

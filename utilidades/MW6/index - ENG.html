@@ -394,7 +394,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     zone.</font></p>
     <p>
     <font size="4" color="#FFFFFF">The upper left zone shows the </font><b>
-    <font size="4" color="#C6C246">Open relay</font></b><font size="4" color="#FFFFFF"> 
+    <font size="4" color="#C6C246">Opening relay</font></b><font size="4" color="#FFFFFF"> 
     status, which indicates whether the environmental conditions are suitable to 
     operate the observatory (green button) and therefore the relay will be 
     inactive, or if on the contrary the conditions for safe operation are not 
@@ -408,7 +408,8 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     case the environmental conditions are not suitable. As with the </font><b>
     <font size="4" color="#C6C246">Opening Relay</font></b><font size="4" color="#FFFFFF">, 
     the button will be green if the conditions are suitable and the program has 
-    not been executed or the </font><b><font size="4" color="#C6C246">Reopen</font></b><font size="4" color="#FFFFFF"> 
+    not been executed or the </font><b><font size="4" color="#C6C246">Time to 
+    open</font></b><font size="4" color="#FFFFFF"> 
     time period has expired, red in case of an incident and therefore the 
     program has been executed, or gray if this option is not active in the
     </font><font size="4" color="#C6C246">Alerts</font><font size="4" color="#FFFFFF"> 
@@ -421,17 +422,17 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     order to park the telescope, and then by means of the relay, initiate the 
     closing of the observatory.</font></p>
     <p>
-    <font size="4" color="#FFFFFF">The </font><b><font size="4" color="#C6C246">
-    Reopen</font></b><font size="4" color="#FFFFFF"> field indicates the 
+    <font size="4" color="#FFFFFF">The </font><b>
+    <font size="4" color="#C6C246">Time to open</font></b><font size="4" color="#FFFFFF"> field indicates the 
     remaining minutes for all activated safety mechanisms to indicate that the 
     observatory can be opened: relay, Observatory Close fields or Alert from the 
     MeteoWatcher6.dat file. This countdown starts at the moment when all alarms 
     are deactivated.</font></p>
     <p>
-    <font size="4" color="#FFFFFF">The </font><b><font size="4" color="#C6C246">Reset</font></b><font size="4" color="#FFFFFF"> button allows you to tell Meteo Watcher to reset the timer for </font>
-    <b><font size="4" color="#C6C246">Reopening</font></b><font size="4" color="#FFFFFF"> to zero at the next cycle, conditions permitting. When the button 
+    <font size="4" color="#FFFFFF">The </font><b><font size="4" color="#C6C246">Reset</font></b><font size="4" color="#FFFFFF"> button allows you to tell Meteo Watcher to reset the </font>
+    <b><font size="4" color="#C6C246">Time to open</font></b><font size="4" color="#FFFFFF"> to zero at the next cycle, conditions permitting. When the button 
     is pressed, it turns red. Once the request has been evaluated, it turns 
-    green again. It is useful if the opening of the observatory is inhibited (</font><b><font size="4" color="#C6C246">opening 
+    green again. It is useful if the opening of the observatory is inhibited (</font><font size="4" color="#C6C246"><b>O</b></font><b><font size="4" color="#C6C246">pening 
     relay</font></b><font size="4" color="#FFFFFF"> in red) and we modify any value in the configuration or in the alerts.<br>
     <br>
 &nbsp;</font></p>
@@ -439,24 +440,24 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     the values provided by some of the sensors, we have:</font></p>
     <p><b><font size="4" color="#C6C246">Temp.</font></b><font size="4" color="#FFFFFF">: 
     Ambient temperature.</font></p>
-    <p><b><font size="4" color="#C6C246">Cielo</font></b><font size="4" color="#FFFFFF">: 
+    <p><font size="4" color="#C6C246"><b>Sky</b></font><font size="4" color="#FFFFFF">: 
      
     Sky temperature measured by the cloud sensor. The clearer the sky the lower 
     the measured temperature. We will use this value for configuration settings.</font></p>
-    <p><font size="4" color="#C6C246"><b>Claridad</b></font><font size="4" color="#FFFFFF">:&nbsp; 
+    <p><font size="4" color="#C6C246"><b>Light</b></font><font size="4" color="#FFFFFF">:&nbsp; 
     It represents an indication of the brightness being measured by the light 
     sensor..</font></p>
-    <p><b><font size="4" color="#C6C246">Humedad</font></b><font size="4" color="#FFFFFF">: 
+    <p><b><font size="4" color="#C6C246">Humidity</font></b><font size="4" color="#FFFFFF">: 
     Relative humidity.</font></p>
-    <p><b><font size="4" color="#C6C246">Rocío</font></b><font size="4" color="#FFFFFF">: 
+    <p><font size="4" color="#C6C246"><b>Dew</b></font><font size="4" color="#FFFFFF">: 
     Temperature at which water vapor in the air begins to condense.</font></p>
-    <p><font size="4" color="#C6C246"><b>Viento</b></font><font size="4" color="#FFFFFF">:&nbsp; 
+    <p><font size="4" color="#C6C246"><b>Wind</b></font><font size="4" color="#FFFFFF">:&nbsp; 
     Wind speed. A reading is taken every 30&quot; and the average value of the last 
     three measurements is displayed. </font>
     </p>
     <p>&nbsp;</p>
     <p><font size="4" color="#FFFFFF">In the lower left zone we have the </font>
-    <b><font size="4" color="#C6C246">Grafica</font></b><font size="4" color="#FFFFFF"> 
+    <b><font size="4" color="#C6C246">Graphics</font></b><font size="4" color="#FFFFFF"> 
     button, which will allow us to visualize with total comfort the evolution of 
     all the variables monitored by Meteo Watcher over the last 48 hours. 
     Clicking it will open a new window like this one:</font></p>
@@ -464,7 +465,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     <img border="0" src="MW6-12.jpg" width="841" height="342"></p>
     <p><font size="4" color="#FFFFFF">If the window remains open, it will be 
     automatically refreshed every 5 minutes. If the </font><b>
-    <font size="4" color="#C6C246">Grafica</font></b><font size="4" color="#FFFFFF"> 
+    <font size="4" color="#C6C246">Graphics</font></b><font size="4" color="#FFFFFF"> 
     button is clicked while the window is open, the graphs will be refreshed at 
     that time.</font></p>
     <p><font size="4" color="#FFFFFF">When the graph window is opened, or when 
@@ -483,7 +484,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     and </font><font size="4" color="#C6C246">Wind</font><font size="4" color="#FFFFFF"> 
     use the right Y-axis. </font></p>
     <p><font size="4" color="#FFFFFF">When the </font>
-    <font size="4" color="#C6C246">Relay</font><font size="4" color="#FFFFFF"> 
+    <font size="4" color="#C6C246">Opening relay</font><font size="4" color="#FFFFFF"> 
     is armed, indicating that the observatory should not be opened, the graph is 
     displayed on a pale red background, covering the 0 to 100 range of the left 
     Y scale. Otherwise, the background is white. </font></p>
@@ -502,7 +503,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     <img border="0" src="MW6-13.jpg" width="351" height="392"></p>
     <p><font size="4" color="#FFFFFF">As previously indicated, Meteo Watcher 6 
     can display graphically all the parameters it monitors.</font><p><font size="4" color="#FFFFFF">
-    In the </font><b><font size="4" color="#C6C246">Graph</font></b><font size="4" color="#FFFFFF"> 
+    In the </font><b><font size="4" color="#C6C246">Graphics</font></b><font size="4" color="#FFFFFF"> 
     window we can select which parameters we want to be displayed graphically.</font></td>
   </tr>
   </table>
@@ -524,7 +525,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     window you will define which parameters you want to control in order to 
     operate with the observatory.</font></p>
     <p>
-    <font size="4" color="#C6C246"><b>Modo automático:</b></font></p>
+    <font size="4" color="#C6C246"><b>Automatic mode:</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -535,14 +536,14 @@ driver and use a single Meteo Watcher 6. This driver has passed the
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">Based on the set 
         configuration, the device will make decisions about relay and heater 
         activation.</font></td>
       </tr>
       </table>
     <p>
-    <font size="4" color="#C6C246"><b>Cielo</b></font></p>
+    <font size="4" color="#C6C246"><b>Sky</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -552,12 +553,12 @@ driver and use a single Meteo Watcher 6. This driver has passed the
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">Alert if the cloud sensor 
         indicates that the sky has exceeded the cloudy threshold.</font></td>
       </tr>
       </table>
-    <p><font size="4" color="#C6C246"><b>Claridad</b></font></p>
+    <p><font size="4" color="#C6C246"><b>Light</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -567,13 +568,13 @@ driver and use a single Meteo Watcher 6. This driver has passed the
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">Alert if the light sensor 
         indicates that the brightness has reached the threshold defined for very 
         bright.</font></td>
       </tr>
       </table>
-    <p><b><font size="4" color="#C6C246">Humedad</font></b></p>
+    <p><b><font size="4" color="#C6C246">Humidity</font></b></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -583,12 +584,12 @@ driver and use a single Meteo Watcher 6. This driver has passed the
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">Alert if relative 
         humidity exceeds the set threshold.</font></td>
       </tr>
       </table>
-    <p><b><font size="4" color="#C6C246">Rocío</font></b></p>
+    <p><font size="4" color="#C6C246"><b>Dew</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -598,13 +599,13 @@ driver and use a single Meteo Watcher 6. This driver has passed the
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">Alert if the difference 
         between the dew point and the ambient temperature is below the set 
         threshold.</font></td>
       </tr>
       </table>
-    <p><font size="4" color="#C6C246"><b>Viento</b></font></p>
+    <p><font size="4" color="#C6C246"><b>Wind</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -614,12 +615,12 @@ driver and use a single Meteo Watcher 6. This driver has passed the
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">SI</font></td>
+        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
         <td width="92%"><font size="4" color="#FFFFFF">Alert if the wind speed 
         measured by the anemometer is too high.</font></td>
       </tr>
       </table>
-    <p><font size="4" color="#C6C246"><b>Tiempo reapertura</b></font></p>
+    <p><font size="4" color="#C6C246"><b>Time to open</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -628,7 +629,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
         alerts have disappeared before it is safe to open the observatory.</font></td>
       </tr>
       </table>
-    <p><font size="4" color="#C6C246"><b>Ejecutar programa externo</b></font></p>
+    <p><font size="4" color="#C6C246"><b>Run external program</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -643,7 +644,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
         park.</font></font></td>
       </tr>
     </table>
-    <p><font size="4" color="#C6C246"><b>Habilitar relé de cierre</b></font></p>
+    <p><font size="4" color="#C6C246"><b>Enable use of opening relay</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
@@ -653,8 +654,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
         even if the conditions are not suitable.</font></td>
       </tr>
     </table>
-    <p><font size="4" color="#C6C246"><b>Enviar mail si se activa el relé de 
-    cierre</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+    <p><font size="4" color="#C6C246"><b>Send mail if opening relay is triggered</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
         <td width="10%">&nbsp;</td>
@@ -663,7 +663,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
         informing of the event once the safety relay has been armed.</font></td>
       </tr>
     </table>
-    <p><font size="4" color="#C6C246"><b>Buscar actualizaciones de software</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+    <p><font size="4" color="#C6C246"><b>Check software update</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
         <td width="10%">&nbsp;</td>
@@ -700,42 +700,42 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     <p><b><font size="4" color="#C6C246">COM</font></b><font size="4" color="#FFFFFF">: 
     Indicate in this field the serial port assigned for communications with it.<br>
     </font><font size="4" color="#FFFFFF"><br>
-    </font><b><font size="4" color="#C6C246">Humedad</font></b><font size="4" color="#FFFFFF">: 
+    </font><b><font size="4" color="#C6C246">Humidity</font></b><font size="4" color="#FFFFFF">: 
     We will indicate the maximum relative humidity threshold above which it is 
     understood that there is too much ambient humidity and it is detrimental to 
     the equipment or significantly impairs the observations. If this threshold 
     is exceeded, it will be indicated in the W and r fields of the 
     MeteoWatcher6.dat file (described later) as high humidity.</font></p>
-    <p><b><font size="4" color="#C6C246">Diferencial de Rocío</font></b><font size="4" color="#FFFFFF">: We will set the minimum allowable differential in degrees 
+    <p><b><font size="4" color="#C6C246">Diferential Dew</font></b><font size="4" color="#FFFFFF">: We will set the minimum allowable differential in degrees 
     Celsius between the ambient temperature and the dew point. Below this 
     differential it is understood that there is excessive danger of condensation. 
     If this threshold is exceeded, it will be indicated in the W and r fields of 
     the MeteoWatcher6.dat file (described later) as high humidity.<br>
     <br>
-    </font><b><font size="4" color="#C6C246">Viento</font></b><font size="4" color="#FFFFFF">: The value at which it is understood that it goes from calm to strong 
+    </font><b><font size="4" color="#C6C246">Wind</font></b><font size="4" color="#FFFFFF">: The value at which it is understood that it goes from calm to strong 
     wind, which prevents keeping the observatory open. </font></p>
-    <p><font size="4" color="#C6C246"><b>Luminoso</b></font><font size="4" color="#FFFFFF">: The value of this parameter can vary between 0 (totally dark) and 
+    <p><font size="4" color="#C6C246"><b>Brightness</b></font><font size="4" color="#FFFFFF">: The value of this parameter can vary between 0 (totally dark) and 
     1023 (maximum brightness) and represents the value below which it is 
     understood that a reasonable level of darkness has been reached. <br>
     <br>
-    </font><b><font size="4" color="#C6C246">Nublado: </font></b>
+    </font><font size="4" color="#C6C246"><b>Cloudy</b></font><b><font size="4" color="#C6C246">: </font></b>
     <font size="4" color="#FFFFFF">The sky temperature values can vary from 
     positive values in case of heavy cloudiness to negative values in case of 
     clear skies. The clearer the sky temperature, the more negative it will be. 
     This value determines the sky temperature limit above which, in descending 
     value direction, the sky becomes cloudy. </font></p>
-    <p><b><font size="4" color="#C6C246">Calibración fotómetro: </font>
+    <p><font size="4" color="#C6C246"><b>Photometer calibration</b></font><b><font size="4" color="#C6C246">: </font>
     </b><font size="4" color="#FFFFFF">This parameter allows to calibrate the 
     sensitivity of the light meter, making it possible to have zero measurements 
     in dark conditions. It is a value that will always be subtracted from the 
     reading provided by the brightness detector.</font></p>
-    <p><b><font size="4" color="#C6C246">Calibración anemómetro: </font>
+    <p><b><font size="4" color="#C6C246">Anemometer calibration: </font>
     </b><font size="4" color="#FFFFFF">To perform a reasonable characterization 
     of the anemometer we need to know and specify these parameters.</font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="8%"><font size="4" color="#C6C246">Pulsos/giro</font></td>
+        <td width="8%"><font size="4" color="#C6C246">Pulses/turn</font></td>
         <td width="94%"><font size="4" color="#FFFFFF">The anemometer has a </font>
         <font size="4" color="#FF0000">reed relay</font><font size="4" color="#FFFFFF"> 
         inside, which closes every time a magnet passes near it, which is what 
@@ -750,7 +750,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
       </tr>
       <tr>
         <td width="6%">&nbsp;</td>
-        <td width="8%"><font size="4" color="#C6C246">Radio</font></td>
+        <td width="8%"><font size="4" color="#C6C246">Radius</font></td>
         <td width="94%"><font size="4" color="#FFFFFF">Distance between the axis 
         of rotation of the anemometer and the central axis of the bowls. </font></td>
       </tr>
@@ -773,7 +773,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
         <td width="94%">&nbsp;</td>
       </tr>
     </table>
-    <p><font size="4" color="#C6C246"><b>Acceso remoto: </b></font>
+    <p><font size="4" color="#C6C246"><b>Remote access: </b></font>
     <font size="4" color="#FFFFFF">Meteo Watcher provides the facility to 
     activate, through the control program, an HTTP server that provides a string 
     in standard Json format that includes all the telemetry data. To do so, you 
@@ -807,21 +807,21 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     </table>
     <p><font size="4" color="#FFFFFF">In the options block we have those that 
     allow defining the operating mode of the Control Program:</font></p>
-    <p><font size="4" color="#C6C246"><b>Iniciar con Windows</b></font><font size="4" color="#FFFFFF">: 
+    <p><font size="4" color="#C6C246"><b>Start with Windows</b></font><font size="4" color="#FFFFFF">: 
     The Meteo Watcher 6 control program is instructed to perform the necessary 
     configuration in the system so that it will start automatically when the 
     operating system is started.</font></p>
-    <p><font size="4" color="#C6C246"><b>Ejecutar minimizado</b></font><font size="4" color="#FFFFFF">: 
+    <p><font size="4" color="#C6C246"><b>Run minimized</b></font><font size="4" color="#FFFFFF">: 
     The Meteo Watcher 6 control program is instructed to run in minimized mode, 
     showing only the icon in the task bar (System Tray). In this way, once the 
     connection with the device is established, the program automatically 
     switches to run in minimized mode.</font></p>
-    <p><b><font size="4" color="#C6C246">Genera traza</font></b><font size="4" color="#FFFFFF">: 
+    <p><b><font size="4" color="#C6C246">Generates trace</font></b><font size="4" color="#FFFFFF">: 
     The Meteo Watcher 6 control program is instructed to generate the 
     MeteoWatcherV.log file, in the same directory where it is installed, in 
     which it will store all the information related to the operations it 
     performs. Normally it will be deactivated.</font></p>
-    <p><b><font size="4" color="#C6C246">Genera CSV</font></b><font size="4" color="#FFFFFF">: 
+    <p><b><font size="4" color="#C6C246">Generates CSV</font></b><font size="4" color="#FFFFFF">: 
     The Meteo Watcher 6 control program is instructed to store in the file 
     MeteoWatcherV.csv (located in the user&#39;s </font>
     <font size="4" color="#C6C246">Documents</font><font size="4" color="#FFFFFF"> 
@@ -829,13 +829,13 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     spreadsheet the evolution of these values and thus to refine the system 
     settings.</font><p>&nbsp;<p><font size="4" color="#FFFFFF">Once the 
     configuration parameters have been set, press the  </font>
-    <b><font size="4" color="#C6C246">Guardar</font></b><font size="4" color="#FFFFFF"> 
+    <b><font size="4" color="#C6C246">Save</font></b><font size="4" color="#FFFFFF"> 
     button to store the configuration in Meteo Watcher 6.</font><p><font size="4" color="#FFFFFF">
     If you press  </font>
     <b><font size="4" color="#C6C246">Reset</font></b><font size="4" color="#FFFFFF">, 
     the default configuration will be loaded. Make the modifications that you 
     consider and finally press  </font>
-    <b><font size="4" color="#C6C246">Guardar</font></b><font size="4" color="#FFFFFF"> 
+    <b><font size="4" color="#C6C246">Save</font></b><font size="4" color="#FFFFFF"> 
     to save the configuration in Meteo Watcher 6.</font></td>
   </tr>
 </table>
@@ -854,10 +854,10 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     observatory closing relay is activated.</font></p>
     <p><font color="#FFFFFF" size="4"><br>
     Once the configuration parameters of our e-mail server have been set, we 
-    must click on the </font><b><font color="#C6C246" size="4">Guardar</font></b><font color="#FFFFFF" size="4"> 
+    must click on the </font><b><font color="#C6C246" size="4">Save</font></b><font color="#FFFFFF" size="4"> 
     button to save our configuration.</font></p>
     <p><font color="#FFFFFF" size="4">By clicking on the </font><b>
-    <font size="4" color="#C6C246">Prueba</font></b><font color="#FFFFFF" size="4"> 
+    <font color="#C6C246" size="4">Test</font></b><font color="#FFFFFF" size="4"> 
     button we can verify that everything is well configured, and we should 
     receive a test e-mail.</font></p>
     </td>
@@ -1039,9 +1039,9 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     file</font></b></u><p>&nbsp;</td>
   </tr>
   <tr>
-    <td width="100%"><font size="4" color="#FFFFFF">Es un fichero en formato CSV 
-    e importable directamente desde Excel. La descripción de los campos, 
-    separados por &quot;;&quot;, es la siguiente:</font><p><b>
+    <td width="100%"><font color="#FFFFFF" size="4">It is a file in CSV format 
+    and can be imported directly from Excel. The description of the fields, 
+    separated by &quot;;&quot;, is as follows:</font><p><b>
     <font face="Letter Gothic Std" size="4" color="#C6C246">
     2023-02-11;09:22:48;-3.08;0.26;-2.49;80.9;-2.62;996;4.2;1;0</font></b></p>
     <table border="1" cellspacing="1" width="47%" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF" height="281">
@@ -1114,8 +1114,8 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     <td width="18%">
     <font size="4" color="#C6C246"><b>Control program</b></font></td>
     <td width="82%">
-    &nbsp;<font size="4" color="#FFFFFF">6.0.1 -
-    <a href="MeteoWatcher6-v6.0.1.zip">MeteoWatcher6-v6.0.1.zip</a> 
+    &nbsp;<font size="4" color="#FFFFFF">6.0.2 -
+    <a href="MeteoWatcher6-v6.0.2.zip">MeteoWatcher6-v6.0.2.zip</a> 
     [Indispensable Firmware 6.0.1 HW R9]</font></td>
   </tr>
   <tr>
@@ -1123,7 +1123,7 @@ driver and use a single Meteo Watcher 6. This driver has passed the
     <i>
     <font size="4" color="#C6C246"><b>Firmware</b></font></i></td>
     <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.1 -&nbsp;<a href="FW-MWV-v6.0.1-HWR9.zip">FW-MW6-v6.0.1-HWR9.zip</a> 
-    [Indispensable Programa de Control 6.0.1]</font></td>
+    [Indispensable Programa de Control 6.0.1 or highers]</font></td>
   </tr>
 </table>
 <p>&nbsp;</p>

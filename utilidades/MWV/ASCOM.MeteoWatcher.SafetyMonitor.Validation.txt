@@ -1,0 +1,56 @@
+Conform Report Hash (V1): 7AA9ADEAFBEFD640F2527110C95E87CCEFCD1D0432E4CE00B897C8A745EC2C6C6B69CE075E642B057DF14B002A520A42E74F830A5295104528B9B322F9E363AF
+
+ 
+ConformanceCheck ASCOM Device Conformance Checker Version 6.6.8048.17861, Build time: 13/01/2022 09:55:24
+ConformanceCheck Running on: ASCOM Platform 6.6 SP1 6.6.1.3673
+ 
+ConformanceCheck Driver ProgID: ASCOM.MeteoWatcher.SafetyMonitor
+ 
+Error handling 
+Error number for "Not Implemented" is: 80040400
+Error number for "Invalid Value 1" is: 80040405
+Error number for "Value Not Set 1" is: 80040402
+Error number for "Value Not Set 2" is: 80040403
+Error messages will not be interpreted to infer state.
+ 
+23:03:05.325 Driver Access Checks              OK       
+23:03:06.287 AccessChecks                      OK       Successfully created driver using late binding
+23:03:06.292 AccessChecks                      OK       Successfully connected using late binding
+23:03:06.296 AccessChecks                      INFO     The driver is a .NET object
+23:03:06.305 AccessChecks                      INFO     The AssemblyQualifiedName is: ASCOM.MeteoWatcher.SafetyMonitor, ASCOM.MeteoWatcher.SafetyMonitor, Version=
+23:03:06.310 AccessChecks                      INFO     The driver implements interface: ASCOM.DeviceInterface.ISafetyMonitor
+23:03:06.978 AccessChecks                      OK       Successfully created driver using early binding to ISafetyMonitor interface
+23:03:06.984 AccessChecks                      OK       Successfully connected using early binding to ISafetyMonitor interface
+23:03:07.011 AccessChecks                      OK       Successfully created driver using driver access toolkit
+23:03:07.025 AccessChecks                      OK       Successfully connected using driver access toolkit
+ 
+Conform is using ASCOM.DriverAccess.SafetyMonitor to get a SafetyMonitor object
+23:03:07.065 ConformanceCheck                  OK       Driver instance created successfully
+ 
+Pre-connect checks 
+23:03:07.134 IsSafe                            OK       Reports false before connection
+ 
+Connect 
+23:03:07.184 ConformanceCheck                  OK       Connected OK
+ 
+Common Driver Methods 
+23:03:07.240 InterfaceVersion                  OK       1
+23:03:07.276 Connected                         OK       True
+23:03:07.321 Description                       OK       MeteoWatcher SafetyMonitor
+23:03:07.367 DriverInfo                        OK       Driver ASCOM for Meteo Watcher 6. Version: 6.6
+23:03:07.414 DriverVersion                     OK       6.6
+23:03:07.459 Name                              OK       MeteoWatcher
+23:03:07.505 CommandString                     INFO     Conform cannot test the CommandString method
+23:03:07.512 CommandBlind                      INFO     Conform cannot test the CommandBlind method
+23:03:07.521 CommandBool                       INFO     Conform cannot test the CommandBool method
+23:03:07.528 Action                            INFO     Conform cannot test the Action method
+23:03:07.536 SupportedActions                  OK       Driver returned an empty action list
+ 
+Properties 
+23:03:07.696 IsSafe                            OK       False
+ 
+Conformance test complete 
+ 
+No errors, warnings or issues found: your driver passes ASCOM validation!! 
+ 
+Driver Hash Value: CF1540F2DCE5071AD9A1145647BF6E3EBEAF7ADD8E2BB104EF50A2E4E3B9D7C6A97E46D69E86544B67E8116F2C20F400EFC9A9AB7BDD1328CE779CD6FC64AFBD

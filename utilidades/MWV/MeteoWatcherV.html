@@ -272,6 +272,52 @@ recomendable verificar la configuración tras aplicar una actualización del
 
 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
   <tr>
+    <td width="100%"><u><font size="5" color="#BD9600"><b>Soporte ASCOM para Meteo Watcher 
+    5</b></font></u><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%">
+
+<p><font size="4" color="#FFFFFF">Meteo watcher 
+proporciona un medio de interconexión con tros programas a través del fichero 
+</font><b><font size="4" color="#C6C246">MeteoWatcherV.dat</font></b><font size="4" color="#FFFFFF">, compatible con el modo
+</font><b><font size="4" color="#C6C246">Boltwood/Clarity II 
+Remote</font></b><font size="4" color="#FFFFFF">,  que le permite interactuar con la mayoría 
+del software destinado a la automatización de observatorios, como pueden ser CCD Commander o CCD Auto Pilot, 
+al ser compatible con <a href="../MW6/Boltwood.SafetyMonitorSetup.exe">ASCOM Boltwood Safety 
+Monitor</a>.</font></p>
+
+<p><font size="4" color="#FFFFFF">De igual manera es compatible con
+<a href="http://www.dehilster.info/astronomy/ascom_generic_file_safetymonitor.php">
+ASCOM Generic File SafetyMonitor Driver</a> mediante la creación del fichero
+</font><b><font size="4" color="#C6C246">MeteoWatcherV.safe</font></b><font size="4" color="#FFFFFF"> 
+en la carpeta </font><b><font size="4" color="#C6C246">MeteoWatcherV</font></b><font size="4" color="#FFFFFF"> 
+dentro de </font><font size="4" color="#C6C246"><b>Documentos</b></font><font size="4" color="#FFFFFF"> 
+del usuario de Windows. De tal manera que si las condiciones son seguras para 
+abrir el observatorio se crea dicho fichero. Eliminándose en el momento que 
+dejan de serlo.</font></p>
+
+<p><font size="4" color="#FFFFFF">Meteo Watcher V también dispone de un driver 
+ASCOM propio, el <b><a href="ASCOM%20MeteoWatcher%20Setup.exe">Meteo Watcher 
+SafetyMonitor</a></b>, 
+aunque en este caso se accede al Meteo Watcher por Ethernet mediante protocolo 
+HTTP. Este <i>
+driver</i> permite conocer si las condiciones climatológicas son seguras para 
+abrir el observatorio, conforme a los parámetros que se hayan configurado desde 
+el Programa de Control. Para ello es necesario activar el Acceso Remoto y 
+configurar el <i>driver</i> para que acceda al ordenador y puerto donde se esté 
+ejecutando. Esta solución permite que varios observatorios puedan instalar el <i>
+driver</i> ASCOM y utilizar un único Meteo Watcher V. Este <i>driver</i> ha 
+pasado las <a href="ASCOM.MeteoWatcher.SafetyMonitor.Validation.txt">pruebas de 
+validación de ASCOM</a>.</font></p>
+
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
     <td width="100%"><u><font size="5" color="#BD9600"><b>Medidas de seguridad 
      
     que proporciona Meteo Watcher V</b></font></u><p>&nbsp;</td>
@@ -1301,8 +1347,8 @@ recomendable verificar la configuración tras aplicar una actualización del
     <td width="18%">
     <font size="4" color="#C6C246"><b>Programa de Control</b></font></td>
     <td width="82%">
-    &nbsp;<font size="4" color="#FFFFFF">5.2.3&nbsp;&nbsp; -
-    <a href="MeteoWatcherV-v5.2.3.zip">MeteoWatcherV-v5.2.3.zip</a> 
+    &nbsp;<font size="4" color="#FFFFFF">5.2.4&nbsp;&nbsp; -
+    <a href="MeteoWatcherV-v5.2.4.zip">MeteoWatcherV-v5.2.4.zip</a> 
     [Indispensable Firmware 5.10.0]</font></td>
   </tr>
   <tr>
@@ -1311,14 +1357,14 @@ recomendable verificar la configuración tras aplicar una actualización del
     <td width="82%">
     &nbsp;<font size="4" color="#FFFFFF">5.1.1&nbsp;&nbsp; -
     <a href="MeteoWatcherV-Cliente-v5.1.1.zip">MeteoWatcherV-Cliente-v5.1.1.zip</a> 
-    [Indispensable Programa de Control 5.2.3]</font></td>
+    [Indispensable Programa de Control 5.2.3 o superior]</font></td>
   </tr>
   <tr>
     <td width="18%">
     <i>
     <font size="4" color="#C6C246"><b>Firmware</b></font></i></td>
     <td width="82%">&nbsp;<font size="4" color="#FFFFFF">5.10.0 -&nbsp;<a href="FW-MWV-v5.10.0-HWR8.zip">FW-MWV-v5.10.0-HWR8.zip</a> 
-    [Indispensable Programa de Control 5.2.3]</font></td>
+    [Indispensable para Programa de Control 5.2.3 o superior]</font></td>
   </tr>
 </table>
 <p>&nbsp;</p>

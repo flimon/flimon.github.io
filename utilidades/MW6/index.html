@@ -496,7 +496,12 @@ en la consola de NINA los siguientes paneles:</font></p>
     apertura del observatorio (</font><b><font size="4" color="#C6C246">Opening 
     relay</font></b><font size="4" color="#FFFFFF"> 
     en rojo) modificamos algún valor en la configuración o en las alertas.</font></p>
-    <p>&nbsp;</p>
+    <p><font color="#FFFFFF">El botón&nbsp; </font>
+    <font size="4" color="#C6C246"><b>Automatic</b></font><font size="4" color="#FFFFFF">, 
+    cuando esté en verde indica que se ha permitido al dispositivo tomar 
+    decisiones de manera autónoma. Si se encuentra en rojo el Meteo Watcher 6 se 
+    limita a proporcionar telemetrías, permaneciendo siempre el relé cerrado, 
+    forzando por tanto el cierre del observatorio.</font></p>
     <p><font size="4" color="#FFFFFF">En la zona derecha, que corresponde a 
     los valores proporcionados por alguno de los sensores, tenemos:</font></p>
     <p><b><font size="4" color="#C6C246">Temp.</font></b><font size="4" color="#FFFFFF">: 
@@ -597,24 +602,6 @@ en la consola de NINA los siguientes paneles:</font></p>
     éstos al Meteo Watcher 6 para poder visualizarlos. Esta operación, 
     dependiendo de las circunstancias puede llegar a tardar unos pocos segundos.</font><p>
     <font size="4" color="#FFFFFF">En la ventana de </font><b><font size="4" color="#C6C246">Alerts</font></b><font size="4" color="#FFFFFF"> se definirá qué parámetros queremos controlar  para operar con el observatorio.</font></p>
-    <p>
-    <font size="4" color="#C6C246"><b>Automatic mode:</b></font></p>
-    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
-      <tr>
-        <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">NO</font></td>
-        <td width="92%"><font size="4" color="#FFFFFF">El dispositivo no está 
-        autorizado a tomar decisiones de manera autónoma. Se limita a 
-        proporcionar telemetrías.</font></td>
-      </tr>
-      <tr>
-        <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
-        <td width="92%"><font size="4" color="#FFFFFF">En base a la 
-        configuración establecida, el dispositivo tomará decisiones sobre la 
-        activación del relé y calentador.</font></td>
-      </tr>
-      </table>
     <p>
     <font size="4" color="#C6C246"><b>Sky</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
@@ -725,8 +712,8 @@ en la consola de NINA los siguientes paneles:</font></p>
         <td width="10%">&nbsp;</td>
         <td width="92%"><font size="4" color="#FFFFFF">Permite habilitar el 
         funcionamiento del relé. En el caso de no estar habilitado, Meteo 
-        Watcher 6 nunca lo activará, aunque las condiciones no sean las 
-        adecuadas.</font></td>
+        Watcher 6 nunca activará el cierre del relé, permaneciendo éste siempre 
+        abierto.</font></td>
       </tr>
     </table>
     <p><font size="4" color="#C6C246"><b>Send mail if opening relay is triggered</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
@@ -1215,9 +1202,9 @@ en la consola de NINA los siguientes paneles:</font></p>
     <td width="18%">
     <font size="4" color="#C6C246"><b>Programa de Control</b></font></td>
     <td width="82%">
-    &nbsp;<font size="4" color="#FFFFFF">6.0.4 -
-    <a href="MeteoWatcher6-v6.0.4.zip">MeteoWatcher6-v6.0.4.zip</a> [Se requiere 
-    Firmware 6.0.4 HW R9]</font></td>
+    &nbsp;<font size="4" color="#FFFFFF">6.0.5 -
+    <a href="MeteoWatcher6-v6.0.4.zip">MeteoWatcher6-v6.0.5.zip</a> [Se requiere 
+    Firmware 6.0.5 HW R9]</font></td>
   </tr>
   <tr>
     <td width="18%">
@@ -1229,8 +1216,8 @@ en la consola de NINA los siguientes paneles:</font></p>
     <td width="18%">
     <i>
     <font size="4" color="#C6C246"><b>Firmware</b></font></i></td>
-    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.4 -&nbsp;<a href="FW-MW6-v6.0.4-HWR9.zip">FW-MW6-v6.0.4-HWR9.zip</a> 
-    [Indispensable para Programa de Control 6.0.4]</font></td>
+    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.5 -&nbsp;<a href="FW-MW6-v6.0.4-HWR9.zip">FW-MW6-v6.0.5-HWR9.zip</a> 
+    [Indispensable para Programa de Control 6.0.4 o superior]</font></td>
   </tr>
 </table>
 <p>&nbsp;</p>

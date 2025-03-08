@@ -480,7 +480,11 @@ following panels in the NINA console:</font></p>
     green again. It is useful if the opening of the observatory is inhibited (</font><font size="4" color="#C6C246"><b>O</b></font><b><font size="4" color="#C6C246">pening 
     relay</font></b><font size="4" color="#FFFFFF"> in red) and we modify any value in the configuration or in the alerts.<br>
     <br>
-&nbsp;</font></p>
+    The </font><b><font size="4" color="#C6C246">Automatic</font></b><font size="4" color="#FFFFFF"> 
+    button, when green, indicates that the device has been allowed to make 
+    autonomous decisions. If it is red, Meteo Watcher 6 limits itself to 
+    providing telemetries, with the relay always remaining closed, thus forcing 
+    the observatory to close.</font></p>
     <p><font size="4" color="#FFFFFF">In the right area, which corresponds to 
     the values provided by some of the sensors, we have:</font></p>
     <p><b><font size="4" color="#C6C246">Temp.</font></b><font size="4" color="#FFFFFF">: 
@@ -571,24 +575,6 @@ following panels in the NINA console:</font></p>
     In the </font><b><font size="4" color="#C6C246">Alerts</font></b><font size="4" color="#FFFFFF"> 
     window you will define which parameters you want to control in order to 
     operate with the observatory.</font></p>
-    <p>
-    <font size="4" color="#C6C246"><b>Automatic mode:</b></font></p>
-    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
-      <tr>
-        <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">NO</font></td>
-        <td width="92%"><font size="4" color="#FFFFFF">The device is not 
-        authorized to make autonomous decisions. It is limited to providing 
-        telemetry.</font></td>
-      </tr>
-      <tr>
-        <td width="6%">&nbsp;</td>
-        <td width="10%"><font size="4" color="#C6C246">YES</font></td>
-        <td width="92%"><font size="4" color="#FFFFFF">Based on the set 
-        configuration, the device will make decisions about relay and heater 
-        activation.</font></td>
-      </tr>
-      </table>
     <p>
     <font size="4" color="#C6C246"><b>Sky</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
@@ -696,9 +682,9 @@ following panels in the NINA console:</font></p>
       <tr>
         <td width="6%">&nbsp;</td>
         <td width="10%">&nbsp;</td>
-        <td width="92%"><font size="4" color="#FFFFFF">Enables the relay 
-        operation. If it is not enabled, Meteo Watcher 6 will never activate it, 
-        even if the conditions are not suitable.</font></td>
+        <td width="92%"><font color="#FFFFFF" size="4">Enables the relay 
+        operation. If it is not enabled, Meteo Watcher 6 will never activate the 
+        relay closing, and the relay will always remain open.</font></td>
       </tr>
     </table>
     <p><font size="4" color="#C6C246"><b>Send mail if opening relay is triggered</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
@@ -1172,9 +1158,9 @@ following panels in the NINA console:</font></p>
     <td width="18%">
     <font size="4" color="#C6C246"><b>Control program</b></font></td>
     <td width="82%">
-    &nbsp;<font size="4" color="#FFFFFF">6.0.4 -
-    <a href="MeteoWatcher6-v6.0.4.zip">MeteoWatcher6-v6.0.4.zip</a> [Firmware 
-    6.0.4 HW R9 required]</font></td>
+    &nbsp;<font size="4" color="#FFFFFF">6.0.5 -
+    <a href="MeteoWatcher6-v6.0.5.zip">MeteoWatcher6-v6.0.5.zip</a> [Firmware 
+    6.0.5 HW R9 required]</font></td>
   </tr>
   <tr>
     <td width="18%">
@@ -1187,8 +1173,8 @@ following panels in the NINA console:</font></p>
     <td width="18%">
     <i>
     <font size="4" color="#C6C246"><b>Firmware</b></font></i></td>
-    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.4 -&nbsp;<a href="FW-MW6-v6.0.4-HWR9.zip">FW-MW6-v6.0.4-HWR9.zip</a> 
-    [Required Control Program 6.0.4]</font></td>
+    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.5 -&nbsp;<a href="FW-MW6-v6.0.5-HWR9.zip">FW-MW6-v6.0.5-HWR9.zip</a> 
+    [Required Control Program 6.0.4 or higher]</font></td>
   </tr>
 </table>
 <p>&nbsp;</p>

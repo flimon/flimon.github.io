@@ -89,14 +89,17 @@ API</b>, que permite interactuar con NINA mediante protocolo HTTP.</font></p>
 <p><font size="4" color="#FFFFFF">Para poder enviar los comandos al plugin 
 mediante comandos HTTP utilizaremos el programa <b>curl</b>, que ya viene incorporado en 
 las últimas versiones de Windows (por últimas me refiero básicamente a Windows 
-11), aunque me he encontrado con instalaciones que no lo tenían, en cuyo caso lo 
+11), aunque me he encontrado con instalaciones que no lo tenían, en cuyo caso 
+puedes instalarlo desde Windows Store (el ejecutable lo deja en 
+C:\Windows\system32\curl.exe). Si prefieres la última versión lo 
 puedes descargar de
-<a href="https://curl.se/windows/latest.cgi?p=win64-mingw.zip">aquí</a><font color="#FFFFFF">. 
-Sólo es necesario descomprimir el fichero descargado y copiar el contenido de la 
-carpeta bin donde consideremos. Por ejemplo: &quot;C:\curl&quot;. En el <i>script</i>
+<a href="https://curl.se/windows/latest.cgi?p=win64-mingw.zip">aquí</a> y <font color="#FFFFFF">
+sólo es necesario descomprimir el fichero descargado y copiar el contenido de la 
+carpeta <b>bin</b> donde consideremos. Por ejemplo: &quot;C:\curl&quot;. En el <i>script</i>
 <b>desconecta.bat</b> 
 podremos indicar el <i>path</i> completo o incluir dicho directorio en los <i>
-path</i> de búsqueda del sistema.</font></font></p>
+path</i> de búsqueda del sistema. Todo esto lo deberás tener en cuenta para 
+personalizar el <i>script</i>.</font></font></p>
 <p>Para cuando hago pruebas, en NINA tengo un perfil específico donde los 
 dispositivos que utilizo son simuladores. Podéis iniciar una sesión con NINA y 
 ejecutando el <i>script</i> &quot;a mano&quot; ver que NINA hace todo lo programado. 

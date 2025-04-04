@@ -1,0 +1,110 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link REL="SHORTCUT ICON" HREF="../../icons/favicon.png">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Fernando Lim&oacute;n [Astrofotografía]</title>
+</head>
+<body text="#000000" bgcolor="#111111">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="1156" id="AutoNumber1">
+  <tr>
+    <td width="4%">
+    &nbsp;</td>
+    <td width="1073">
+    <p align="center">
+<font face="Avery Deluxe" size="7" color="#C6C246">Comunicación de SAI con 
+N.I.N.A.</font></td>
+    <td width="4%" align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49" style="border-style:solid; border-width:0px; ">
+    <p align="center">&nbsp;</td>
+    <td width="1073" style="border: 5px solid #BD9600">
+    <p align="center">
+    <font size="4" color="#FFFFFF">&nbsp;</font><font size="4" color="#C6C246">Documentación</font></td>
+    <td width="34" align="justify">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49">&nbsp;</td>
+    <td width="1073">&nbsp;</td>
+    <td width="34" align="justify">&nbsp;</td>
+  </tr>
+  </table>
+
+<p>&nbsp;</p>
+
+<p><font size="4" color="#FFFFFF">Es más que probable que dispongáis de un SAI 
+(Sistema de Alimentación Ininterrumpida) en vuestro observatorio. Más si éste lo 
+operáis de manera remota, en cuyo caso es un componente indispensable y crítico.</font></p>
+<p><font size="4" color="#FFFFFF">Si utilizas NINA es probable que te hayas 
+planteado el problema de cómo informarle que estamos sufriendo un corte de 
+suministro eléctrico y que debe proceder a parar lo que estuviese haciendo, 
+aparcar la montura y cerrar el observatorio. Si sigues leyendo verás que es un 
+problema de muy fácil solución.</font></p>
+<p><font size="4" color="#FFFFFF">Aunque es factible que el SAI no se gestione 
+desde el mismo PC que lleva el observatorio, en el ejemplo parto de la base que 
+NINA y el programa de control del SAI corren en el mismo ordenador.</font></p>
+<p><font size="4" color="#FFFFFF">Por una parte, necesitamos que nuestro SAI 
+permita programar la ejecución de <i>sripts</i> cuando se producen determinados 
+eventos. En concreto cuando falta el suministro eléctrico. En mi caso, el SAI 
+está monitorizado por <a href="https://www.ups-technet.com/upsmon6.htm">Upsmon</a><font color="#FFFFFF">, 
+que permite realizar este tipo de operaciones:</font></font></p>
+<p>&nbsp;</p>
+<p align="center"><font size="4" color="#FFFFFF">
+<img border="0" src="SAI-1.jpg" width="600></font></p>
+<p align="center">&nbsp;</font></p>
+<p align="center"><font size="4" color="#FFFFFF">
+</p>
+<p><font size="4" color="#FFFFFF">Configuraremos Upsmon para que transcurridos 
+15&quot; (por ejemplo) desde el corte del suministro ejecute el siguiente <i>script</i>, que 
+he denominado <b>desconecta.bat</b>:</font></p>
+<p><font size="4" color="#008000">@echo off<br>
+<br>
+&gt; alerta.txt (<br>
+echo %DATE% %TIME%<br>
+curl --request GET http://localhost:1888/v2/api/sequence/stop &amp;&amp; echo<br>
+curl --request GET http://localhost:1888/v2/api/equipment/guider/stop &amp;&amp; echo<br>
+curl --request GET http://localhost:1888/v2/api/equipment/mount/park &amp;&amp; echo<br>
+curl --request GET http://localhost:1888/v2/api/equipment/dome/close &amp;&amp; echo<br>
+curl --request GET http://localhost:1888/v2/api/equipment/camera/warm?minutes=5 
+&amp;&amp; echo<br>
+)</font></p>
+<p>Este <i>script</i> le indica a NINA que debe:</p>
+<ol>
+  <li>Parar la secuencia que esté ejecutando.</li>
+  <li>Parar el guiado.</li>
+  <li>Aparcar la montura.</li>
+  <li>Cerrar el observatorio.</li>
+  <li>Poner a calentar la cámara.</li>
+</ol>
+<p>generando un fichero de log, en el mismo directorio donde está el <i>script</i>, 
+que se denomina <b>alerta.txt</b></p>
+<p>&nbsp;</p>
+<p align="center"><img border="0" src="SAI-2.jpg" width="600"></p>
+<p align="center">&nbsp;</p>
+<p><font size="4" color="#FFFFFF">En NINA deberemos instalar el plugin <b>Advanced 
+API</b>, que permite interactuar con NINA mediante protocolo HTTP.</font></p>
+<p><font size="4" color="#FFFFFF">Para poder enviar los comandos al plugin 
+mediante comandos HTTP utilizaremos el programa <b>curl</b>, que ya viene incorporado en 
+las últimas versiones de Windows (por últimas me refiero básicamente a Windows 
+11), aunque me he encontrado con instalaciones que no lo tenían, en cuyo caso lo 
+puedes descargar de
+<a href="https://curl.se/windows/latest.cgi?p=win64-mingw.zip">aquí</a><font color="#FFFFFF">. 
+Sólo es necesario descomprimir el fichero descargado y copiar el contenido de la 
+carpeta bin donde consideremos. Por ejemplo: &quot;C:\curl&quot;. En el <i>script</i>
+<b>desconecta.bat</b> 
+podremos indicar el <i>path</i> completo o incluir dicho directorio en los <i>
+path</i> de búsqueda del sistema.</font></font></p>
+<p>Para cuando hago pruebas, en NINA tengo un perfil específico donde los 
+dispositivos que utilizo son simuladores. Podéis iniciar una sesión con NINA y 
+ejecutando el <i>script</i> &quot;a mano&quot; ver que NINA hace todo lo programado. 
+Finalmente, podéis provocar un corte en el suministro eléctrico y verificar que 
+todo funciona conforme a lo previsto. </p>
+<p><font size="4" color="#FFFFFF">Y esto es todo ... así que espero os sea de 
+utilidad y que lo disfrutéis.</font></p>
+<p>&nbsp;</p>
+
+</body>
+</html>

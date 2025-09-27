@@ -81,8 +81,8 @@
     <td width="6%">
     &nbsp;</td>
     <td width="94%">
-    <a href="https://www.ea4su.org/utilidades/MWV/MeteoWatcherV.html">&nbsp;<b><font size="4">Meteo 
-    Watcher V</font></b></a></td>
+    <a href="https://www.ea4su.org/utilidades/MWV/MeteoWatcherV.html">&nbsp;<font size="4"><b>Meteo 
+    Watcher V</b></font></a></td>
   </tr>
   <tr>
     <td width="6%">
@@ -667,15 +667,25 @@ following panels in the NINA console:</font></p>
       <tr>
         <td width="6%">&nbsp;</td>
         <td width="10%">&nbsp;</td>
-        <td width="92%"><font color="#FFFFFF">A<font size="4">llows you to tell 
-        Meteo Watcher 6 that before arming the safety relay (if enabled) you 
-        want to run a program on the computer. To do so, it will be instructed 
-        to wait for a time (delay necessary to execute the program, which should 
-        be one minute or more) before 
-        arming the safety relay. Once this time has elapsed, if enabled, the 
-        safety relay will be armed. This makes it possible to execute, for 
-        example, a program that gives the necessary commands to the mount to 
-        park.</font></font></td>
+        <td width="92%"><font size="4" color="#FFFFFF">This allows you to 
+        instruct the Meteo Watcher 6 to run a program on the computer before 
+        arming the safety relay (if enabled). To do this, you will be asked to 
+        wait for a certain amount of time (the delay required to run the program, 
+        which must be one minute or more) before arming the safety relay. Once 
+        this time has elapsed, if enabled, the safety relay will be armed. This 
+        allows you to run, for example, a program that gives the necessary 
+        commands to the mount to park.<br>
+        <br>
+        As an example, here is a script that uses CURL (a command line tool that 
+        comes pre-installed in Windows, or can be installed from the Microsoft 
+        Store) to interact with N.I.N.A. through the Advanced API plugin. In 
+        this way, before closing the observatory, we can instruct N.I.N.A. to 
+        stop the sequence in progress, stop guiding, park the mount, and even 
+        warm up the camera.<br>
+        <br>
+        It is recommended that the script be located in the MeteoWatcher6 folder 
+        that will exist in the user&#39;s Documents folder.</font><p align="center">
+        <img border="0" src="MW6-19.jpg" width="797" height="180"></td>
       </tr>
     </table>
     <p><font size="4" color="#C6C246"><b>Enable use of opening relay</b></font></p>
@@ -683,9 +693,16 @@ following panels in the NINA console:</font></p>
       <tr>
         <td width="6%">&nbsp;</td>
         <td width="10%">&nbsp;</td>
-        <td width="92%"><font color="#FFFFFF" size="4">Enables the relay 
-        operation. If it is not enabled, Meteo Watcher 6 will never activate the 
-        relay closing, and the relay will always remain open.</font></td>
+        <td width="92%"><font size="4" color="#FFFFFF">Enables relay operation. 
+        If not enabled, Meteo Watcher 6 will never activate the relay closure, 
+        and it will always remain open.<br>
+        <br>
+        The relay output is a MOSFET transistor and has polarity, so it may be 
+        necessary to reverse the connection of the cables to the motor control 
+        system.</font><p><b><font size="4" color="#C6C246">Pulse mode:</font></b><font size="4" color="#FFFFFF"> 
+        In order to facilitate compatibility with motors that are controlled by 
+        pulses, the option is provided for the relay output to operate by means 
+        of pulses, the duration of which is configurable. </font></td>
       </tr>
     </table>
     <p><font size="4" color="#C6C246"><b>Send mail if opening relay is triggered</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
@@ -1170,9 +1187,9 @@ following panels in the NINA console:</font></p>
     <td width="18%">
     <font size="4" color="#C6C246"><b>Control program</b></font></td>
     <td width="82%">
-    &nbsp;<font size="4" color="#FFFFFF">6.0.8 -
-    <a href="MeteoWatcher6-v6.0.8.zip">MeteoWatcher6-v6.0.8.zip</a> [Firmware 
-    6.0.5 HW R9 required]</font></td>
+    &nbsp;<font size="4" color="#FFFFFF">6.0.9 -
+    <a href="MeteoWatcher6-v6.0.9.zip">MeteoWatcher6-v6.0.9.zip</a> [Firmware 
+    6.0.6 HW R9 required]</font></td>
   </tr>
   <tr>
     <td width="18%">
@@ -1185,8 +1202,8 @@ following panels in the NINA console:</font></p>
     <td width="18%">
     <i>
     <font size="4" color="#C6C246"><b>Firmware</b></font></i></td>
-    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.5 -&nbsp;<a href="FW-MW6-v6.0.5-HWR9.zip">FW-MW6-v6.0.5-HWR9.zip</a> 
-    [Required for Control Program 6.0.6 or higher]</font></td>
+    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.6 -&nbsp;<a href="FW-MW6-v6.0.6-HWR9.zip">FW-MW6-v6.0.6-HWR9.zip</a> 
+    [Required for Control Program 6.0.9 or higher]</font></td>
   </tr>
 </table>
 <p>&nbsp;</p>

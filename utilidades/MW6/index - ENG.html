@@ -567,6 +567,16 @@ following panels in the NINA console:</font></p>
     <p>&nbsp;</td>
   </tr>
   <tr>
+    <td width="100%"><font size="4" color="#C6C246"><b>IMPORTANT:</b></font><p>
+    <font color="#FFFFFF" size="4">In order for the MW6 to make autonomous 
+    decisions about opening or closing the observatory, Automatic Mode must be 
+    activated [green Automatic button in the Monitor window].<br>
+    All operations and status changes described below are also reflected in the 
+    Safe or Unsafe indication of the ASCOM driver.</font></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
     <td width="100%"><font size="4" color="#FFFFFF">Remember that the 
     configuration parameters are stored in Meteo Watcher 6, so each time 
     configuration parameters are requested, the program must request them to 
@@ -699,13 +709,48 @@ following panels in the NINA console:</font></p>
         <br>
         The relay output is a MOSFET transistor and has polarity, so it may be 
         necessary to reverse the connection of the cables to the motor control 
-        system.</font><p><b><font size="4" color="#C6C246">Pulse mode:</font></b><font size="4" color="#FFFFFF"> 
-        In order to facilitate compatibility with motors that are controlled by 
-        pulses, the option is provided for the relay output to operate by means 
-        of pulses, the duration of which is configurable. </font></td>
+        system.</font></td>
       </tr>
     </table>
-    <p><font size="4" color="#C6C246"><b>Send mail if opening relay is triggered</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+    <p><font size="4" color="#C6C246"><b>Pulse mode</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+      <tr>
+        <td width="6%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="84%"><font color="#FFFFFF" size="4">In order to facilitate 
+        compatibility with motors that are operated by pulses, the option is 
+        provided for the relay output to operate by pulses, the duration of 
+        which is configurable. </font></td>
+      </tr>
+      <tr>
+        <td width="100%" colspan="3"><p><font size="4" color="#C6C246"><br>
+        <b>Open only once</b></br></font></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="6%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="84%">
+        <p align="left"><font color="#FFFFFF" size="4">This tick is valid for 
+        both Standard Mode (normal operation) and Pulse Mode, and means that MW6 
+        can only give the command to open the observatory once.<br>
+        <br>
+        MW6 will indicate, via the Control Programme, that it cannot give any 
+        more opening commands by turning the Opening relay button blue.</font></p>
+        <p align="center"><font color="#FFFFFF" size="4"><br>
+        <img border="0" src="MW6-20.jpg" width="343" height="384"></font></p>
+        <p align="left"><font color="#FFFFFF" size="4"><br>
+        Pressing the Reset button resets the opening counter to zero, allowing 
+        the observatory to be opened once more.<br>
+        <br>
+        The counter is reset to zero if the Control Programme is restarted. 
+        Therefore, if you want to maintain this behaviour in future sessions, 
+        you do not need to do anything when you turn on the equipment the next 
+        day.</font></td>
+      </tr>
+      <tr>
+        <td width="100%" colspan="3"><p><font size="4" color="#C6C246"><br><b>Send mail if opening relay is triggered</b></br></font></p>
+        </td>
+      </tr>
       <tr>
         <td width="6%">&nbsp;</td>
         <td width="10%">&nbsp;</td>
@@ -726,6 +771,67 @@ following panels in the NINA console:</font></p>
     <p><font size="4" color="#FFFFFF">Once the alert parameters have been set, 
     click on the </font><b><font size="4" color="#C6C246">Save</font></b><font size="4" color="#FFFFFF"> 
     button to save the settings in Meteo Watcher 6.</font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%"><u><font size="5" color="#BD9600"><b>Operating in Standard 
+    Mode and Pulse Mode</b></font></u><p><font size="4" color="#FFFFFF">When the 
+    opening relay is deactivated, it remains open, which for some devices or 
+    observatory management programmes could be interpreted as meaning that 
+    weather conditions are safe and it is possible to open. When automatic mode 
+    is deactivated, the relay always remains closed.</font><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%">
+    <p><font size="4" color="#C6C246"><b>Standard Mode</b></font></p>
+    <p><font size="4" color="#FFFFFF">Devices operating in Standard Mode, upon 
+    detecting the closed relay, interpret that conditions are unsafe and never 
+    activate the opening of the observatory.<br>
+    <br>
+    Therefore, when operating in Standard Mode, the way to indicate to the MW6 
+    that it should not issue any more opening commands is to deactivate 
+    Automatic Mode.</font></p>
+    <p align="center"><font size="4" color="#FFFFFF">
+    <img border="0" src="MW6-21.jpg" width="345" height="383"></font></p>
+    <p align="left"><font size="4" color="#FFFFFF"><br>
+    Two BAT scripts are provided that allow you to tell the MW6 that you want to 
+    disable (<a href="MW6_Noautomatic.bat">MW6_Noautomatic.bat</a>) or enable (<a href="MW6_Automatic.bat">MW6_Automatic.bat</a>) 
+    Automatic Mode.<br>
+    <br>
+    These scripts communicate with the MW6 by creating the 
+    MeteoWatcher.Noautomatic or MeteoWatcher.Automatic file in the MeteoWatcher6 
+    folder in the user&#39;s Documents folder.<br>
+    <br>
+    When the MW6&#39;s Automatic Mode is deactivated, the opening relay will always 
+    remain closed, never allowing the observatory to open.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%">
+    <p><font size="4" color="#C6C246"><b>Pulses Mode</b></font></p>
+    <p><font size="4" color="#FFFFFF">What happens if the command to close the 
+    observatory is given manually or through a programme and MW6 has not done 
+    so? When MW6 generates a pulse to close, what it will actually do is open 
+    the observatory. This is not what is intended.<br>
+    <br>
+    The solution would be to instruct MW6 to deactivate the use of the opening 
+    relay, thereby not giving any more commands to open the observatory.</font></p>
+    <p align="center"><img border="0" src="MW6-22.jpg" width="345" height="384"></p>
+    <p><font size="4" color="#FFFFFF"><br>
+    Two BAT scripts are provided that allow you to tell the MW6 that you want to 
+    disable (<a href="MW6_Lock.bat">MW6_Lock.bat</a>) or enable (<a href="MW6_Unlock.bat">MW6_Unlock.bat</a>) 
+    the use of the relay, just as you would from the Alerts window.<br>
+    <br>
+    These scripts communicate with the MW6 by creating the MeteoWatcher.Lock or 
+    MeteoWatcher.Unlock file in the MeteoWatcher6 folder in the user&#39;s Documents.<br>
+    <br>
+    When the MW6 relay is locked, it will always remain open, never generating 
+    open or close signals.</font></p>
+    </td>
   </tr>
 </table>
 
@@ -1187,9 +1293,9 @@ following panels in the NINA console:</font></p>
     <td width="18%">
     <font size="4" color="#C6C246"><b>Control program</b></font></td>
     <td width="82%">
-    &nbsp;<font size="4" color="#FFFFFF">6.0.9 -
-    <a href="MeteoWatcher6-v6.0.9.zip">MeteoWatcher6-v6.0.9.zip</a> [Firmware 
-    6.0.6 HW R9 required]</font></td>
+    &nbsp;<font size="4" color="#FFFFFF">6.0.10 -
+    <a href="MeteoWatcher6-v6.0.10.7z">MeteoWatcher6-v6.0.10.7z</a> [Firmware 
+    6.0.7 HW R9 required]</font></td>
   </tr>
   <tr>
     <td width="18%">
@@ -1202,8 +1308,8 @@ following panels in the NINA console:</font></p>
     <td width="18%">
     <i>
     <font size="4" color="#C6C246"><b>Firmware</b></font></i></td>
-    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.6 -&nbsp;<a href="FW-MW6-v6.0.6-HWR9.zip">FW-MW6-v6.0.6-HWR9.zip</a> 
-    [Required for Control Program 6.0.9 or higher]</font></td>
+    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.7 -&nbsp;<a href="FW-MW6-v6.0.6-HWR9.zip">FW-MW6-v6.0.7-HWR9.zip</a> 
+    [Required for Control Program 6.0.10 or higher]</font></td>
   </tr>
 </table>
 <p>&nbsp;</p>

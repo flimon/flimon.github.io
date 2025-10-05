@@ -593,15 +593,25 @@ en la consola de NINA los siguientes paneles:</font></p>
     <p>&nbsp;</td>
   </tr>
   <tr>
-    <td width="100%">&nbsp;</td>
+    <td width="100%"><font size="4" color="#C6C246"><b>IMPORTANTE:</b></font><p>
+    <font size="4" color="#FFFFFF">Para que el MW6 pueda adoptar decisiones 
+    autónomamente de apertura o cierre del observatorio, deberá estar activado 
+    el Modo Automático [botón Automatic en verde de la ventana Monitor].<br>
+    Todas las operaciones y cambios de estado que se describen a continuación se 
+    reflejan también en la indicación de Seguro o Inseguro del driver ASCOM.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>&nbsp;</td>
   </tr>
   <tr>
     <td width="100%"><font size="4" color="#FFFFFF">Recuerde que los parámetros 
-    de configuración se almacenan en el Meteo Watcher 6, por lo que cada 
-    vez que se solicitan parámetros de configuración, el programa debe solicitar 
-    éstos al Meteo Watcher 6 para poder visualizarlos. Esta operación, 
-    dependiendo de las circunstancias puede llegar a tardar unos pocos segundos.</font><p>
-    <font size="4" color="#FFFFFF">En la ventana de </font><b><font size="4" color="#C6C246">Alerts</font></b><font size="4" color="#FFFFFF"> se definirá qué parámetros queremos controlar  para operar con el observatorio.</font></p>
+    de configuración se almacenan en el Meteo Watcher 6, por lo que cada vez que 
+    se solicitan parámetros de configuración, el programa debe solicitar éstos 
+    al Meteo Watcher 6 para poder visualizarlos. Esta operación, dependiendo de 
+    las circunstancias puede llegar a tardar unos  segundos.</font><p>
+    <font size="4" color="#FFFFFF">En la ventana de </font><b><font size="4" color="#C6C246">
+    Alerts</font></b><font size="4" color="#FFFFFF"> se definirá qué parámetros 
+    queremos controlar para operar con el observatorio.</font></p>
     <p>
     <font size="4" color="#C6C246"><b>Sky</b></font></p>
     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
@@ -697,12 +707,12 @@ en la consola de NINA los siguientes paneles:</font></p>
         <td width="10%">&nbsp;</td>
         <td width="92%"><font size="4" color="#FFFFFF">Permite indicar al Meteo 
         Watcher 6 que antes de armar el relé de seguridad (si estuviese 
-        habilitado) se quiere ejecutar un programa en el ordenador. Para ello se le 
-        indicará que espere un tiempo (retardo necesario para ejecutar dicho 
-        programa, que debe ser de un minuto o más) antes de armar el relé de seguridad. Una vez transcurrido 
-        dicho tiempo, si estuviese habilitado, se armaría el relé de seguridad. 
-        Esto permite ejecutar, por ejemplo, un programa que da las órdenes 
-        necesarias a la montura para que aparque.</font><p>
+        habilitado) se quiere ejecutar un programa en el ordenador. Para ello se 
+        le indicará que espere un tiempo (retardo necesario para ejecutar dicho 
+        programa, que debe ser de un minuto o más) antes de armar el relé de 
+        seguridad. Una vez transcurrido dicho tiempo, si estuviese habilitado, 
+        se armaría el relé de seguridad. Esto permite ejecutar, por ejemplo, un 
+        programa que da las órdenes necesarias a la montura para que aparque.</font><p>
         <font size="4" color="#FFFFFF">A modo de ejemplo, se muestra un script 
         que mediant</font><font size="4" color="#FFFFFF">e CURL (herramienta de 
         línea de comandos que viene preinstalado en Windows, o es instalable 
@@ -729,11 +739,45 @@ en la consola de NINA los siguientes paneles:</font></p>
         abierto.</font><p><font size="4" color="#FFFFFF">La salida del relé, es 
         un transistor MOSFET, y tiene polaridad, por lo que puede que sea 
         necesario invertir la conexión de los cables al sistema de control del 
-        motor.</font></p>
-        <p><b><font size="4" color="#C6C246">Pulse mode:</font></b><font size="4" color="#FFFFFF"> 
-        Con el fin de facilitar la compatibilidad con motores que se manejan 
-        mediante pulsaciones, se proporciona la opción de que la salida de relé 
-        opere mediante pulsos, cuya duración es configurable. </font></td>
+        motor. </font></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="108%" colspan="3"><font size="4" color="#C6C246"><br><b>Pulse 
+        mode</b></br></font></td>
+        </tr>
+      <tr>
+        <td width="6%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="92%">
+        <p><font size="4" color="#FFFFFF">Con el fin de facilitar la 
+        compatibilidad con motores que se manejan mediante pulsaciones, se 
+        proporciona la opción de que la salida de relé opere mediante pulsos, 
+        cuya duración es configurable. </font></td>
+      </tr>
+      <tr>
+        <td width="108%" colspan="3"><p><font size="4" color="#C6C246"><br>
+        <b>Open only one</b></br></font></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="6%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="92%"><font size="4" color="#FFFFFF">Tick válido tanto para 
+        Modo Estándar (funcionamiento normal) como para Modo Pulsos, y hace que 
+        MW6 sólo pueda dar la orden de abrir el observatorio una única vez.<br>
+        <br>
+        El MW6 indicará, a través del Programa de Control, que  no puede dar 
+        más órdenes de apertura poniendo el botón Opening relay en color azul.<br>
+&nbsp;</font><p align="center">
+        <img border="0" src="MW6-20.jpg" width="343" height="384"></p>
+        <p><font size="4" color="#FFFFFF"><br>
+        Pulsando el botón Reset se pone a cero el contador de aperturas y 
+        permitiendo abrir el observatorio una vez más.<br>
+        <br>
+        El contador se pone a cero si se reinicia el Programa de Control. Por lo 
+        que, si se quiere mantener este comportamiento en futuras sesiones, no 
+        es necesario hacer nada al encender el equipo al día siguiente.</font></td>
       </tr>
     </table>
     <p><font size="4" color="#C6C246"><b>Send mail if opening relay is triggered</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
@@ -741,9 +785,9 @@ en la consola de NINA los siguientes paneles:</font></p>
         <td width="6%">&nbsp;</td>
         <td width="10%">&nbsp;</td>
         <td width="84%"><font size="4" color="#FFFFFF">Permite indicar al 
-        programa de control del Meteo 
-        Watcher 6 que una vez armado el relé de seguridad se envíe un mail, si 
-        estuviese configurado, informando del hecho.</font></td>
+        programa de control del Meteo Watcher 6 que una vez armado el relé de 
+        seguridad se envíe un mail, si estuviese configurado, informando del 
+        hecho.</font></td>
       </tr>
     </table>
     <p><font size="4" color="#C6C246"><b>Check software update</b></font><br>&nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
@@ -759,7 +803,71 @@ en la consola de NINA los siguientes paneles:</font></p>
     <p>&nbsp;<p><font size="4" color="#FFFFFF">Una 
     vez ajustados los parámetros de alerta debe pulsar el botón  </font><b>
     <font size="4" color="#C6C246">Save</font></b><font size="4" color="#FFFFFF"> 
-    para que se almacene en el propio Meteo Watcher 6 la configuración establecida.</font></td>
+    para que se almacene en el propio Meteo Watcher 6 la configuración establecida.</font><br>&nbsp;<p>&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="90%">
+  <tr>
+    <td width="100%"><u><font size="5" color="#BD9600"><b>Operativa en Modo 
+    Estándar y Modo Pulsos</b></font></u><p><font size="4" color="#FFFFFF">Cuando se desactiva el uso del relé de 
+    apertura éste queda abierto, lo que para algunos dispositivos o programas de 
+    gestión de observatorios podría interpretarse como que las condiciones 
+    climatológicas son seguras y es posible abrir. Cuando se desactiva el modo 
+    automático el relé permanece siempre cerrado.</font><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%">
+    <p><font size="4" color="#C6C246"><b>Modo Estándar</b></font></p>
+    <p><font size="4" color="#FFFFFF">Los dispositivos que trabajan en Modo Estándar, al detectar el relé cerrado, 
+    interpretan que las condiciones no son seguras y nunca activan la apertura 
+    del observatorio.<br>
+    <br>
+    Por lo que, trabajando en Modo Estándar, la forma de indicar al MW6 que no 
+    debe proporcionar más órdenes de apertura es desactivando el Modo 
+    Automático.</font></p>
+    <p align="center"><font size="4" color="#FFFFFF">
+    <img border="0" src="MW6-21.jpg" width="345" height="383"></font></p>
+    <p align="left"><font size="4" color="#FFFFFF"><br>
+    Se proporcionan dos scripts BAT que permiten indicar al MW6 que se quiere 
+    desactivar (<a href="MW6_Noautomatic.bat">MW6_Noautomatic.bat</a>) o se quiere  activar 
+    (<a href="MW6_Automatic.bat">MW6_Automatic.bat</a>) el Modo Automático.<br>
+    <br>
+    La comunicación con MW6 que realizan estos scripts se implementa mediante la 
+    creación del fichero MeteoWatcher.Noautomatic o MeteoWatcher.Automatic en la 
+    carpeta MeteoWatcher6 en Documentos del usuario.<br>
+    <br>
+    Estando desactivado el Modo Automático del MW6 el relé de apertura siempre 
+    permanecerá cerrado, no permitiendo nunca la apertura del observatorio.</font></p>
+    <p align="left">&nbsp;</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%">
+    <p><font size="4" color="#C6C246"><b>Modo Pulsos</b></font></p>
+    <p><font size="4" color="#FFFFFF">¿Qué ocurre si manualmente, o a través de 
+    un programa, se da la orden de cierre del observatorio y no lo ha hecho 
+    MW6?: Pues cuando MW6 genere un pulso para cerrar, lo que realmente hará es 
+    abrir el observatorio. Que no es lo que se pretende.<br>
+    <br>
+    La solución pasaría por poder indicar al MW6 que desactive el uso del relé 
+    de apertura, no proporcionando más órdenes de apertura del observatorio.</font></p>
+    <p align="center"><img border="0" src="MW6-22.jpg" width="345" height="384"></p>
+    <p><font size="4" color="#FFFFFF"><br>
+    Se proporcionan dos cripts BAT que permiten indicar al MW6 que se quiere 
+    desactivar (<a href="MW6_Lock.bat">MW6_Lock.bat</a>) o se quiere activar (<a href="MW6_Unlock.bat">MW6_Unlock.bat</a>) 
+    el uso del relé, tal y como se haría desde la ventana de Alertas.<br>
+    <br>
+    Estos scripts se comunican con el MW6 mediante la creación del fichero 
+    MeteoWatcher.Lock o MeteoWatcher.Unlock en la carpeta MeteoWatcher6 en 
+    Documentos del usuario.<br>
+    <br>
+    Estando bloqueado el uso del relé del MW6, éste permanecerá siempre abierto, 
+    no generando nunca indicaciones de apertura o cierre.<br>
+&nbsp;</font></p>
+    </td>
   </tr>
 </table>
 
@@ -1235,9 +1343,9 @@ en la consola de NINA los siguientes paneles:</font></p>
     <td width="18%">
     <font size="4" color="#C6C246"><b>Programa de Control</b></font></td>
     <td width="82%">
-    &nbsp;<font size="4" color="#FFFFFF">6.0.9 -
-    <a href="MeteoWatcher6-v6.0.9.zip">MeteoWatcher6-v6.0.9.zip</a> [Se requiere 
-    Firmware 6.0.6 HW R9]</font></td>
+    &nbsp;<font size="4" color="#FFFFFF">6.0.10 -
+    <a href="MeteoWatcher6-v6.0.10.7z">MeteoWatcher6-v6.0.10.7z</a> [Se requiere 
+    Firmware 6.0.7 HW R9]</font></td>
   </tr>
   <tr>
     <td width="18%">
@@ -1249,8 +1357,8 @@ en la consola de NINA los siguientes paneles:</font></p>
     <td width="18%">
     <i>
     <font size="4" color="#C6C246"><b>Firmware</b></font></i></td>
-    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.6 -&nbsp;<a href="FW-MW6-v6.0.6-HWR9.zip">FW-MW6-v6.0.6-HWR9.zip</a> 
-    [Indispensable para Programa de Control 6.0.9 o superior]</font></td>
+    <td width="82%">&nbsp;<font size="4" color="#FFFFFF">6.0.7 -&nbsp;<a href="FW-MW6-v6.0.7-HWR9.zip">FW-MW6-v6.0.7-HWR9.zip</a> 
+    [Indispensable para Programa de Control 6.0.10 o superior]</font></td>
   </tr>
 </table>
 <p>&nbsp;</p>
